@@ -4,16 +4,21 @@ using System.Collections;
 public class Obstacle : MonoBehaviour {
 
     //VARIABLES
-    public enum Type { car, cone, pedestrian}
+    public enum Type { car, parkedCar, cone, pedestrian}
     public Type type;
+    private bool knockInTheAir = false;
+
     [Header("Force")]
-    public float ForceMinSpeed = 5f;
-    public float ForceMaxSpeed = 15f;
-    public float YvectorRangeMin = 5f;
-    public float YvectorRangeMax = 30f;
+    public float ForceMinSpeed = 1000f;
+    public float ForceMaxSpeed = 2000f;
+    public float YvectorRangeMin = 1000f;
+    public float YvectorRangeMax = 2000f;
 
     [Header("Torque")]
     public float maxTorqueSpeed = 1000f;
+
+    [Header("Effect Ref")]
+    public GameObject Explosion;
 
     //cooldown
     private float cooldownTimer = 0.5f;
@@ -26,8 +31,16 @@ public class Obstacle : MonoBehaviour {
             gameObject.GetComponent<Rigidbody>().mass = 1;
             AddForce(player);
             RotationRandomDerp();
+            OnHitEffect();
             onCooldown = true;
+            knockInTheAir = true;
             StartCoroutine(Cooldown());
+        }
+    }
+
+    void OnHitEffect() {
+        switch (type) {
+            case Type.car: Destroy(GetComponent<Car_ForwardMove>()); return;
         }
     }
 
@@ -51,13 +64,20 @@ public class Obstacle : MonoBehaviour {
 
     void OnDeath() {
         switch (type) {
-
+            case Type.car:
+                Instantiate(Explosion, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+                return;
+            case Type.parkedCar:
+                Instantiate(Explosion, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+                return;
         }
     }
 
     void OnCollisionEnter(Collision other) {
         //When colliding with the player or enemy vehicle get thrown into the air, otherwise explode on impact
         if (other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy") OnHit(other.transform);
-        else OnDeath();
+        else if (knockInTheAir) OnDeath();
     }
 }
