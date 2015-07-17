@@ -1,11 +1,10 @@
 fileFormatVersion: 2
-guid: b48392014a46e5b44b2125d835b2fbde
-timeCreated: 1437162395
+guid: e3452c6fc72be064a9d2560181e2a4fe
+timeCreated: 1437162191
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences:
-  - ScoreParticles: {fileID: 142672, guid: 96e9f07a342abe14481d69aa6860743c, type: 2}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

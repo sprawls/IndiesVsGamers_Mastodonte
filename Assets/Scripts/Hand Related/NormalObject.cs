@@ -3,11 +3,11 @@ using System.Collections;
 
 public class NormalObject : GrabbableObject {
 
-    public Rigidbody rbToDeactivate;
+    public int amt_points = 10;
+    public GameObject ScoreParticles;
 
+    private bool _canScore = true;
     private Transform originalParent;
-    private HingeJoint hingeJoint;
-    private SpringJoint springJoint;
     private ConfigurableJoint confJoint;
 
     void Start() {
@@ -73,6 +73,17 @@ public class NormalObject : GrabbableObject {
 
     public override void ForceRelease() {
 
+    }
+
+    public void ScorePoints(float multiplier) {
+        if (_canScore) {
+            _canScore = false;
+            GameManager.instance.score += (int)(amt_points * multiplier);
+            if (ScoreParticles != null) Instantiate(ScoreParticles,transform.position, Quaternion.identity);
+        }
+    }
+    public bool CanBeScored() {
+        return _canScore;
     }
 
 }

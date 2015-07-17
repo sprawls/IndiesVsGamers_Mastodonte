@@ -118,7 +118,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180326}
   m_LocalRotation: {x: 0, y: .248780131, z: 0, w: .96855998}
-  m_LocalPosition: {x: 1.73399997, y: 1.56599998, z: -6.52799988}
+  m_LocalPosition: {x: 1.73000002, y: 1.76999998, z: -6.53000021}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 494990}
@@ -172,7 +172,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c0094b3e822493b4caede9b11d4fd2e3, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -238,14 +238,14 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180326}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 15
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &6553536
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -282,7 +282,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeDropped: 1
-  rbToDeactivate: {fileID: 5417506}
+  canBeUsed: 0
+  amt_points: 100
+  ScoreParticles: {fileID: 142672, guid: 96e9f07a342abe14481d69aa6860743c, type: 2}
 --- !u!222 &22274510
 CanvasRenderer:
   m_ObjectHideFlags: 1

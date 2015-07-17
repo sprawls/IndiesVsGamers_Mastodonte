@@ -691,7 +691,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeDropped: 1
-  rbToDeactivate: {fileID: 0}
+  canBeUsed: 0
+  amt_points: 15
+  ScoreParticles: {fileID: 142672, guid: 96e9f07a342abe14481d69aa6860743c, type: 2}
 --- !u!114 &11480082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -704,7 +706,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeDropped: 1
-  rbToDeactivate: {fileID: 0}
+  canBeUsed: 0
+  amt_points: 15
+  ScoreParticles: {fileID: 142672, guid: 96e9f07a342abe14481d69aa6860743c, type: 2}
 --- !u!114 &11485070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -717,7 +721,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeDropped: 1
-  rbToDeactivate: {fileID: 0}
+  canBeUsed: 0
+  amt_points: 15
+  ScoreParticles: {fileID: 142672, guid: 96e9f07a342abe14481d69aa6860743c, type: 2}
 --- !u!114 &11495304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -730,7 +736,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeDropped: 1
-  rbToDeactivate: {fileID: 0}
+  canBeUsed: 0
+  amt_points: 25
+  ScoreParticles: {fileID: 142672, guid: 96e9f07a342abe14481d69aa6860743c, type: 2}
 --- !u!136 &13613696
 CapsuleCollider:
   m_ObjectHideFlags: 1
