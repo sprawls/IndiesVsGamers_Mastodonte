@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Picture_LeftShark
-  m_Shader: {fileID: 10753, guid: 0000000000000000e000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
+  m_Name: Shark_Material
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _EMISSION
+  m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   m_SavedProperties:
     serializedVersion: 2
@@ -105,7 +105,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .5
+        second: .326000005
       data:
         first:
           name: _BumpScale
@@ -125,7 +125,7 @@ Material:
       data:
         first:
           name: _EmissionScaleUI
-        second: 0
+        second: .5
       data:
         first:
           name: _Mode
@@ -138,12 +138,12 @@ Material:
       data:
         first:
           name: _EmissionColor
-        second: {r: 0, g: 0, b: 0, a: 1}
+        second: {r: .0178416967, g: .0356833972, b: .121323526, a: .5}
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .117647052, g: .415821612, b: 1, a: 1}
       data:
         first:
           name: _EmissionColorUI
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .0356833935, g: .0713667944, b: .242647052, a: 1}
