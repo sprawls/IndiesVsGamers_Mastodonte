@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11462806}
   m_Layer: 0
   m_Name: Car
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca80921ef3114e48a6a0df1521a95e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
+  Speed: 40
 --- !u!114 &11462806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -222,6 +222,7 @@ MonoBehaviour:
   YvectorRangeMin: 1000
   YvectorRangeMax: 2000
   maxTorqueSpeed: 1000
+  Explosion: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
