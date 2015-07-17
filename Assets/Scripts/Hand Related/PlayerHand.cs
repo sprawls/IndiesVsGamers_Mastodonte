@@ -5,6 +5,7 @@ public class PlayerHand : MonoBehaviour {
 
     [Header("Variables to Set In Inspector : ")]
     public GameObject model;
+    public GameObject grabAnchor;
     public float Ypos_Idle;
     public float Ypos_Grab;
     public float sensibility = 10f;
@@ -17,7 +18,11 @@ public class PlayerHand : MonoBehaviour {
     private Vector3 _startModelPos;
     private Vector3 _mousePosition;
     private Rigidbody _modelRB;
-    
+
+
+    void Awake() {
+        Cursor.visible = false;
+    }
 
 	void Start () {
         _startModelPos = model.transform.localPosition;
@@ -26,12 +31,13 @@ public class PlayerHand : MonoBehaviour {
 	
 
 	void Update () {
-        UpdateGrabbing();
+        UpdateGrabbingBool();
         GetMousePosition();
         UpdateModelPosition();
+        if (isGrabbing) AttemptToGrab();
 	}
 
-    void UpdateGrabbing() {
+    void UpdateGrabbingBool() {
         if(Input.GetMouseButton(0)) isGrabbing = true;
         else isGrabbing = false;
     }
@@ -57,5 +63,9 @@ public class PlayerHand : MonoBehaviour {
                                             _mousePosition.z) + _startModelPos;
 
         _modelRB.velocity = (targetPos - _modelRB.transform.position) * sensibility;
+    }
+
+    void AttemptToGrab() {
+        //Collider[] hitColliders = Physics.OverlapSphere(center, radius);
     }
 }
