@@ -10,6 +10,7 @@ public class PlayerHand : MonoBehaviour {
     public float Ypos_Idle;
     public float Ypos_Grab;
     public float sensibility = 10f;
+    public float camSensibility = 500f;
     public Vector2 maxCameraMouvement;
     public Vector2 handMouvementToReachMax;
     public LayerMask HandCollisionPlane;
@@ -44,11 +45,16 @@ public class PlayerHand : MonoBehaviour {
 	void Update () {
         CheckLeftClick();
         GetMousePosition();
-        UpdateModelPosition();
-        UpdateCameraPosition();
+        
+        
         if (armIsLowered && !isGrabbing && !_hasGrabbedRecently) AttemptToGrab();
         else if (isGrabbing && Input.GetMouseButtonDown(1)) DropObject();
 	}
+
+    void LateUpdate() {
+        UpdateModelPosition();
+        UpdateCameraPosition();
+    }
 
 
     void CheckLeftClick() {
@@ -87,7 +93,7 @@ public class PlayerHand : MonoBehaviour {
                                             Ypos,
                                             _mousePosition.z) + _startModelPos;
 
-        _modelRB.velocity = (targetPos - _modelRB.transform.position) * sensibility;
+        _modelRB.velocity = (targetPos - _modelRB.transform.position) * sensibility * Time.deltaTime;
     }
 
     void UpdateCameraPosition() {
@@ -99,7 +105,7 @@ public class PlayerHand : MonoBehaviour {
         Vector3 ZVector = _mainCam.transform.up * targetZ;
         Vector3 targetPos = XVector + ZVector;
 
-        _mainCam.transform.localPosition = Vector3.Lerp(_mainCam.transform.localPosition, targetPos, 0.25f);
+        _mainCam.transform.localPosition = Vector3.Lerp(_mainCam.transform.localPosition, targetPos, 0.05f);
     }
 
     void AttemptToGrab() {
