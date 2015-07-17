@@ -9,6 +9,11 @@ public class NormalObject : GrabbableObject {
     private bool _canScore = true;
     private Transform originalParent;
     private ConfigurableJoint confJoint;
+    private Rigidbody rb;
+
+    void Awake() {
+        rb = GetComponent<Rigidbody>();
+    }
 
     void Start() {
         originalParent = transform.parent;
@@ -84,6 +89,10 @@ public class NormalObject : GrabbableObject {
     }
     public bool CanBeScored() {
         return _canScore;
+    }
+
+    public void Push(Vector3 point) {
+        Debug.Log("Push not implemented yet!");
     }
 
 }

@@ -5,6 +5,7 @@ public class GunObject : GrabbableObject {
 
     public GameObject ShootPosition;
     public GameObject ShootLineRenderer;
+    public GameObject[] gunPows;
     public LayerMask ShootLayerMask;
 
     private Transform originalParent;
@@ -79,16 +80,36 @@ public class GunObject : GrabbableObject {
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100, ShootLayerMask)) {
             Debug.DrawLine(ray.origin, hit.point, Color.red, 2f);
+            //check for normal grabbable object
+            NormalObject normalObj = hit.transform.GetComponentInParent<NormalObject>();
+            if (normalObj != null) normalObj.Push(hit.point);
+            //check for boss damage
+            Enemy_Manager enemyManager = hit.transform.GetComponentInParent<Enemy_Manager>();
+            if (enemyManager != null) enemyManager.TakeDamage(1);
             StartCoroutine(SpawnShootParticles(hit));
         }
     }
 
     IEnumerator SpawnShootParticles(RaycastHit hit) {
+        //Spawn them
         LineRenderer newLineRenderer = Instantiate(ShootLineRenderer).GetComponent<LineRenderer>();
         newLineRenderer.SetPosition(0,ShootPosition.transform.position);
         newLineRenderer.SetPosition(1, hit.point);
-        yield return new WaitForSeconds(0.5f);
+        SpriteRenderer[] gunPowSprites = new SpriteRenderer[2];
+        gunPowSprites[0] = ((GameObject)Instantiate(gunPows[Random.Range(0, gunPows.Length)], ShootPosition.transform.position, Quaternion.identity)).GetComponentInChildren<SpriteRenderer>();
+        gunPowSprites[1] = ((GameObject)Instantiate(gunPows[Random.Range(0, gunPows.Length)], hit.point, Quaternion.identity)).GetComponentInChildren<SpriteRenderer>();
+
+        //Fade them
+        for (float i = 0; i < 1; i += Time.deltaTime / 1f) {
+            Color targetColor = Color.Lerp(new Color(1,1,1,1), new Color(1,1,1,0), i);
+            newLineRenderer.SetColors(targetColor,targetColor);
+            foreach (SpriteRenderer sp in gunPowSprites) sp.color = targetColor;
+            yield return null;
+        }
+        //Destroy them
         Destroy(newLineRenderer.gameObject);
+        foreach (SpriteRenderer sp in gunPowSprites) Destroy(sp.transform.parent.gameObject);
+        gunPowSprites = null;
     }
 
 }

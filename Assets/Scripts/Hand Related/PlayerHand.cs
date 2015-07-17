@@ -133,11 +133,13 @@ public class PlayerHand : MonoBehaviour {
     }
 
     void DropObject() {
-        isGrabbing = false;
-        StartCoroutine(GrabCooldown());
-        grabbedModel.SetActive(false);
-        _grabbedObject.Release();
-        _grabbedObject = null;
+        if (_grabbedObject.canBeDropped) {
+            isGrabbing = false;
+            StartCoroutine(GrabCooldown());
+            grabbedModel.SetActive(false);
+            _grabbedObject.Release();
+            _grabbedObject = null;
+        }
     }
 
     //Debug function for grab collider
