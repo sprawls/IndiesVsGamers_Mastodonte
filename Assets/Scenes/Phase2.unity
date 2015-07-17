@@ -252,6 +252,22 @@ MonoBehaviour:
 GameObject:
   m_PrefabParentObject: {fileID: 137962, guid: 2c67eaef4138b2d42bcec69554caa2f0, type: 2}
   m_PrefabInternal: {fileID: 1619861834}
+--- !u!1 &1527120381 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 112604, guid: 91bb934579ffc204ab05625988ffa1ef, type: 2}
+  m_PrefabInternal: {fileID: 1777002175}
+--- !u!65 &1527120384
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1527120381}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1100, y: 1000, z: 2000}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1619861834
 Prefab:
   m_ObjectHideFlags: 0
@@ -333,10 +349,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11498038, guid: 91bb934579ffc204ab05625988ffa1ef, type: 2}
-      propertyPath: generation
-      value: 
-      objectReference: {fileID: 459163895}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91bb934579ffc204ab05625988ffa1ef, type: 2}
   m_IsPrefabParent: 0
