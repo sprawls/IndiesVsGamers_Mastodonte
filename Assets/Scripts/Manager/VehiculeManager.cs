@@ -5,14 +5,47 @@ public class VehiculeManager : MonoBehaviour {
 
     [Header("Vehicule Stats")]
     public float forwardSpeed;
-    public float horizontalSpeed;
+    public float HorizontalSpeed;
+    public float speedModifier;
+
+    [Header("Checks")]
+    public bool canGoRight;
+    public bool canGoLeft;
+
+    private CarTilt carTilt;
+
+    void Awake() {
+        carTilt = gameObject.GetComponent<CarTilt>();
+        speedModifier = 0;
+    }
 
     void Update () {
         GoForward();
-        UpdateHorizontalPos(Input.GetAxis("Horizontal"));
+        CalculateSpeedModifier(Input.GetAxis("Horizontal"));
+        UpdateHorizontalPos();
     }
 
     #region Mouvement Controller
+
+    void CalculateSpeedModifier(float input) {
+        if (input == 0) {
+            if (speedModifier < 0)
+                speedModifier += 0.1f;
+            if (speedModifier > 0)
+                speedModifier -= 0.1f;
+        }
+        else {
+            if (speedModifier < 1 && speedModifier > -1) {
+                speedModifier += (input / 2);
+            }
+        }
+        if (speedModifier > 1) 
+            speedModifier = 1;
+        else if (speedModifier < -1) 
+            speedModifier = -1;
+        else if (speedModifier > -0.15f && speedModifier < 0.15f) 
+            speedModifier = 0;
+    }
 
     void GoForward() {
         gameObject.transform.position = new Vector3(gameObject.transform.position.x,
@@ -20,10 +53,19 @@ public class VehiculeManager : MonoBehaviour {
                                                     gameObject.transform.position.z + forwardSpeed * Time.deltaTime);
     }
 
-    void UpdateHorizontalPos(float inputMultiplier) {
-        gameObject.transform.position = new Vector3(gameObject.transform.position.x + horizontalSpeed * Time.deltaTime * inputMultiplier,
+    void UpdateHorizontalPos() {
+        if (speedModifier < 0 && canGoLeft) {
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x + HorizontalSpeed * speedModifier * Time.deltaTime,
                                                     gameObject.transform.position.y,
                                                     gameObject.transform.position.z);
+            carTilt.Tilt(speedModifier);
+        }
+        else if (speedModifier > 0 && canGoRight) {
+            gameObject.transform.position = new Vector3(gameObject.transform.position.x + HorizontalSpeed * speedModifier * Time.deltaTime,
+                                                    gameObject.transform.position.y,
+                                                    gameObject.transform.position.z);
+            carTilt.Tilt(speedModifier);
+        }
     }
 
     #endregion
@@ -31,7 +73,7 @@ public class VehiculeManager : MonoBehaviour {
     #region Collision Test
 
     void OnCollisionEnter(Collision other) {
-        if (other.gameObject.GetComponent<Obstacle>() != null) other.gameObject.GetComponent<Obstacle>().OnHit(gameObject.transform);
+        /* Feedback */
     }
 
     #endregion

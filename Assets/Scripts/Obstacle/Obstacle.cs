@@ -19,13 +19,21 @@ public class Obstacle : MonoBehaviour {
     private float cooldownTimer = 0.5f;
     private bool onCooldown = false;
 
+    #region when hit by the player
+
     public void OnHit(Transform player) {
         if (!onCooldown) {
+            gameObject.GetComponent<Rigidbody>().mass = 1;
             AddForce(player);
             RotationRandomDerp();
             onCooldown = true;
             StartCoroutine(Cooldown());
         }
+    }
+
+    IEnumerator Cooldown() {
+        yield return new WaitForSeconds(cooldownTimer);
+        onCooldown = false;
     }
 
     private void RotationRandomDerp() {
@@ -39,8 +47,17 @@ public class Obstacle : MonoBehaviour {
         gameObject.GetComponent<Rigidbody>().AddForce(force);
     }
 
-    IEnumerator Cooldown() {
-        yield return new WaitForSeconds(cooldownTimer);
-        onCooldown = false;
+    #endregion
+
+    void OnDeath() {
+        switch (type) {
+
+        }
+    }
+
+    void OnCollisionEnter(Collision other) {
+        //When colliding with the player or enemy vehicle get thrown into the air, otherwise explode on impact
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy") OnHit(other.transform);
+        else OnDeath();
     }
 }
