@@ -12,6 +12,7 @@ GameObject:
   - 136: {fileID: 13680912}
   - 23: {fileID: 2347438}
   - 54: {fileID: 5422776}
+  - 114: {fileID: 11480082}
   m_Layer: 0
   m_Name: pencil 3
   m_TagString: Untagged
@@ -31,6 +32,7 @@ GameObject:
   - 136: {fileID: 13659942}
   - 23: {fileID: 2366892}
   - 54: {fileID: 5487146}
+  - 114: {fileID: 11458946}
   m_Layer: 0
   m_Name: pencil 2
   m_TagString: Untagged
@@ -68,6 +70,7 @@ GameObject:
   - 136: {fileID: 13613696}
   - 23: {fileID: 2313486}
   - 54: {fileID: 5452672}
+  - 114: {fileID: 11485070}
   m_Layer: 0
   m_Name: pencil 1
   m_TagString: Untagged
@@ -171,6 +174,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 496238}
   - 54: {fileID: 5475790}
+  - 114: {fileID: 11495304}
   m_Layer: 0
   m_Name: Container
   m_TagString: Untagged
@@ -675,6 +679,58 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &11458946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b48392014a46e5b44b2125d835b2fbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeDropped: 1
+  rbToDeactivate: {fileID: 0}
+--- !u!114 &11480082
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b48392014a46e5b44b2125d835b2fbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeDropped: 1
+  rbToDeactivate: {fileID: 0}
+--- !u!114 &11485070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b48392014a46e5b44b2125d835b2fbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeDropped: 1
+  rbToDeactivate: {fileID: 0}
+--- !u!114 &11495304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 181812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b48392014a46e5b44b2125d835b2fbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeDropped: 1
+  rbToDeactivate: {fileID: 0}
 --- !u!136 &13613696
 CapsuleCollider:
   m_ObjectHideFlags: 1
