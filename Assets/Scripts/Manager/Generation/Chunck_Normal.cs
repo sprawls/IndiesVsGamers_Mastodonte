@@ -29,7 +29,8 @@ public class Chunck_Normal : Chunck {
     void SpawnInLane() { //Only one can spawn per chunck
         if (Random.Range(0, VehicleInLaneRatio) == 0) {
             if (Random.Range(0, 2) == 0) {
-                Instantiate(Resources.Load("Car"), leftLaneSpawn[Random.Range(0, leftLaneSpawn.Length)].transform.position, Quaternion.identity);
+                GameObject temp = Instantiate(Resources.Load("Car"), leftLaneSpawn[Random.Range(0, leftLaneSpawn.Length)].transform.position, Quaternion.identity) as GameObject;
+                temp.GetComponent<Car_ForwardMove>().Speed *= -1;
             }
             else {
                 Instantiate(Resources.Load("Car"), rightLaneSpawn[Random.Range(0, rightLaneSpawn.Length)].transform.position, Quaternion.identity);

@@ -13,7 +13,7 @@ public class MapGeneration : MonoBehaviour {
     public int intersectionChunckRation;
  
     //VARIABLES
-    List<GameObject> chunckList = new List<GameObject>();
+    public List<GameObject> chunckList = new List<GameObject>();
     private Vector3 currentChunckPos;
 
     void Start() {
@@ -27,7 +27,9 @@ public class MapGeneration : MonoBehaviour {
     }
 
     void Update() {
-
+        if (chunckList.Count < numberOfChuncksLoaded) {
+            CreateChunck(ChooseChunckToLoad());
+        }
     }
 
     ChunckType ChooseChunckToLoad() {
@@ -46,12 +48,5 @@ public class MapGeneration : MonoBehaviour {
 
         chunckList.Add(chunck);
         chunck.GetComponent<Chunck>().Spawn();
-    }
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-    public void DeleteChunk(GameObject chunck) {
-        chunckList.Remove(chunck);
-        Destroy(chunck);
     }
 }

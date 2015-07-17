@@ -5,7 +5,9 @@ public class Car_ForwardMove : MonoBehaviour {
 
     public float Speed = 10;
 
-    void Awake() {
-        gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, Speed); 
+    void Update() {
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x,
+                                                    gameObject.transform.position.y,
+                                                    gameObject.transform.position.z + Speed * Time.deltaTime); 
     }
 }
