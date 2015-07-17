@@ -16,11 +16,13 @@ public class NormalObject : GrabbableObject {
         foreach (Transform t in Ts) {
             t.gameObject.layer = 9; //Physics Object
         }
+        canBeUsed = false;
        
     }
 
     public override void Grab(Transform grabAnchor, Rigidbody rb) {
         transform.parent = grabAnchor;
+        //transform.localPosition = Vector3.zero;
 
         confJoint = gameObject.AddComponent<ConfigurableJoint>();
         confJoint.connectedBody = rb;
@@ -65,8 +67,8 @@ public class NormalObject : GrabbableObject {
         Destroy(confJoint);
     }
 
-    public override void Use() {
-
+    public override bool Use() {
+        return false;
     }
 
     public override void ForceRelease() {
