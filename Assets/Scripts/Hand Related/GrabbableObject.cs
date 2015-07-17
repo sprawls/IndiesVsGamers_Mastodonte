@@ -5,7 +5,7 @@ public abstract class GrabbableObject : MonoBehaviour {
 
     public bool canBeDropped = true;
 
-    public abstract void Grab();
+    public abstract void Grab(Transform grabAnchor, Rigidbody rb);
 
     public abstract void Release();
 

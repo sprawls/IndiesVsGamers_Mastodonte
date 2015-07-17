@@ -203,13 +203,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 196374}
+  grabAnchor: {fileID: 0}
   Ypos_Idle: 2
   Ypos_Grab: 1.5
   sensibility: 5
   HandCollisionPlane:
     serializedVersion: 2
     m_Bits: 256
+  PhysicsObject:
+    serializedVersion: 2
+    m_Bits: 512
+  armIsLowered: 0
   isGrabbing: 0
+  _modelRB: {fileID: 0}
+  _grabbedObject: {fileID: 0}
 --- !u!135 &13545402
 SphereCollider:
   m_ObjectHideFlags: 1

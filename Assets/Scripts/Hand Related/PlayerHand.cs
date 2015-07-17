@@ -5,19 +5,22 @@ public class PlayerHand : MonoBehaviour {
 
     [Header("Variables to Set In Inspector : ")]
     public GameObject model;
-    public GameObject grabAnchor;
+    public SphereCollider grabAnchor;
     public float Ypos_Idle;
     public float Ypos_Grab;
     public float sensibility = 10f;
     public LayerMask HandCollisionPlane;
+    public LayerMask PhysicsObject;
 
     [Header("State Variables (for debug): ")]
+    public bool armIsLowered = false;
     public bool isGrabbing = false;
 
 
     private Vector3 _startModelPos;
     private Vector3 _mousePosition;
-    private Rigidbody _modelRB;
+    public Rigidbody _modelRB;
+    public GrabbableObject _grabbedObject;
 
 
     void Awake() {
@@ -34,19 +37,20 @@ public class PlayerHand : MonoBehaviour {
         UpdateGrabbingBool();
         GetMousePosition();
         UpdateModelPosition();
-        if (isGrabbing) AttemptToGrab();
+        if (armIsLowered && !isGrabbing) AttemptToGrab();
+        else if (isGrabbing && Input.GetMouseButtonDown(1)) DropObject();
 	}
 
     void UpdateGrabbingBool() {
-        if(Input.GetMouseButton(0)) isGrabbing = true;
-        else isGrabbing = false;
+        if(Input.GetMouseButton(0)) armIsLowered = true;
+        else armIsLowered = false;
     }
 
     void GetMousePosition() { 
         Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100, HandCollisionPlane)) {
-            Debug.DrawLine(ray.origin, hit.point);
+            //Debug.DrawLine(ray.origin, hit.point);
             _mousePosition = hit.point;
         }
 
@@ -55,7 +59,7 @@ public class PlayerHand : MonoBehaviour {
     void UpdateModelPosition() {
         //Get target Height
         float Ypos;
-        if (isGrabbing) Ypos = Ypos_Grab;
+        if (armIsLowered) Ypos = Ypos_Grab;
         else Ypos = Ypos_Idle;
 
         Vector3 targetPos = new Vector3(    _mousePosition.x,
@@ -66,6 +70,33 @@ public class PlayerHand : MonoBehaviour {
     }
 
     void AttemptToGrab() {
-        //Collider[] hitColliders = Physics.OverlapSphere(center, radius);
+        Collider[] hitColliders = Physics.OverlapSphere(grabAnchor.transform.position, grabAnchor.radius, PhysicsObject);
+        for (int i = 0; i < hitColliders.Length; i++) {
+            //Debug.Log("object in grab coll : " + hitColliders[i]);
+            GrabbableObject grabbedObject = hitColliders[i].GetComponentInParent<GrabbableObject>();
+            if (grabbedObject != null) {
+                GrabAnObject(grabbedObject);
+                break;
+            }
+           
+        }
+       
+    }
+
+    void GrabAnObject(GrabbableObject grabbedObject) {
+        isGrabbing = true;
+        _grabbedObject = grabbedObject;
+        _grabbedObject.Grab(grabAnchor.transform, _modelRB);
+    }
+
+    void DropObject() {
+        isGrabbing = false;
+        _grabbedObject.Release();
+        _grabbedObject = null;
+    }
+
+    //Debug function for grab collider
+    void OnDrawGizmos() {
+        Gizmos.DrawSphere(grabAnchor.transform.position, grabAnchor.radius);
     }
 }
