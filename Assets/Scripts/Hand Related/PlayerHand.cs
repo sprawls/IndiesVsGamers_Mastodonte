@@ -57,6 +57,7 @@ public class PlayerHand : MonoBehaviour {
     }
 
 
+    /// <summary> Do Left click centered Stuff. Depends if object is grabbed or not. </summary>
     void CheckLeftClick() {
         armIsLowered = false;
         if (isGrabbing && _grabbedObject.canBeUsed) {
@@ -83,6 +84,7 @@ public class PlayerHand : MonoBehaviour {
 
     }
 
+    /// <summary> Updates the hand model position </summary>
     void UpdateModelPosition() {
         //Get target Height
         float Ypos;
@@ -96,6 +98,7 @@ public class PlayerHand : MonoBehaviour {
         _modelRB.velocity = (targetPos - _modelRB.transform.position) * sensibility * Time.deltaTime;
     }
 
+    /// <summary> Updates the Camera position </summary>
     void UpdateCameraPosition() {
         float targetX = Mathf.Lerp(0, maxCameraMouvement.x, Mathf.Lerp(0f, 1f, Mathf.Abs(_modelRB.transform.localPosition.x) / handMouvementToReachMax.x));
         targetX *= Mathf.Sign(_modelRB.transform.localPosition.x);

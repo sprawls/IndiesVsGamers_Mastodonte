@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 478934}
   - 33: {fileID: 3324226}
   - 23: {fileID: 2315788}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 480964}
   - 54: {fileID: 5445734}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RigidBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 407660}
   - 114: {fileID: 11453808}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hand Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 497318}
   - 136: {fileID: 13633770}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 430164}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 456844}
   - 135: {fileID: 13545402}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Grab Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - 4: {fileID: 410878}
   - 33: {fileID: 3345328}
   - 23: {fileID: 2375872}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grabbed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 437364}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,8 +226,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148846}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: 0, z: .949000001}
-  m_LocalScale: {x: .300000012, y: .5, z: .400000006}
+  m_LocalPosition: {x: 0, y: 0, z: .699999988}
+  m_LocalScale: {x: .300000012, y: .75, z: .400000006}
   m_Children: []
   m_Father: {fileID: 430164}
   m_RootOrder: 0
@@ -305,7 +305,7 @@ Rigidbody:
   m_AngularDrag: .0500000007
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 2
 --- !u!114 &11453808
@@ -324,7 +324,8 @@ MonoBehaviour:
   grabbedModel: {fileID: 183504}
   Ypos_Idle: 2.25
   Ypos_Grab: 1.25
-  sensibility: 5
+  sensibility: 200
+  camSensibility: 500
   maxCameraMouvement: {x: 3, y: .5}
   handMouvementToReachMax: {x: 3.5, y: 1.79999995}
   HandCollisionPlane:
