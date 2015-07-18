@@ -87,12 +87,6 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &352832051 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11466886, guid: f18112959dce32b4faba838fcab5f9d9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1353131164}
-  m_Script: {fileID: 11500000, guid: 437fc7f014a7f1344be12d4b2a07655c, type: 3}
 --- !u!1001 &410732956
 Prefab:
   m_ObjectHideFlags: 0
@@ -172,14 +166,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11444346, guid: 21ddd1e6e3588724dbd1a5ebcfb7c254, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 352832051}
-    - target: {fileID: 11443826, guid: 21ddd1e6e3588724dbd1a5ebcfb7c254, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 352832051}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21ddd1e6e3588724dbd1a5ebcfb7c254, type: 2}
   m_IsPrefabParent: 0
