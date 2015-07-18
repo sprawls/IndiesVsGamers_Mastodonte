@@ -237,34 +237,6 @@ Prefab:
       propertyPath: gunObj
       value: 
       objectReference: {fileID: 1365828580}
-    - target: {fileID: 176564, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11487832, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
-      propertyPath: sensibility
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 11487832, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
-      propertyPath: camSensibility
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 11487832, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
-      propertyPath: maxCameraMouvement.y
-      value: 1.29999995
-      objectReference: {fileID: 0}
-    - target: {fileID: 11487832, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
-      propertyPath: Ypos_Grab
-      value: .899999976
-      objectReference: {fileID: 0}
-    - target: {fileID: 436812, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: .333999991
-      objectReference: {fileID: 0}
-    - target: {fileID: 11487832, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
-      propertyPath: Ypos_Idle
-      value: 1.60000002
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
   m_IsPrefabParent: 0
@@ -410,6 +382,18 @@ Prefab:
     - target: {fileID: 439958, guid: c45ec1330eb8da44fa6468f5115cb6f1, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 428098, guid: c45ec1330eb8da44fa6468f5115cb6f1, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 428098, guid: c45ec1330eb8da44fa6468f5115cb6f1, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 428098, guid: c45ec1330eb8da44fa6468f5115cb6f1, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45ec1330eb8da44fa6468f5115cb6f1, type: 2}
