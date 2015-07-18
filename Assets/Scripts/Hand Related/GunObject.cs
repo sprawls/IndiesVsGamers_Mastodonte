@@ -93,8 +93,10 @@ public class GunObject : GrabbableObject {
             NormalObject normalObj = hit.transform.GetComponentInParent<NormalObject>();
             if (normalObj != null) normalObj.Push(hit.point);
             //check for boss damage
+           
             Enemy_Manager enemyManager = hit.transform.GetComponentInParent<Enemy_Manager>();
             if (enemyManager != null) enemyManager.TakeDamage(1);
+            Debug.Log(hit.collider.gameObject + "     " + enemyManager);
             StartCoroutine(SpawnShootParticles(hit));
         }
     }
