@@ -46,7 +46,7 @@ public class GunObject : GrabbableObject {
         transform.parent = grabAnchor;
         transform.localPosition = Vector3.zero;
         
-
+        /*
         confJoint = gameObject.AddComponent<ConfigurableJoint>();
         confJoint.connectedBody = rb;
         confJoint.xMotion = ConfigurableJointMotion.Locked;
@@ -55,7 +55,7 @@ public class GunObject : GrabbableObject {
         confJoint.angularXMotion = ConfigurableJointMotion.Locked;
         confJoint.angularYMotion = ConfigurableJointMotion.Locked;
         confJoint.angularZMotion = ConfigurableJointMotion.Locked;
-
+        */
         Transform[] Ts = GetComponentsInChildren<Transform>();
         foreach (Transform t in Ts) {
             t.gameObject.layer = 10; //Physics Hand

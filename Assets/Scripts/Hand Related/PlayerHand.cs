@@ -42,20 +42,22 @@ public class PlayerHand : MonoBehaviour {
         _mainCam = Camera.main;
         grabbedModel.SetActive(false);
     }
-	
 
-	void Update () {
+
+    void Update() {
         CheckLeftClick();
         GetMousePosition();
         
         
         if (armIsLowered && !isGrabbing && !_hasGrabbedRecently) AttemptToGrab();
         else if (isGrabbing && Input.GetMouseButtonDown(1)) DropObject();
+
+        UpdateModelPosition();
+        UpdateCameraPosition();
 	}
 
     void LateUpdate() {
-        UpdateModelPosition();
-        UpdateCameraPosition();
+       
     }
 
 

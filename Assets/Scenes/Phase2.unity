@@ -272,7 +272,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
 --- !u!1001 &523405800
 Prefab:
   m_ObjectHideFlags: 0
@@ -311,6 +311,10 @@ Prefab:
     - target: {fileID: 456460, guid: 91bb934579ffc204ab05625988ffa1ef, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11493650, guid: 91bb934579ffc204ab05625988ffa1ef, type: 2}
+      propertyPath: forwardSpeed
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91bb934579ffc204ab05625988ffa1ef, type: 2}
@@ -496,7 +500,28 @@ Prefab:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 829082028}
-    m_RemovedComponents: []
+    - target: {fileID: 11473346, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
+      propertyPath: sensibility
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473346, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
+      propertyPath: camSensibility
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413434, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
+      propertyPath: m_CollisionDetection
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413434, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5414950, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5414950, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1959242507
@@ -549,6 +574,10 @@ Prefab:
     - target: {fileID: 11400748, guid: 294517de87cf5bf4db0ab05cfe27ff51, type: 2}
       propertyPath: maxHealth
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11401348, guid: 294517de87cf5bf4db0ab05cfe27ff51, type: 2}
+      propertyPath: Speed
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 294517de87cf5bf4db0ab05cfe27ff51, type: 2}
