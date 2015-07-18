@@ -124,7 +124,9 @@ public class GunObject : GrabbableObject {
             //check for boss damage
            
             Enemy_Manager enemyManager = hit.transform.GetComponentInParent<Enemy_Manager>();
+            Obstacle obstacle = hit.transform.GetComponentInParent<Obstacle>();
             if (enemyManager != null) enemyManager.TakeDamage(1);
+            if (obstacle != null) obstacle.TakeDamage(1);
             StartCoroutine(SpawnShootParticles(hit));
         }
     }

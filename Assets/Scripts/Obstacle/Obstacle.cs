@@ -82,22 +82,27 @@ public class Obstacle : MonoBehaviour {
                 return;
             case Type.flying:
                 Instantiate(Explosion, transform.position, Quaternion.identity);
-                Destroy(gameObject);
+                ExplodingFlyer();
+                Destroy(gameObject, 0.1f);
                 return;
         }
     }
 
     void ExplodingFlyer() {
-        gameObject.transform.FindChild("Explosion").GetComponent<Explosion>();
+        gameObject.transform.FindChild("Explosion").GetComponent<Explosion>().BOOM();
     }
 
     public void TakeDamage(int damage) {
-        health -= damage;
-        if (health <= 0) {
-            if (type != Type.flying) OnDeath();
-            else {
-                gameObject.GetComponent<Rigidbody>().useGravity = true;
-                knockInTheAir = true;
+        if (health > 0) {
+            health -= damage;
+            if (health <= 0) {
+                if (type != Type.flying) OnDeath();
+                else {
+                    gameObject.GetComponent<Rigidbody>().useGravity = true;
+                    RotationRandomDerp();
+                    gameObject.GetComponent<Rigidbody>().AddForce(Random.Range(ForceMinSpeed, ForceMaxSpeed) * gameObject.transform.forward);
+                    knockInTheAir = true;
+                }
             }
         }
     }

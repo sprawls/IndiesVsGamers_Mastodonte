@@ -1158,8 +1158,7 @@ MonoBehaviour:
   forwardSpeed: 70
   HorizontalSpeed: 25
   speedModifier: 0
-  canGoRight: 1
-  canGoLeft: 1
+  maxDistanceX: 25
 --- !u!114 &11498038
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -98,13 +98,13 @@ public class Enemy_Manager : MonoBehaviour{
     }
 
     void OnTriggerEnter(Collider other) {
-        if (other.transform.root.tag == "Obstacle" && other.transform.root.GetComponent<Obstacle>().type == Obstacle.Type.car) {
+        if (other.transform.root.GetComponentInParent<Obstacle>() != null && other.transform.root.GetComponentInParent<Obstacle>().type == Obstacle.Type.car) {
             vehicleInFront = true;
         }
     }
 
     void OnTriggerExit(Collider other) {
-        if (other.transform.root.tag == "Obstacle" && other.transform.root.GetComponent<Obstacle>().type == Obstacle.Type.car) vehicleInFront = false;
+        if (other.transform.root.GetComponentInParent<Obstacle>() != null && other.GetComponentInParent<Obstacle>().type == Obstacle.Type.car) vehicleInFront = false;
     }
 
     #endregion
