@@ -76,14 +76,15 @@ public class Enemy_Manager : MonoBehaviour{
     IEnumerator RandomPathingState() {
         Coroutine laneSwitch;
         while (true) {
-            if (!IsFrontEmptyOfCar())
+            if (!IsFrontEmptyOfCar()) {
                 SwitchState(State.DodgingCar);
+            }
 
-            if (Random.Range(0, 10) == 0) {
+            if (Random.Range(0, 5f/Time.deltaTime) == 0) {
                 laneSwitch = StartCoroutine(SwitchLane(!inRightLane));
                 yield return laneSwitch;
             }
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForEndOfFrame();
         }
     }
 
