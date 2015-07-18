@@ -73,7 +73,8 @@ public class VehiculeManager : MonoBehaviour {
     #region Collision Test
 
     void OnCollisionEnter(Collision other) {
-        /* Feedback */
+		//transform.FindChild("Main Camera").GetComponent<CameraShake>().DoShake();
+
     }
 
     #endregion

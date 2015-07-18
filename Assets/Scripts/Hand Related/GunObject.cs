@@ -78,7 +78,7 @@ public class GunObject : GrabbableObject {
     void Shoot() {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 100, ShootLayerMask)) {
+        if (Physics.Raycast(ray, out hit, 1000, ShootLayerMask)) {
             Debug.DrawLine(ray.origin, hit.point, Color.red, 2f);
             //check for normal grabbable object
             NormalObject normalObj = hit.transform.GetComponentInParent<NormalObject>();
