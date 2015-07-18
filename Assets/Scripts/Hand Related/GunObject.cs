@@ -22,6 +22,8 @@ public class GunObject : GrabbableObject {
     private int w = 32;
     private int h = 32;
     public Texture2D cursor;
+    public Texture2D cursor_highlighted;
+    private bool highligthed = false;
 
     void Awake(){
         rb = GetComponent<Rigidbody>();
@@ -41,18 +43,28 @@ public class GunObject : GrabbableObject {
     }
 
 
-    void Update() { 
+    void Update() {
+        
         //Look at target
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 1000, ShootLayerMask)) {
+            if (hit.collider.gameObject.layer == 9) {
+                highligthed = true;
+            } else highligthed = false;
             transform.rotation = Quaternion.LookRotation(hit.point);
         }
+        //Get mouse position
         mouse = new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y);
     }
 
+    void LateUpdate() {
+        
+    }
+
     void OnGUI(){
-         GUI.DrawTexture(new Rect(mouse.x - (w / 2), mouse.y - (h / 2), w, h), cursor);
+        if (!highligthed) GUI.DrawTexture(new Rect(mouse.x - (w / 2), mouse.y - (h / 2), w, h), cursor);
+        else GUI.DrawTexture(new Rect(mouse.x - (w / 2), mouse.y - (h / 2), w, h), cursor_highlighted);
     }
 
     public override void Grab(Transform grabAnchor, Rigidbody rb) {
