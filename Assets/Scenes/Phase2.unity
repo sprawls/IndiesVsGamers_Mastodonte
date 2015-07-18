@@ -631,6 +631,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 11489054, guid: e5dd0fb7df31fb04585b2d3fb8776a10, type: 2}
+      propertyPath: startingChunck
+      value: 
+      objectReference: {fileID: 1419271456}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5dd0fb7df31fb04585b2d3fb8776a10, type: 2}
   m_IsPrefabParent: 0
@@ -997,6 +1001,10 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 2
+--- !u!1 &1419271456 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 137962, guid: 2c67eaef4138b2d42bcec69554caa2f0, type: 2}
+  m_PrefabInternal: {fileID: 1619861834}
 --- !u!1 &1480848894
 GameObject:
   m_ObjectHideFlags: 0
