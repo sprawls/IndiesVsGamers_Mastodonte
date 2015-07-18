@@ -15,6 +15,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &146828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 423032}
+  m_Layer: 0
+  m_Name: PedestrianSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &148962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 473862}
+  m_Layer: 0
+  m_Name: Car Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &149538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 444298}
+  m_Layer: 0
+  m_Name: PedestrianSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &163786
 GameObject:
   m_ObjectHideFlags: 1
@@ -101,16 +146,16 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &198942
+--- !u!1 &193420
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 440072}
+  - 4: {fileID: 471556}
   m_Layer: 0
-  m_Name: Parking
+  m_Name: Car Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,10 +169,22 @@ Transform:
   m_GameObject: {fileID: 185990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -30, y: 2.5999999, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 105}
+  m_LocalScale: {x: 3, y: 5, z: 105}
   m_Children: []
   m_Father: {fileID: 449850}
   m_RootOrder: 2
+--- !u!4 &423032
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -46, y: 2, z: -14}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 425118}
+  m_RootOrder: 0
 --- !u!4 &425118
 Transform:
   m_ObjectHideFlags: 1
@@ -135,9 +192,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181422}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 100}
+  m_LocalPosition: {x: -25.4480515, y: 111.565475, z: -42.9243393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 423032}
+  - {fileID: 444298}
+  - {fileID: 473862}
+  - {fileID: 471556}
   - {fileID: 449850}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -153,18 +214,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 449850}
   m_RootOrder: 0
---- !u!4 &440072
+--- !u!4 &444298
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 198942}
+  m_GameObject: {fileID: 149538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 46, y: 2, z: 14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 449850}
-  m_RootOrder: 3
+  m_Father: {fileID: 425118}
+  m_RootOrder: 1
 --- !u!4 &449850
 Transform:
   m_ObjectHideFlags: 1
@@ -178,10 +239,9 @@ Transform:
   - {fileID: 433740}
   - {fileID: 455648}
   - {fileID: 412116}
-  - {fileID: 440072}
   - {fileID: 483430}
   m_Father: {fileID: 425118}
-  m_RootOrder: 0
+  m_RootOrder: 4
 --- !u!4 &455648
 Transform:
   m_ObjectHideFlags: 1
@@ -190,10 +250,34 @@ Transform:
   m_GameObject: {fileID: 184732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 30, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 5, z: 105}
+  m_LocalScale: {x: 3, y: 5, z: 105}
   m_Children: []
   m_Father: {fileID: 449850}
   m_RootOrder: 1
+--- !u!4 &471556
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193420}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -46, y: 2, z: -7.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 425118}
+  m_RootOrder: 3
+--- !u!4 &473862
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148962}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 46, y: 2, z: 7.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 425118}
+  m_RootOrder: 2
 --- !u!4 &483430
 Transform:
   m_ObjectHideFlags: 1
@@ -205,7 +289,7 @@ Transform:
   m_LocalScale: {x: 40, y: .5, z: 105}
   m_Children: []
   m_Father: {fileID: 449850}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!23 &2383952
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -327,6 +411,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 158634e18d77e4d4f987399d2e917be6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftPedestrianSpawn: {fileID: 146828}
+  rightPedestrianSpawn: {fileID: 149538}
+  leftCarSpawn: {fileID: 193420}
+  rightCarSpawn: {fileID: 148962}
 --- !u!114 &11435652
 MonoBehaviour:
   m_ObjectHideFlags: 1

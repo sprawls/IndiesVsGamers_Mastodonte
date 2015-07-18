@@ -3,8 +3,8 @@ using System.Collections;
 
 public abstract class GrabbableObject : MonoBehaviour {
 
-    public bool canBeDropped = true;
-    public bool canBeUsed = false;
+    [HideInInspector] public bool canBeDropped = true;
+    [HideInInspector] public bool canBeUsed = false;
 
     public abstract void Grab(Transform grabAnchor, Rigidbody rb);
 

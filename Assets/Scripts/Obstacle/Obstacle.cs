@@ -4,7 +4,7 @@ using System.Collections;
 public class Obstacle : MonoBehaviour {
 
     //VARIABLES
-    public enum Type { car, parkedCar, cone, pedestrian}
+    public enum Type { car, parkedCar, cone, pedestrian, flying}
     public Type type;
     private bool knockInTheAir = false;
 
@@ -41,6 +41,7 @@ public class Obstacle : MonoBehaviour {
     void OnHitEffect() {
         switch (type) {
             case Type.car: Destroy(GetComponent<Car_ForwardMove>()); return;
+            case Type.pedestrian: Destroy(GetComponent<PedestrianMoveForward>()); return;
         }
     }
 

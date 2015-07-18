@@ -19,9 +19,9 @@ TagManager:
   - 
   - HandCollisionPlane
   - PhysicsObject
-  - 
-  - 
-  - 
+  - PhysicsHand
+  - IgnoreHand
+  - ShootCollisionLayer
   - 
   - 
   - 
