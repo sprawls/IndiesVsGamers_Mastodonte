@@ -34,7 +34,7 @@ public class Enemy_Manager : MonoBehaviour{
     }
 
     void Death() {
-
+        Destroy(gameObject);
     }
 
     #endregion
