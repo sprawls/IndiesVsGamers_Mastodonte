@@ -271,24 +271,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f18112959dce32b4faba838fcab5f9d9, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1353131165 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 154538, guid: f18112959dce32b4faba838fcab5f9d9, type: 2}
-  m_PrefabInternal: {fileID: 1353131164}
---- !u!114 &1353131166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1353131165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 437fc7f014a7f1344be12d4b2a07655c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 0
-  amtLevels: 4
-  roundTime: 5
 --- !u!1001 &1958596358
 Prefab:
   m_ObjectHideFlags: 0
@@ -355,6 +337,8 @@ MonoBehaviour:
   camSensibility: 500
   maxCameraMouvement: {x: 0, y: 0}
   handMouvementToReachMax: {x: 0, y: 0}
+  useClamp: 0
+  clampDistance: {x: 0, y: 0, z: 0}
   HandCollisionPlane:
     serializedVersion: 2
     m_Bits: 0
