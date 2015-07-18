@@ -83,7 +83,7 @@ public class NormalObject : GrabbableObject {
     public void ScorePoints(float multiplier) {
         if (_canScore) {
             _canScore = false;
-            GameManager.instance.score += (int)(amt_points * multiplier);
+            GameManager.instance.addScore( (int)(amt_points * multiplier) );
             if (ScoreParticles != null) Instantiate(ScoreParticles,transform.position, Quaternion.identity);
         }
     }
