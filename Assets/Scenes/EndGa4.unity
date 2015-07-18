@@ -92,10 +92,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22423976, guid: 21ddd1e6e3588724dbd1a5ebcfb7c254,
     type: 2}
   m_PrefabInternal: {fileID: 1949784996}
---- !u!1 &955339257 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 154538, guid: f18112959dce32b4faba838fcab5f9d9, type: 2}
-  m_PrefabInternal: {fileID: 1085697607}
 --- !u!1001 &1085697607
 Prefab:
   m_ObjectHideFlags: 0
@@ -279,7 +275,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_HighlightedColor: {r: .444852948, g: .742444336, b: .889705896, a: 1}
     m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
     m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
     m_ColorMultiplier: 1
@@ -298,12 +294,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 955339257}
-        m_MethodName: 
+      - m_Target: {fileID: 1949784997}
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -548,6 +544,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21ddd1e6e3588724dbd1a5ebcfb7c254, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1949784997 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11494938, guid: 21ddd1e6e3588724dbd1a5ebcfb7c254,
+    type: 2}
+  m_PrefabInternal: {fileID: 1949784996}
+  m_Script: {fileID: 11500000, guid: 926ab5fa5bf4c354b99400badde89012, type: 3}
 --- !u!1001 &2038963121
 Prefab:
   m_ObjectHideFlags: 0

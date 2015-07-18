@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	//Game loop
-    public int amtLevels = 4;
+	public int numberOfLevels = 4;
 	internal int currentLevel = 0;
 	internal int currentPhase = 1;
 
@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour {
 	public float phase1Time = 15.0f;
 	public float phase2Time = 45.0f;
 	public float phase3Time = 15.0f;
-	public float levelDoneTimer = 5.0f;
 	private float currentPhaseTime = 0f;
 	private bool phaseOngoing = true;
 
@@ -164,7 +163,7 @@ public class GameManager : MonoBehaviour {
 		currentLevel++;
 
 		//End Game
-		if(currentLevel < (amtLevels-1)){
+		if(currentLevel < (numberOfLevels)){
 			GameObject.Find("UI").GetComponent<UI>().DisplayNextLevelPopUp();
 		}
 		else
