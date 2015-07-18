@@ -28,7 +28,7 @@ public class Enemy_Manager : MonoBehaviour{
     #region Utility Function
 
     public void TakeDamage(int damageTaken) {
-        if (health - damageTaken < 0) Death();
+        if (health - damageTaken <= 0) Death();
         else health -= damageTaken;
         
     }

@@ -204,12 +204,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  maxHealth: 3
   ForceMinSpeed: 1000
   ForceMaxSpeed: 2000
   YvectorRangeMin: 1000
   YvectorRangeMax: 2000
   maxTorqueSpeed: 1000
   Explosion: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
+  explosivePower: 200
+  radius: 10
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

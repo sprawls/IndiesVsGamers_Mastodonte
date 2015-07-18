@@ -7,6 +7,9 @@ public class Obstacle : MonoBehaviour {
     public enum Type { car, parkedCar, cone, pedestrian, flying}
     public Type type;
     private bool knockInTheAir = false;
+    [Header("Stats")]
+    public int maxHealth;
+    private int health;
 
     [Header("Force")]
     public float ForceMinSpeed = 1000f;
@@ -17,12 +20,16 @@ public class Obstacle : MonoBehaviour {
     [Header("Torque")]
     public float maxTorqueSpeed = 1000f;
 
-    [Header("Effect Ref")]
+    [Header("Explosion")]
     public GameObject Explosion;
 
     //cooldown
     private float cooldownTimer = 0.5f;
     private bool onCooldown = false;
+
+    void Awake() {
+        health = maxHealth;
+    }
 
     #region when hit by the player
 
@@ -73,6 +80,25 @@ public class Obstacle : MonoBehaviour {
                 Instantiate(Explosion, transform.position, Quaternion.identity);
                 Destroy(gameObject);
                 return;
+            case Type.flying:
+                Instantiate(Explosion, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+                return;
+        }
+    }
+
+    void ExplodingFlyer() {
+        gameObject.transform.FindChild("Explosion").GetComponent<Explosion>();
+    }
+
+    public void TakeDamage(int damage) {
+        health -= damage;
+        if (health <= 0) {
+            if (type != Type.flying) OnDeath();
+            else {
+                gameObject.GetComponent<Rigidbody>().useGravity = true;
+                knockInTheAir = true;
+            }
         }
     }
 
