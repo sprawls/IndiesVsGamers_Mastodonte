@@ -398,10 +398,12 @@ MonoBehaviour:
   gunPows:
   - {fileID: 120800, guid: 0dcb80bb752916c4a97a4e82779aabfc, type: 2}
   - {fileID: 116134, guid: 6cf6d8377e588f343bfde7270194a680, type: 2}
+  hitParticles: {fileID: 199606, guid: 60a1d783dc6b9c34d9f1e55e9934df72, type: 2}
   model: {fileID: 140626}
   ShootLayerMask:
     serializedVersion: 2
     m_Bits: 4294963967
+  cursor: {fileID: 2800000, guid: 2fa37e212324dca4da7953e40f58f605, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

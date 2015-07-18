@@ -6,6 +6,7 @@ public class GunObject : GrabbableObject {
     public GameObject ShootPosition;
     public GameObject ShootLineRenderer;
     public GameObject[] gunPows;
+    public GameObject hitParticles;
     public GameObject model;
     public LayerMask ShootLayerMask;
 
@@ -14,6 +15,12 @@ public class GunObject : GrabbableObject {
     private Rigidbody rb;
     private Collider[] colliders;
     private bool _canShot = true;
+
+    //Cursor Related
+    private Vector2 mouse;
+    private int w = 32;
+    private int h = 32;
+    public Texture2D cursor;
 
     void Awake(){
         rb = GetComponent<Rigidbody>();
@@ -32,6 +39,7 @@ public class GunObject : GrabbableObject {
 
     }
 
+
     void Update() { 
         //Look at target
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -39,6 +47,11 @@ public class GunObject : GrabbableObject {
         if (Physics.Raycast(ray, out hit, 1000, ShootLayerMask)) {
             transform.rotation = Quaternion.LookRotation(hit.point);
         }
+        mouse = new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y);
+    }
+
+    void OnGUI(){
+         GUI.DrawTexture(new Rect(mouse.x - (w / 2), mouse.y - (h / 2), w, h), cursor);
     }
 
     public override void Grab(Transform grabAnchor, Rigidbody rb) {
@@ -120,6 +133,7 @@ public class GunObject : GrabbableObject {
         SpriteRenderer[] gunPowSprites = new SpriteRenderer[2];
         gunPowSprites[0] = ((GameObject)Instantiate(gunPows[Random.Range(0, gunPows.Length)], ShootPosition.transform.position, Quaternion.identity)).GetComponentInChildren<SpriteRenderer>();
         gunPowSprites[1] = ((GameObject)Instantiate(gunPows[Random.Range(0, gunPows.Length)], hit.point, Quaternion.identity)).GetComponentInChildren<SpriteRenderer>();
+        Instantiate(hitParticles, hit.point, Quaternion.identity);
 
         //Fade them
         for (float i = 0; i < 1; i += Time.deltaTime / 1f) {
