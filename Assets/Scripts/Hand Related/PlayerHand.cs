@@ -24,7 +24,7 @@ public class PlayerHand : MonoBehaviour {
 
     private Vector3 _startModelPos;
     public Vector3 _mousePosition;
-    private Rigidbody _modelRB;
+    [HideInInspector] public Rigidbody _modelRB;
     private GrabbableObject _grabbedObject;
     private Camera _mainCam;
 
@@ -86,6 +86,7 @@ public class PlayerHand : MonoBehaviour {
 
     /// <summary> Updates the hand model position </summary>
     void UpdateModelPosition() {
+        
         //Get target Height
         float Ypos;
         if (armIsLowered) Ypos = Ypos_Grab;
@@ -96,6 +97,7 @@ public class PlayerHand : MonoBehaviour {
                                             _mousePosition.z) + _startModelPos;
 
         _modelRB.velocity = (targetPos - _modelRB.transform.position) * sensibility * Time.deltaTime;
+        //Debug.Log("mouse Pos : " + _mousePosition + "      target pos : " + targetPos + "     velo : " + _modelRB.velocity);
     }
 
     /// <summary> Updates the Camera position </summary>
@@ -125,7 +127,7 @@ public class PlayerHand : MonoBehaviour {
        
     }
 
-    void GrabAnObject(GrabbableObject grabbedObject) {
+    public void GrabAnObject(GrabbableObject grabbedObject) {
         isGrabbing = true;
         grabbedModel.SetActive(true);
         _grabbedObject = grabbedObject;
