@@ -4,82 +4,149 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-    [HideInInspector] public static GameManager instance{get; private set;}
-    public int score = 0;
+	//Singleton
+	private static GameManager _instance;
+	public static GameManager instance{
+		get{
+			if(_instance == null){
+				_instance = GameObject.FindObjectOfType<GameManager>();
+				DontDestroyOnLoad(_instance.gameObject);
+			}
+			
+			return _instance;
+		}
+	}
+
+	//Game loop
     public int amtLevels = 4;
 	internal int currentLevel = 0;
 	internal int currentPhase = 1;
 
+	//Score
+	private int score;
+
 	//Round timer
-	public float roundTime = 30.0f;
+	public float phase1Time = 15.0f;
+	public float phase2Time = 45.0f;
+	public float phase3Time = 15.0f;
+	private float currentPhaseTime = 0f;
 	private bool phaseOngoing = true;
 
-    void Awake() {
-        if (GameManager.instance == null) {
-            GameManager.instance = this;
-            score = 0;
-        } else {
-            Destroy(gameObject);
-        }
-    }
+	
+	void Awake() {
+		if(_instance == null){
+			_instance = this;
+			DontDestroyOnLoad(this);
+			score = 0;
+		}
+		else{
+			if(this != _instance)
+				Destroy(this.gameObject);
+		}
+	}
 
 	void Start(){
-		Debug.Log ("Loaded " + Application.loadedLevelName);
+		switch(currentPhase){
+		case 1:
+			currentPhaseTime = phase1Time;
+			break;
+		case 2:
+			currentPhaseTime = phase2Time;
+			break;
+		case 3:
+			currentPhaseTime = phase3Time;
+			break;
+		default:
+			break;
+		}
 
 		currentPhase = int.Parse(Application.loadedLevelName.Substring(5));
 	}
-
-	void Update(){
+	
+	private void Update(){
 		if(phaseOngoing){
 			//Timer
-			roundTime -= Time.deltaTime;
-			GameObject.Find("UI").transform.FindChild("Timer").GetComponent<Text>().text = roundTime.ToString("F2");
-			if(roundTime <= 0f){
+			currentPhaseTime -= Time.deltaTime;
+			GameObject.Find("UI").transform.FindChild("Timer").GetComponent<Text>().text = currentPhaseTime.ToString("F2");
+			if(currentPhaseTime <= 0f){
 				phaseOngoing = false;
+				Debug.Log("nextPhase");
 				NextPhase();
 			}
+
+			//Scoring
+			GameObject.Find("UI").transform.FindChild("Score").GetComponent<Text>().text = score.ToString("000000000");
+		}
+		else{
+
 		}
 	}
-
-
-    void OnDestroy() {
-        if (GameManager.instance == this) GameManager.instance = null;
+	
+    private void OnDestroy() {
+        if (GameManager._instance == this){
+			GameManager._instance = null;
+		}
     }
 
-	//Game loop
+
+	#region game loop
 	private void NextPhase(){
+		Debug.Log ("current: "+ currentPhase);
+		currentPhase = int.Parse(Application.loadedLevelName.Substring(5));
+
 		switch(currentPhase){
 			case 1:
+				currentPhaseTime = phase2Time;
 				StartLevel_Phase2();
+				phaseOngoing = true;
 				break;
 			case 2:
+				currentPhaseTime = phase3Time;
 				StartLevel_Phase3();
-				break;
+				phaseOngoing = true;
+			break;
 			case 3:
+				currentPhaseTime = phase3Time;
 				CompleteLevel();
 				break;
 			default:
+				StartLevel_Phase1();
 				break;
 		}
+
+
 	}
 
-    public void StartLevel_Phase1(){
+    private void StartLevel_Phase1(){
         Application.LoadLevel("Phase1");
     }
-    public  void StartLevel_Phase2(){
+    private void StartLevel_Phase2(){
         Application.LoadLevel("Phase2");
     }
-    public  void StartLevel_Phase3(){
+    private  void StartLevel_Phase3(){
         Application.LoadLevel("Phase3");
     }
-    public void CompleteLevel() {
+
+    private void CompleteLevel() {
 		currentLevel++;
 
 		if(currentLevel < (amtLevels-1))
 			StartLevel_Phase1();
         else {
             //End Game
+			//Application.LoadLevel("EndGame");
 			Debug.Log ("Leaderboard time!");
         }
     }
+
+	#endregion
+
+
+	#region Score Managing
+
+	public void addScore(int scoreInc){
+		score += scoreInc;
+	}
+
+	#endregion
 }
