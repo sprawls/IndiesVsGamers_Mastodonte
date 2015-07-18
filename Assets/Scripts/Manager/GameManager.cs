@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+    //Collectable
+    public Inventory inventory;
+
 	//Game loop
     public int amtLevels = 4;
 	internal int currentLevel = 0;
@@ -37,6 +40,9 @@ public class GameManager : MonoBehaviour {
 	
 	void Awake() {
 		if(_instance == null){
+            if (inventory == null) {
+                inventory = new Inventory();
+            }
 			_instance = this;
 			DontDestroyOnLoad(this);
 			score = 0;
