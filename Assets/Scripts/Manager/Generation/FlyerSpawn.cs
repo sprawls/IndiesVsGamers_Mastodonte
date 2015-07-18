@@ -3,7 +3,6 @@ using System.Collections;
 
 public class FlyerSpawn : MonoBehaviour {
 
-    public GameObject spawnObject;
     private GameObject player;
     private Vector3 posLock;
 
@@ -13,12 +12,13 @@ public class FlyerSpawn : MonoBehaviour {
     }
 
     void Update() {
-        transform.position = new Vector3(posLock.x, posLock.y, player.transform.position.z);
+        transform.position = new Vector3(posLock.x, posLock.y + 35, player.transform.position.z - 10);
+        CheckSpawn();
     }
 
     void CheckSpawn() {
-        if (Random.Range(0, 60) == 0) {
-            
+        if (Random.Range(0, 1000) == 0) {
+            Instantiate(Resources.Load("Flyer"), transform.position + new Vector3(Random.Range(-15f, 15f), 0, 0), Quaternion.identity);
         }
     }
 }

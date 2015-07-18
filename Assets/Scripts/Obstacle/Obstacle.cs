@@ -109,7 +109,8 @@ public class Obstacle : MonoBehaviour {
 
     void OnCollisionEnter(Collision other) {
         //When colliding with the player or enemy vehicle get thrown into the air, otherwise explode on impact
-        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy") OnHit(other.transform);
+        if (type == Type.flying && other.gameObject.GetComponentInParent<Enemy_Manager>() != null && knockInTheAir) OnDeath();
+        else if (other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy") OnHit(other.transform);
         else if (knockInTheAir) OnDeath();
     }
 }
