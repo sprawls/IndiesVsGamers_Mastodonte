@@ -9,8 +9,7 @@ public class VehiculeManager : MonoBehaviour {
     public float speedModifier;
 
     [Header("Checks")]
-    public bool canGoRight;
-    public bool canGoLeft;
+    public float maxDistanceX;
 
     private CarTilt carTilt;
 
@@ -54,16 +53,16 @@ public class VehiculeManager : MonoBehaviour {
     }
 
     void UpdateHorizontalPos() {
-        if (speedModifier < 0 && canGoLeft) {
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x + HorizontalSpeed * speedModifier * Time.deltaTime,
-                                                    gameObject.transform.position.y,
-                                                    gameObject.transform.position.z);
+        if (speedModifier < 0) {
+            gameObject.transform.position = new Vector3(Mathf.Clamp(gameObject.transform.position.x + HorizontalSpeed * speedModifier * Time.deltaTime, -maxDistanceX, maxDistanceX),
+                                                        gameObject.transform.position.y,
+                                                        gameObject.transform.position.z);
             carTilt.Tilt(speedModifier);
         }
-        else if (speedModifier > 0 && canGoRight) {
-            gameObject.transform.position = new Vector3(gameObject.transform.position.x + HorizontalSpeed * speedModifier * Time.deltaTime,
-                                                    gameObject.transform.position.y,
-                                                    gameObject.transform.position.z);
+        else if (speedModifier > 0) {
+            gameObject.transform.position = new Vector3(Mathf.Clamp(gameObject.transform.position.x + HorizontalSpeed * speedModifier * Time.deltaTime, -maxDistanceX, maxDistanceX),
+                                                        gameObject.transform.position.y,
+                                                        gameObject.transform.position.z);
             carTilt.Tilt(speedModifier);
         }
     }

@@ -9,8 +9,10 @@ public class Explosion : MonoBehaviour {
     public float radius = 10;
 
     void Awake() {
+        
         target = new List<GameObject>();
         GetComponent<SphereCollider>().radius = radius;
+        GetComponent<SphereCollider>().enabled = false;
     }
 
 	public void BOOM () {
@@ -19,9 +21,15 @@ public class Explosion : MonoBehaviour {
     }
 
     void OnTriggerStay(Collider other) {
-        if (other.tag == "Obstacle" && !target.Contains(other.gameObject)) {
-            target.Add(other.gameObject);
-            other.gameObject.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, gameObject.transform.position, radius);
+        Obstacle obstacle = other.GetComponentInParent<Obstacle>();
+        if (obstacle != null && !target.Contains(obstacle.gameObject)) {
+            target.Add(obstacle.gameObject);
+            other.transform.GetComponentInParent<Rigidbody>().AddExplosionForce(explosionForce, gameObject.transform.position, radius, 400f);
+        }
+        Enemy_Manager enemy = other.GetComponentInParent<Enemy_Manager>();
+        if ( enemy != null && !target.Contains(enemy.gameObject)) {
+            enemy.TakeDamage(7);
+            target.Add(enemy.gameObject);
         }
     }
 }

@@ -16,7 +16,7 @@ GameObject:
   - 114: {fileID: 11450666}
   m_Layer: 0
   m_Name: Pedestrian 2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ GameObject:
   - 114: {fileID: 11493900}
   m_Layer: 0
   m_Name: Pedestrian 1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ GameObject:
   - 114: {fileID: 11421610}
   m_Layer: 0
   m_Name: Pedestrian
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +79,7 @@ GameObject:
   - 114: {fileID: 11436658}
   m_Layer: 0
   m_Name: Pedestrian 4
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ GameObject:
   - 4: {fileID: 432082}
   m_Layer: 0
   m_Name: PedestrianGroup
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +115,7 @@ GameObject:
   - 114: {fileID: 11423914}
   m_Layer: 0
   m_Name: Pedestrian 5
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,7 +136,7 @@ GameObject:
   - 114: {fileID: 11444120}
   m_Layer: 0
   m_Name: Pedestrian 3
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -519,6 +519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  maxHealth: 0
   ForceMinSpeed: 700
   ForceMaxSpeed: 1500
   YvectorRangeMin: -2000
@@ -536,6 +537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2da7682b3520d409cb81dba81eb0b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multiplier: 1
   minSpeed: 5
   maxSpeed: 7
 --- !u!114 &11423914
@@ -549,6 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2da7682b3520d409cb81dba81eb0b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multiplier: 1
   minSpeed: 5
   maxSpeed: 7
 --- !u!114 &11436658
@@ -562,6 +565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2da7682b3520d409cb81dba81eb0b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multiplier: 1
   minSpeed: 5
   maxSpeed: 7
 --- !u!114 &11441646
@@ -576,6 +580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  maxHealth: 0
   ForceMinSpeed: 700
   ForceMaxSpeed: 1500
   YvectorRangeMin: -2000
@@ -593,6 +598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2da7682b3520d409cb81dba81eb0b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multiplier: 1
   minSpeed: 5
   maxSpeed: 7
 --- !u!114 &11450666
@@ -606,6 +612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2da7682b3520d409cb81dba81eb0b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multiplier: 1
   minSpeed: 5
   maxSpeed: 7
 --- !u!114 &11456522
@@ -620,6 +627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  maxHealth: 0
   ForceMinSpeed: 700
   ForceMaxSpeed: 1500
   YvectorRangeMin: -2000
@@ -638,6 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  maxHealth: 0
   ForceMinSpeed: 700
   ForceMaxSpeed: 1500
   YvectorRangeMin: -2000
@@ -656,6 +665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  maxHealth: 0
   ForceMinSpeed: 700
   ForceMaxSpeed: 1500
   YvectorRangeMin: -2000
@@ -674,6 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  maxHealth: 0
   ForceMinSpeed: 700
   ForceMaxSpeed: 1500
   YvectorRangeMin: -2000
@@ -691,6 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2da7682b3520d409cb81dba81eb0b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multiplier: 1
   minSpeed: 5
   maxSpeed: 7
 --- !u!136 &13612372
