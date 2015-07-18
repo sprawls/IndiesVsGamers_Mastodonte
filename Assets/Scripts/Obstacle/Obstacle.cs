@@ -41,6 +41,7 @@ public class Obstacle : MonoBehaviour {
     void OnHitEffect() {
         switch (type) {
             case Type.car: Destroy(GetComponent<Car_ForwardMove>()); return;
+            case Type.pedestrian: Destroy(GetComponent<PedestrianMoveForward>()); return;
         }
     }
 
