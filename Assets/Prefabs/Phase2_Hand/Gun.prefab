@@ -400,10 +400,12 @@ MonoBehaviour:
   - {fileID: 116134, guid: 6cf6d8377e588f343bfde7270194a680, type: 2}
   hitParticles: {fileID: 199606, guid: 60a1d783dc6b9c34d9f1e55e9934df72, type: 2}
   model: {fileID: 140626}
+  SmashingHandGO: {fileID: 173566, guid: 28435586dad39a2439a152517d981f1a, type: 2}
   ShootLayerMask:
     serializedVersion: 2
     m_Bits: 4294963967
   cursor: {fileID: 2800000, guid: 2fa37e212324dca4da7953e40f58f605, type: 3}
+  cursor_highlighted: {fileID: 2800000, guid: 89b429666c85a1340a32ead2d3f4f584, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
