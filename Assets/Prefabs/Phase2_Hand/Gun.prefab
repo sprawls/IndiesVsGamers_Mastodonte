@@ -155,8 +155,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 137610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -100, y: -100, z: -100}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: .5, z: 1}
   m_Children:
   - {fileID: 428098}
   m_Father: {fileID: 0}
@@ -414,6 +414,7 @@ MonoBehaviour:
   gunPows:
   - {fileID: 120800, guid: 0dcb80bb752916c4a97a4e82779aabfc, type: 2}
   - {fileID: 116134, guid: 6cf6d8377e588f343bfde7270194a680, type: 2}
+  model: {fileID: 140626}
   ShootLayerMask:
     serializedVersion: 2
     m_Bits: 4294963967
