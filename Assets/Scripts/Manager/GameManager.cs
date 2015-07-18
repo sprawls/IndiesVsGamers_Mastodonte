@@ -24,11 +24,13 @@ public class GameManager : MonoBehaviour {
 
 	//Score
 	private int score;
+	GamejoltAPI_Manager api = new GamejoltAPI_Manager();
 
 	//Round timer
 	public float phase1Time = 15.0f;
 	public float phase2Time = 45.0f;
 	public float phase3Time = 15.0f;
+	public float levelDoneTimer = 5.0f;
 	private float currentPhaseTime = 0f;
 	private bool phaseOngoing = true;
 
@@ -46,6 +48,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Start(){
+		currentPhase = int.Parse(Application.loadedLevelName.Substring(5));
+
 		switch(currentPhase){
 		case 1:
 			currentPhaseTime = phase1Time;
@@ -56,11 +60,14 @@ public class GameManager : MonoBehaviour {
 		case 3:
 			currentPhaseTime = phase3Time;
 			break;
+		case 4:
+			phaseOngoing = false;
+			currentPhaseTime = 0;
+			api.ShowScore();
+			break;
 		default:
 			break;
 		}
-
-		currentPhase = int.Parse(Application.loadedLevelName.Substring(5));
 	}
 	
 	private void Update(){
@@ -70,7 +77,6 @@ public class GameManager : MonoBehaviour {
 			GameObject.Find("UI").transform.FindChild("Timer").GetComponent<Text>().text = currentPhaseTime.ToString("F2");
 			if(currentPhaseTime <= 0f){
 				phaseOngoing = false;
-				Debug.Log("nextPhase");
 				NextPhase();
 			}
 
@@ -91,7 +97,6 @@ public class GameManager : MonoBehaviour {
 
 	#region game loop
 	private void NextPhase(){
-		Debug.Log ("current: "+ currentPhase);
 		currentPhase = int.Parse(Application.loadedLevelName.Substring(5));
 
 		switch(currentPhase){
@@ -111,13 +116,15 @@ public class GameManager : MonoBehaviour {
 				break;
 			default:
 				StartLevel_Phase1();
+				phaseOngoing = true;
 				break;
 		}
-
-
 	}
 
-    private void StartLevel_Phase1(){
+	private void StartLevel_MainM0(){
+		//Application.LoadLevel("MainM0");
+	}
+	private void StartLevel_Phase1(){
         Application.LoadLevel("Phase1");
     }
     private void StartLevel_Phase2(){
@@ -126,19 +133,56 @@ public class GameManager : MonoBehaviour {
     private  void StartLevel_Phase3(){
         Application.LoadLevel("Phase3");
     }
+	private  void StartLevel_EndGa4(){
+		Application.LoadLevel("EndGa4");
 
-    private void CompleteLevel() {
+	}
+
+	//TODO change when have main menu
+	void OnLevelWasLoaded(int level){
+		if(level == 0){
+			currentPhaseTime = phase1Time;
+			phaseOngoing = true;
+		}
+		else if(level == 1){
+			currentPhaseTime = phase2Time;
+			phaseOngoing = true;
+		}
+		else if(level == 2){
+			currentPhaseTime = phase3Time;
+			phaseOngoing = true;
+		}
+		if(level == 3){
+			api.ShowScore();
+		}
+		if(level == 4){
+
+		}
+	}
+	
+	private void CompleteLevel() {
 		currentLevel++;
 
-		if(currentLevel < (amtLevels-1))
-			StartLevel_Phase1();
-        else {
-            //End Game
-			//Application.LoadLevel("EndGame");
-			Debug.Log ("Leaderboard time!");
-        }
-    }
+		//End Game
+		if(currentLevel < (amtLevels-1)){
+			GameObject.Find("UI").GetComponent<UI>().DisplayNextLevelPopUp();
+		}
+		else
+			StartLevel_EndGa4();
+			
+	}
 
+	public void NextLevel(){
+		StartLevel_Phase1();
+		currentPhaseTime = phase1Time;
+		phaseOngoing = true;
+	}
+
+	public void BackToMenu(){
+		Debug.Log("mainmenu");
+		StartLevel_MainM0();
+	}
+	
 	#endregion
 
 
