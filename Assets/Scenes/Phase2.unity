@@ -366,6 +366,10 @@ Prefab:
       propertyPath: m_Name
       value: HandContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 11436992, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
+      propertyPath: SmashingHandGO
+      value: 
+      objectReference: {fileID: 173566, guid: 28435586dad39a2439a152517d981f1a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
   m_IsPrefabParent: 0
@@ -430,9 +434,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437fc7f014a7f1344be12d4b2a07655c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
   amtLevels: 4
-  roundTime: 30
+  phase1Time: 15
+  phase2Time: 45
+  phase3Time: 15
 --- !u!1 &1419271456
 GameObject:
   m_PrefabParentObject: {fileID: 137962, guid: 2c67eaef4138b2d42bcec69554caa2f0, type: 2}
