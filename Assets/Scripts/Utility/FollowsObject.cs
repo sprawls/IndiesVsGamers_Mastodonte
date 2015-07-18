@@ -7,7 +7,7 @@ public class FollowsObject : MonoBehaviour {
 
     public Transform ObjToFollow;
 
-    void LateUpdate() {
+    void Update() {
         transform.position = ObjToFollow.position;
     }
 }

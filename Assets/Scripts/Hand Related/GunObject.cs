@@ -30,6 +30,15 @@ public class GunObject : GrabbableObject {
 
     }
 
+    void Update() { 
+        //Look at target
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 1000, ShootLayerMask)) {
+            transform.rotation = Quaternion.LookRotation(hit.point);
+        }
+    }
+
     public override void Grab(Transform grabAnchor, Rigidbody rb) {
         foreach(Collider col in colliders) col.enabled = false;
         transform.parent = grabAnchor;

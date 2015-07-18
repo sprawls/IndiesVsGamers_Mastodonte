@@ -13,6 +13,8 @@ public class PlayerHand : MonoBehaviour {
     public float camSensibility = 500f;
     public Vector2 maxCameraMouvement;
     public Vector2 handMouvementToReachMax;
+    public bool useClamp = false;
+    public Vector3 clampDistance;
     public LayerMask HandCollisionPlane;
     public LayerMask PhysicsObject;
 
@@ -92,9 +94,18 @@ public class PlayerHand : MonoBehaviour {
         if (armIsLowered) Ypos = Ypos_Grab;
         else Ypos = Ypos_Idle;
 
+
         Vector3 targetPos = new Vector3(    _mousePosition.x,
                                             Ypos,
                                             _mousePosition.z) + _startModelPos;
+       
+        if (useClamp) {
+            float newX = Mathf.Clamp(targetPos.x, -clampDistance.x + transform.root.position.x, clampDistance.x + transform.root.position.x);
+            float newY = Mathf.Clamp(targetPos.y, -clampDistance.y + transform.root.position.y, clampDistance.y + transform.root.position.y);
+            float newZ = Mathf.Clamp(targetPos.z, -clampDistance.z + transform.root.position.z, clampDistance.z + transform.root.position.z);
+            targetPos = new Vector3(newX, newY, newZ) + _startModelPos;
+        }
+       
 
         _modelRB.velocity = (targetPos - _modelRB.transform.position) * sensibility * Time.deltaTime;
         //Debug.Log("mouse Pos : " + _mousePosition + "      target pos : " + targetPos + "     velo : " + _modelRB.velocity);
