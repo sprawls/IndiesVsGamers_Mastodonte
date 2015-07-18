@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Inventory : MonoBehaviour {
+public class Inventory {
     public List<Collectable> collectables = new List<Collectable>();
 
     public void AddToInventory(Collectable collectable) {

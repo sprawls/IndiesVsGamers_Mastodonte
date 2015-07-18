@@ -17,8 +17,11 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+    //Collectable
+    public Inventory inventory;
+
 	//Game loop
-    public int amtLevels = 4;
+	public int numberOfLevels = 4;
 	internal int currentLevel = 0;
 	internal int currentPhase = 1;
 
@@ -30,13 +33,15 @@ public class GameManager : MonoBehaviour {
 	public float phase1Time = 15.0f;
 	public float phase2Time = 45.0f;
 	public float phase3Time = 15.0f;
-	public float levelDoneTimer = 5.0f;
 	private float currentPhaseTime = 0f;
 	private bool phaseOngoing = true;
 
 	
 	void Awake() {
 		if(_instance == null){
+            if (inventory == null) {
+                inventory = new Inventory();
+            }
 			_instance = this;
 			DontDestroyOnLoad(this);
 			score = 0;
@@ -51,8 +56,12 @@ public class GameManager : MonoBehaviour {
 		currentPhase = int.Parse(Application.loadedLevelName.Substring(5));
 
 		switch(currentPhase){
+		case 0:
+			api.Login();
+			break;
 		case 1:
 			currentPhaseTime = phase1Time;
+			api.Login();//TODO remove to leave only in main menu
 			break;
 		case 2:
 			currentPhaseTime = phase2Time;
@@ -68,20 +77,22 @@ public class GameManager : MonoBehaviour {
 		default:
 			break;
 		}
+
+
 	}
 	
 	private void Update(){
 		if(phaseOngoing){
 			//Timer
 			currentPhaseTime -= Time.deltaTime;
-			GameObject.Find("UI").transform.FindChild("Timer").GetComponent<Text>().text = currentPhaseTime.ToString("F2");
+			GameObject.Find("Main_UI").transform.FindChild("Timer").GetComponent<Text>().text = currentPhaseTime.ToString("F2");
 			if(currentPhaseTime <= 0f){
 				phaseOngoing = false;
 				NextPhase();
 			}
 
 			//Scoring
-			GameObject.Find("UI").transform.FindChild("Score").GetComponent<Text>().text = score.ToString("000000000");
+			GameObject.Find("Main_UI").transform.FindChild("Score").GetComponent<Text>().text = score.ToString("000000000");
 		}
 		else{
 
@@ -153,6 +164,7 @@ public class GameManager : MonoBehaviour {
 			phaseOngoing = true;
 		}
 		if(level == 3){
+			//api.SendScore();//TODO
 			api.ShowScore();
 		}
 		if(level == 4){
@@ -164,7 +176,7 @@ public class GameManager : MonoBehaviour {
 		currentLevel++;
 
 		//End Game
-		if(currentLevel < (amtLevels-1)){
+		if(currentLevel < (numberOfLevels)){
 			GameObject.Find("UI").GetComponent<UI>().DisplayNextLevelPopUp();
 		}
 		else

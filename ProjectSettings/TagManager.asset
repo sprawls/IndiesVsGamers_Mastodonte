@@ -45,3 +45,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: backgroundBoard
+    uniqueID: 1015479771
+    locked: 0
