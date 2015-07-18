@@ -6,12 +6,14 @@ public class GunObject : GrabbableObject {
     public GameObject ShootPosition;
     public GameObject ShootLineRenderer;
     public GameObject[] gunPows;
+    public GameObject model;
     public LayerMask ShootLayerMask;
 
     private Transform originalParent;
     private ConfigurableJoint confJoint;
     private Rigidbody rb;
     private Collider[] colliders;
+    private bool _canShot = true;
 
     void Awake(){
         rb = GetComponent<Rigidbody>();
@@ -68,27 +70,27 @@ public class GunObject : GrabbableObject {
     }
 
     public override bool Use() {
-        Shoot();
+        if(_canShot == true) Shoot();
         return true;
     }
 
     public override void ForceRelease() {
-        foreach (Collider col in colliders) col.enabled = true;
-        rb.useGravity = true;
-        transform.parent = originalParent;
         Destroy(confJoint);
-
         Transform[] Ts = GetComponentsInChildren<Transform>();
         foreach (Transform t in Ts) {
             t.gameObject.layer = 9; //Physics Object
         }
+
+        transform.parent = originalParent;
+        transform.localPosition = Vector3.zero; //place it out of screen
+        
     }
 
     void Shoot() {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 1000, ShootLayerMask)) {
-            Debug.DrawLine(ray.origin, hit.point, Color.red, 2f);
+            //Debug.DrawLine(ray.origin, hit.point, Color.red, 2f);
             //check for normal grabbable object
             NormalObject normalObj = hit.transform.GetComponentInParent<NormalObject>();
             if (normalObj != null) normalObj.Push(hit.point);
@@ -96,9 +98,18 @@ public class GunObject : GrabbableObject {
            
             Enemy_Manager enemyManager = hit.transform.GetComponentInParent<Enemy_Manager>();
             if (enemyManager != null) enemyManager.TakeDamage(1);
-            Debug.Log(hit.collider.gameObject + "     " + enemyManager);
             StartCoroutine(SpawnShootParticles(hit));
         }
+    }
+
+    public void DeactivateGun() {
+        _canShot = false;
+        model.SetActive(false);
+    }
+
+    public void ActivateGun() {
+        _canShot = true;
+        model.SetActive(true);
     }
 
     IEnumerator SpawnShootParticles(RaycastHit hit) {

@@ -155,6 +155,14 @@ public class PlayerHand : MonoBehaviour {
         }
     }
 
+    public void ForceDropObject() {
+        isGrabbing = false;
+        StartCoroutine(GrabCooldown());
+        grabbedModel.SetActive(false);
+        _grabbedObject.ForceRelease();
+        _grabbedObject = null;
+    }
+
     //Debug function for grab collider
     void OnDrawGizmos() {
         //Gizmos.DrawSphere(grabAnchor.transform.position, grabAnchor.radius);

@@ -12,7 +12,8 @@ GameObject:
   - 92: {fileID: 9255582}
   - 124: {fileID: 12422086}
   - 81: {fileID: 8198468}
-  m_Layer: 0
+  - 114: {fileID: 11466228}
+  m_Layer: 11
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -27,7 +28,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 432314}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CameraContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,8 +41,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130820}
-  m_LocalRotation: {x: .28343159, y: 0, z: 0, w: .958992481}
-  m_LocalPosition: {x: 0, y: 3.29999995, z: -9.44999981}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.870000005, y: .0900000036, z: -.790000021}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 496568}
@@ -105,6 +106,19 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110240}
   m_Enabled: 1
+--- !u!114 &11466228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110240}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b3e9c380cf9fe42ab333b10c6a60e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeParam: 1.04999995
+  shakeAmount: .0500000007
 --- !u!124 &12422086
 Behaviour:
   m_ObjectHideFlags: 1
