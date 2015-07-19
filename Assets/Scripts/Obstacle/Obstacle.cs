@@ -27,6 +27,11 @@ public class Obstacle : MonoBehaviour {
     private float cooldownTimer = 0.5f;
     private bool onCooldown = false;
 
+    //Audio Chances
+    private float sharkAudioChance = 0.2f;
+    private float stalinAudioChance = 0.1f;
+    private float pencilAudioChance = 0.025f;
+
     void Awake() {
         health = maxHealth;
     }
@@ -98,6 +103,7 @@ public class Obstacle : MonoBehaviour {
             if (health <= 0) {
                 if (type != Type.flying) OnDeath();
                 else {
+                    GameManager.instance.voices_player.PlayAirDown();
                     gameObject.GetComponent<Rigidbody>().useGravity = true;
                     RotationRandomDerp();
                     gameObject.GetComponent<Rigidbody>().AddForce(Random.Range(ForceMinSpeed, ForceMaxSpeed) * gameObject.transform.forward);
@@ -110,7 +116,41 @@ public class Obstacle : MonoBehaviour {
     void OnCollisionEnter(Collision other) {
         //When colliding with the player or enemy vehicle get thrown into the air, otherwise explode on impact
         if (type == Type.flying && other.gameObject.GetComponentInParent<Enemy_Manager>() != null && knockInTheAir) OnDeath();
-        else if (other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy") OnHit(other.transform);
-        else if (knockInTheAir) OnDeath();
+        else if (other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy") {
+            OnHit(other.transform);
+            float randomChange = Random.Range(0f,1f);
+
+            if (other.gameObject.tag == "Player" && randomChange < sharkAudioChance) {
+                switch (type) {
+                    case Type.parkedCar:
+                    case Type.car:
+                        GameManager.instance.voices_player.PlayCarHit();
+                        break;
+                    case Type.pedestrian :
+                        GameManager.instance.voices_player.PlayPedHit();
+                        break;
+                }
+            } else if (other.gameObject.tag == "Player" && randomChange < pencilAudioChance) {
+                switch (type) {
+                    case Type.parkedCar:
+                    case Type.car:
+                        GameManager.instance.voices_pencil.PlayPedHit();
+                        break;
+                    case Type.pedestrian:
+                        GameManager.instance.voices_pencil.PlayPedHit();
+                        break;
+                }
+            } else if (other.gameObject.tag == "Enemy" && randomChange < stalinAudioChance) {
+                switch (type) {
+                    case Type.parkedCar:
+                    case Type.car:
+                        GameManager.instance.voices_stalin.PlayPedHit();
+                        break;
+                    case Type.pedestrian:
+                        GameManager.instance.voices_stalin.PlayPedHit();
+                        break;
+                }
+            }
+        } else if (knockInTheAir) OnDeath();
     }
 }

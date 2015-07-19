@@ -31,6 +31,10 @@ public class VehiculeManager : MonoBehaviour {
         Sirene.SetActive(false);
     }
 
+    void Start() {
+        StartCoroutine(PlayIntroVoices());
+    }
+
     void Update () {
         GoForward();
         CalculateSpeedModifier(Input.GetAxis("Horizontal"));
@@ -110,6 +114,8 @@ public class VehiculeManager : MonoBehaviour {
     }
 
     #endregion
+
+    #region Wipers
     public void StartWipers() {
         if (canSirene) StartCoroutine(CoroutineWipers());
     }
@@ -125,8 +131,15 @@ public class VehiculeManager : MonoBehaviour {
         canWipe = true;
 
     }
-
-    #region Wipers
-
     #endregion
+
+    IEnumerator PlayIntroVoices() {
+        GameManager.instance.voices_stalin.PlayIntro();
+        yield return new WaitForSeconds(2.5f);
+        GameManager.instance.voices_player.PlayBehindBars();
+        yield return new WaitForSeconds(2f);
+        GameManager.instance.voices_pencil.PlayIntro();
+
+       
+    }
 }

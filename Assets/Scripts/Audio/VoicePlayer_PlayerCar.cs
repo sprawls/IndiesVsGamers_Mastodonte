@@ -18,7 +18,7 @@ public class VoicePlayer_PlayerCar : VoicePlayer {
     public AudioClip nineThousands;
 
     public override void Start() {
-        base.Start();
+        audioSource = GetComponent<AudioSource>();
         GameManager.instance.voices_player = this;
     }
 
