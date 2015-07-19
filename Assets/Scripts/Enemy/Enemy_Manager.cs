@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Enemy_Manager : MonoBehaviour{
 
@@ -13,6 +14,7 @@ public class Enemy_Manager : MonoBehaviour{
     [Header("Lane")]
     public float leftLaneX;
     public float rightLaneX;
+    public Slider healthBar;
 
     enum State { DodgingCar, RandomPathing }
     State activeState;
@@ -23,6 +25,7 @@ public class Enemy_Manager : MonoBehaviour{
         carTilt = gameObject.GetComponent<CarTilt>();
         SwitchState(State.RandomPathing);
         inRightLane = true;
+        healthBar = GameObject.Find("EnemyLifeBar").GetComponent<Slider>();
     }
 
     #region Utility Function
@@ -30,7 +33,12 @@ public class Enemy_Manager : MonoBehaviour{
     public void TakeDamage(int damageTaken) {
         if (health - damageTaken <= 0) Death();
         else health -= damageTaken;
+        UpdateHealthBar();
         
+    }
+
+    private void UpdateHealthBar() {
+        healthBar.value = health;
     }
 
     void Death() {
