@@ -43,7 +43,7 @@ GameObject:
   - 33: {fileID: 3330952}
   - 23: {fileID: 2312718}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Capsule 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 173566}
   m_LocalRotation: {x: 0, y: .707069457, z: 0, w: .707144201}
-  m_LocalPosition: {x: -92.1689148, y: -17.4699993, z: -55.6096344}
+  m_LocalPosition: {x: -9.64999962, y: 1.82000005, z: -88.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 403698}
@@ -81,9 +81,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187622}
-  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .5, y: 2, z: .5}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: -0, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 403698}
   m_RootOrder: 0
@@ -97,7 +97,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 93173285c176cfb4cb7e9d06ba78f4a1, type: 2}
+  - {fileID: 2100000, guid: 822ab58b9587b5949915e62ace9e3bc6, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -117,7 +117,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187622}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 575314bb62d9bc74f999b4dbd422ee82, type: 3}
 --- !u!114 &11447888
 MonoBehaviour:
   m_ObjectHideFlags: 1
