@@ -14,6 +14,7 @@ public class carButton_Light : CarButton {
 
 
     public override void buttonPressed() {
+        Debug.Log("light");
         vehicle.StartCirene();
     }
 

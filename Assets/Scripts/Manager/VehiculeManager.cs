@@ -117,7 +117,7 @@ public class VehiculeManager : MonoBehaviour {
 
     #region Wipers
     public void StartWipers() {
-        if (canSirene) StartCoroutine(CoroutineWipers());
+        if (canWipe) StartCoroutine(CoroutineWipers());
     }
 
     IEnumerator CoroutineWipers() {
