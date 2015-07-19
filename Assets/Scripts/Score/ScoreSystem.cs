@@ -24,15 +24,19 @@ public class ScoreSystem : MonoBehaviour{
     }
 
     public void AddScore(int points, GameObject objectGivingScore, Vector3 offset, bool Combo = false) {
+        AddScore(points, objectGivingScore, offset, new Vector3(1, 1, 1), Combo);
+    }
+
+    public void AddScore(int points, GameObject objectGivingScore, Vector3 offset, Vector3 scale, bool Combo = false) {
         GameManager.instance.addScore(points);
-        TextMesh scorePopup = (Instantiate(scoreText, objectGivingScore.transform.position + new Vector3(0, 5, 0) + offset , Quaternion.identity) as GameObject).GetComponent<TextMesh>();
+        TextMesh scorePopup = (Instantiate(scoreText, objectGivingScore.transform.position + new Vector3(0, 5, 0) + offset, Quaternion.identity) as GameObject).GetComponent<TextMesh>();
         StartCoroutine(ScoreAnim(scorePopup, points, Combo));
     }
 
     IEnumerator ScoreAnim(TextMesh score, int points, bool combo) {
         if (combo) {
             score.text = "Combo\n" + points.ToString();
-            score.gameObject.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+            //score.gameObject.transform.localScale = new Vector3(1.5f, 1.5f, 1f);
             score.lineSpacing = 0.8f;
         }
         else score.text = points.ToString();

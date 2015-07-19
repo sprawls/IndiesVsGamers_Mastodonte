@@ -13,6 +13,9 @@ public class Chunck_Normal : Chunck {
     public GameObject[] leftLaneSpawn;
     public GameObject[] rightLaneSpawn;
 
+    [Header("Type of Cars")]
+    public Material[] carMat;
+
     public override void Spawn() {
         SpawnInParking();
         SpawnInLane();
@@ -23,6 +26,7 @@ public class Chunck_Normal : Chunck {
             if (Random.Range(0, VehicleInParkingRatio) == 0) {
                 GameObject temp = Instantiate(Resources.Load("ParkedCar"), parkingSpawn[i].transform.position, Quaternion.identity) as GameObject;
                 if (parkingSpawn[i].transform.position.x < 0) temp.transform.localScale = new Vector3(1, 1, -1);
+                RandomizeCarMat(temp);
             }
         }
     }
@@ -33,10 +37,20 @@ public class Chunck_Normal : Chunck {
                 GameObject temp = Instantiate(Resources.Load("Car"), leftLaneSpawn[Random.Range(0, leftLaneSpawn.Length)].transform.position, Quaternion.identity) as GameObject;
                 temp.GetComponent<Car_ForwardMove>().Speed *= -1;
                 temp.transform.localScale = new Vector3(1, 1, -1);
+                RandomizeCarMat(temp);
             }
             else {
-                Instantiate(Resources.Load("Car"), rightLaneSpawn[Random.Range(0, rightLaneSpawn.Length)].transform.position, Quaternion.identity);
+                RandomizeCarMat(Instantiate(Resources.Load("Car"), rightLaneSpawn[Random.Range(0, rightLaneSpawn.Length)].transform.position, Quaternion.identity) as GameObject);
             }
+        }
+    }
+
+    void RandomizeCarMat(GameObject car) {
+        if (car.transform.FindChild("OtherCar") != null) {
+            car.transform.FindChild("OtherCar").GetComponent<MeshRenderer>().material = carMat[Random.Range(0, carMat.Length)];
+        }
+        else if (car.transform.FindChild("CarModel") != null) {
+            car.transform.FindChild("CarModel").GetComponent<MeshRenderer>().material = carMat[Random.Range(0, carMat.Length)];
         }
     }
 }
