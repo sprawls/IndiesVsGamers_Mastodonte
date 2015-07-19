@@ -15,7 +15,7 @@ MonoBehaviour:
   privateKey: 6f597cab2f3df3dde4fc96908a80fba6
   timeout: 10
   autoPing: 1
-  useCaching: 1
+  useCaching: 0
   autoConnect: 0
   user: 
   token: 
