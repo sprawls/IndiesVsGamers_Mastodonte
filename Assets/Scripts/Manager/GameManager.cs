@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour {
 
 
 	#region game loop
-	private void EndPhase(){
+	private void EndPhase(bool ennemyDead=false){
 		Time.timeScale = 0.0f;
 		currentPhase = int.Parse(Application.loadedLevelName.Substring(5));
 		
@@ -135,7 +135,12 @@ public class GameManager : MonoBehaviour {
                 Cursor.visible = true;
 				break;
 			case 2:
-				GameObject.Find("Main_UI").transform.FindChild("Phase2End").gameObject.SetActive(true);
+                if (ennemyDead){
+                    GameObject.Find("Main_UI").transform.FindChild("Phase2End").gameObject.SetActive(true);
+                }
+                else {
+                    GameObject.Find("Main_UI").transform.FindChild("Phase2Endfail").gameObject.SetActive(true);
+                }
                 Cursor.visible = true;
 				break;
 			case 3:
@@ -237,7 +242,7 @@ public class GameManager : MonoBehaviour {
 	}
 
     public void EnemyDeath() {
-        EndPhase();
+        EndPhase(true);
     }
 
 	IEnumerator WaitForLogin() {
@@ -285,6 +290,12 @@ public class GameManager : MonoBehaviour {
 	public void Quit(){
 		Application.Quit();
 	}
+
+    public void GameOver()
+    {
+        phaseOngoing = false;
+		StartLevel_EndGa4();
+    }
 
 
     public void DisplayScoreBoard()
