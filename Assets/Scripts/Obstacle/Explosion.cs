@@ -9,7 +9,6 @@ public class Explosion : MonoBehaviour {
     public float radius = 10;
 
     void Awake() {
-        
         target = new List<GameObject>();
         GetComponent<SphereCollider>().radius = radius;
         GetComponent<SphereCollider>().enabled = false;
@@ -32,5 +31,9 @@ public class Explosion : MonoBehaviour {
             enemy.TakeDamage(7);
             target.Add(enemy.gameObject);
         }
+    }
+
+    void OnDestroy() {
+        GameManager.instance.scoreSystem.AddScore((int)Mathf.Pow((target.Count), 1.2f) * target.Count * 1000 , gameObject, new Vector3(0,10,0), true);
     }
 }

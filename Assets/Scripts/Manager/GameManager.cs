@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour {
 
     //Collectable
     public Inventory inventory;
+    public ScoreSystem scoreSystem;
 
 	//Game loop
 	private int numberOfLevels = 1;
@@ -45,6 +46,9 @@ public class GameManager : MonoBehaviour {
 		if(_instance == null){
             if (inventory == null) {
                 inventory = new Inventory();
+            }
+            if (scoreSystem == null) {
+                scoreSystem = gameObject.AddComponent<ScoreSystem>();
             }
 			_instance = this;
 			DontDestroyOnLoad(this);
