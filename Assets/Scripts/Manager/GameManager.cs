@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour {
                 scoreSystem = gameObject.AddComponent<ScoreSystem>();
             }
             if (voices_pedestrian == null) {
-                voices_pedestrian = GetComponent<VoicePedestrian>();
+                voices_pedestrian = GetComponentInChildren<VoicePedestrian>();
             }
 			_instance = this;
 			DontDestroyOnLoad(this);

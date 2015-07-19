@@ -25,9 +25,15 @@ public class GunObject : GrabbableObject {
     public Texture2D cursor_highlighted;
     private bool highligthed = false;
 
+    //Gun Related
+    private float cooldown = 0.25f;
+    private bool onCooldown = false;
+    private AudioSource audio;
+
     void Awake(){
         rb = GetComponent<Rigidbody>();
         colliders = GetComponentsInChildren<Collider>();
+        audio = gameObject.GetComponent<AudioSource>();
     }
     
     void Start() {
@@ -114,21 +120,32 @@ public class GunObject : GrabbableObject {
     }
 
     void Shoot() {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 1000, ShootLayerMask)) {
-            //Debug.DrawLine(ray.origin, hit.point, Color.red, 2f);
-            //check for normal grabbable object
-            NormalObject normalObj = hit.transform.GetComponentInParent<NormalObject>();
-            if (normalObj != null) normalObj.Push(hit.point);
-            //check for boss damage
-           
-            Enemy_Manager enemyManager = hit.transform.GetComponentInParent<Enemy_Manager>();
-            Obstacle obstacle = hit.transform.GetComponentInParent<Obstacle>();
-            if (enemyManager != null) enemyManager.TakeDamage(1);
-            if (obstacle != null) obstacle.TakeDamage(1);
-            StartCoroutine(SpawnShootParticles(hit));
+        if (!onCooldown) {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 1000, ShootLayerMask)) {
+                //Debug.DrawLine(ray.origin, hit.point, Color.red, 2f);
+                //check for normal grabbable object
+                NormalObject normalObj = hit.transform.GetComponentInParent<NormalObject>();
+                if (normalObj != null) normalObj.Push(hit.point);
+                //check for boss damage
+
+                Enemy_Manager enemyManager = hit.transform.GetComponentInParent<Enemy_Manager>();
+                Obstacle obstacle = hit.transform.GetComponentInParent<Obstacle>();
+                if (enemyManager != null) enemyManager.TakeDamage(1);
+                if (obstacle != null) obstacle.TakeDamage(1);
+                audio.pitch = Random.Range(0.85f, 1.15f);
+                audio.Play();
+                StartCoroutine(SpawnShootParticles(hit));
+            }
+            StartCoroutine(CooldownTime());
         }
+    }
+
+    IEnumerator CooldownTime() {
+        onCooldown = true;
+        yield return new WaitForSeconds(cooldown);
+        onCooldown = false;
     }
 
     void SpawnArm() {

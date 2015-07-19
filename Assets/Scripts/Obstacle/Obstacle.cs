@@ -59,7 +59,10 @@ public class Obstacle : MonoBehaviour {
     void OnHitEffect() {
         switch (type) {
             case Type.car: Destroy(GetComponent<Car_ForwardMove>()); return;
-            case Type.pedestrian: Destroy(GetComponent<PedestrianMoveForward>()); return;
+            case Type.pedestrian:
+                GameManager.instance.voices_pedestrian.PlayScream(gameObject.GetComponent<AudioSource>());
+                Destroy(GetComponent<PedestrianMoveForward>()); 
+                return;
         }
     }
 
