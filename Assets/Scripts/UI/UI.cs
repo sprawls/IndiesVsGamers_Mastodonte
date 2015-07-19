@@ -11,6 +11,11 @@ public class UI : MonoBehaviour {
 		GameManager.instance.NextLevel();
 	}
 
+    public void NextPhase()
+    {
+        GameManager.instance.NextPhaseMenu();
+    }
+
 	public void MainMenu(){
 		GameManager.instance.BackToMenu();
 	}
