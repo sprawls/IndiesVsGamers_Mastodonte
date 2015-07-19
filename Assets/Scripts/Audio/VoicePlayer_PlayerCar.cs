@@ -72,6 +72,11 @@ public class VoicePlayer_PlayerCar : VoicePlayer {
         PlaySoundFX(random);
     }
 
+    public void PlayLikeNew() {
+        AudioClip random = LikeNew[Random.Range(0, LikeNew.Length)];
+        PlaySoundFX(random);
+    }
+
     public void Play9000() {
         PlaySoundFX(nineThousands);
     }

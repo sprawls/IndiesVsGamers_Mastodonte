@@ -97,6 +97,7 @@ public class VehiculeManager : MonoBehaviour {
     }
 
     IEnumerator CoroutineSirene() {
+        GameManager.instance.voices_player.PlayPolice();
         canSirene = false;
         sirene_IsOn = true;
         Sirene.SetActive(true);
@@ -114,6 +115,7 @@ public class VehiculeManager : MonoBehaviour {
     }
 
     IEnumerator CoroutineWipers() {
+        GameManager.instance.voices_player.PlayLikeNew();
         canWipe = false;
         Transform[] ts = Window.GetComponentsInChildren<Transform>();
         foreach (Transform t in ts) {

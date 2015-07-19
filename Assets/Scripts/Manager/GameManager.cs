@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
 	private bool phaseOngoing = true;
 
     //Voices
-    public VoicePlayer voices_player;
+    public VoicePlayer_PlayerCar voices_player;
 	
 	void Awake() {
 		if(_instance == null){
