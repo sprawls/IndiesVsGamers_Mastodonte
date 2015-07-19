@@ -14,4 +14,8 @@ public class UI : MonoBehaviour {
 	public void MainMenu(){
 		GameManager.instance.BackToMenu();
 	}
+
+	public void Pause(){
+		GameManager.instance.Pause();
+	}
 }

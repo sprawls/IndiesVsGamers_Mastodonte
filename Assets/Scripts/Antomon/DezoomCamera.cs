@@ -36,7 +36,7 @@ public class DezoomCamera : MonoBehaviour {
 		while (transform.position.z > endPosition.z + 0.05f) {
 			distCovered = (Time.time -startTime) * speedDezoom;
 			fracJourney = distCovered / distanceTravel;
-			transform.position = Vector3.Lerp(startPosition, endPosition, fracJourney);
+			transform.position = Vector3.Lerp(startPosition, endPosition, Mathf.SmoothStep(0f,1f,fracJourney));
 			yield return null;
 		}
 
