@@ -32,7 +32,8 @@ public class ScoreSystem : MonoBehaviour{
     IEnumerator ScoreAnim(TextMesh score, int points, bool combo) {
         if (combo) {
             score.text = "Combo\n" + points.ToString();
-            yield return new WaitForSeconds(0.4f);
+            score.gameObject.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+            score.lineSpacing = 0.8f;
         }
         else score.text = points.ToString();
 
