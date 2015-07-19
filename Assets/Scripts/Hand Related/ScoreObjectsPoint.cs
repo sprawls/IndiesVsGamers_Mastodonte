@@ -12,6 +12,7 @@ public class ScoreObjectsPoint : MonoBehaviour {
         if (NOScript != null && NOScript.CanBeScored()) {
             NOScript.ScorePoints(multiplier);
             multiplier *= (1f - MultiplierPercentageLost); //Reduce gain points for succesive items
+
         }
     }
 }

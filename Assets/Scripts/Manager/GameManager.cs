@@ -38,7 +38,8 @@ public class GameManager : MonoBehaviour {
 
     //Voices
     public VoicePlayer_PlayerCar voices_player;
-	
+    public voicePlayer_Stalin voices_stalin;
+
 	void Awake() {
 		if(_instance == null){
             if (inventory == null) {
