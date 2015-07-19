@@ -289,6 +289,16 @@ public class GameManager : MonoBehaviour {
 	public void Quit(){
 		Application.Quit();
 	}
+
+
+    public void DisplayScoreBoard()
+    {
+        api.ShowScore();
+    }
+    public void DisplayLogin()
+    {
+        api.Login();
+    }
 	
 	#endregion
 

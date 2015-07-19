@@ -31,4 +31,13 @@ public class UI : MonoBehaviour {
 		transform.FindChild("PauseMenu").gameObject.SetActive(false);
 		transform.FindChild("Pause").gameObject.SetActive(true);
 	}
+
+    public void DisplayScoreBoard(){
+        GameManager.instance.DisplayScoreBoard();
+    }
+
+    public void DisplayLogin()
+    {
+        GameManager.instance.DisplayLogin();
+    }
 }
