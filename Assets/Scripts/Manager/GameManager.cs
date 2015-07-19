@@ -128,12 +128,15 @@ public class GameManager : MonoBehaviour {
 		switch(currentPhase){
 			case 1:
 				GameObject.Find("Main_UI").transform.FindChild("Phase1End").gameObject.SetActive(true);
+                Cursor.visible = true;
 				break;
 			case 2:
 				GameObject.Find("Main_UI").transform.FindChild("Phase2End").gameObject.SetActive(true);
+                Cursor.visible = true;
 				break;
 			case 3:
 				CompleteLevel();
+                Cursor.visible = true;
 				break;
 			default:
 				StartLevel_Phase1();
@@ -193,15 +196,18 @@ public class GameManager : MonoBehaviour {
 		else if(level == 1){
 			currentPhaseTime = phase1Time;
 			phaseOngoing = true;
+            Cursor.visible = false;
 		}
 		else if(level == 2){
 			currentPhaseTime = phase2Time;
 			phaseOngoing = true;
 			GameObject.Find("Main_UI").transform.FindChild("EnemyLifeBar").gameObject.SetActive(true);
+            Cursor.visible = false;
 		}
 		if(level == 3){
 			currentPhaseTime = phase3Time;
 			phaseOngoing = true;
+            Cursor.visible = false;
 		}
 		if(level == 4){
 			phaseOngoing = false;
