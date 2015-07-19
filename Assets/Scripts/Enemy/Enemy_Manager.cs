@@ -48,6 +48,7 @@ public class Enemy_Manager : MonoBehaviour{
     }
 
     void Death() {
+        GameManager.instance.EnemyDeath();
         Destroy(gameObject);
     }
 

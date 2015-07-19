@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour {
     public VoicePlayer_PlayerCar voices_player;
     public voicePlayer_Stalin voices_stalin;
     public voicePlayer_Pencil voices_pencil;
+    public VoicePedestrian voices_pedestrian;
 
 	void Awake() {
 		if(_instance == null){
@@ -49,6 +50,9 @@ public class GameManager : MonoBehaviour {
             }
             if (scoreSystem == null) {
                 scoreSystem = gameObject.AddComponent<ScoreSystem>();
+            }
+            if (voices_pedestrian == null) {
+                voices_pedestrian = GetComponent<VoicePedestrian>();
             }
 			_instance = this;
 			DontDestroyOnLoad(this);
@@ -228,6 +232,10 @@ public class GameManager : MonoBehaviour {
 			GameObject.Find("Main_UI").transform.FindChild("EndPopUp").gameObject.SetActive(true);
 		}
 	}
+
+    public void EnemyDeath() {
+        EndPhase();
+    }
 
 	IEnumerator WaitForLogin() {
         float timerCount = 0;
