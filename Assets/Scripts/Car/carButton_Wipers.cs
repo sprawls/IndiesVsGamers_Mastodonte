@@ -13,6 +13,7 @@ public class carButton_Wipers : CarButton {
 
 
     public override void buttonPressed() {
+        Debug.Log("wipe");
         vehicle.StartWipers();
     }
 
