@@ -188,6 +188,7 @@ public class GameManager : MonoBehaviour {
 	void OnLevelWasLoaded(int level){
 		if(level == 0){
 			phaseOngoing = false;
+            Cursor.visible = true;
 		}
 		else if(level == 1){
 			currentPhaseTime = phase1Time;
@@ -206,6 +207,7 @@ public class GameManager : MonoBehaviour {
 			phaseOngoing = false;
 			currentPhaseTime = 0;
 			GameObject.Find("Main_UI").transform.FindChild("FinalScore").GetComponent<Text>().text = score.ToString("000000000");
+            Cursor.visible = true;
 
 			if(api.IsConnected()){
 				api.SendScore(score, score + " Justice");
