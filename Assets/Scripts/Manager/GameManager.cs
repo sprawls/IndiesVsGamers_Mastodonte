@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour {
 			break;
 		case 2:
 			currentPhaseTime = phase2Time;
+			GameObject.Find("Main_UI").transform.FindChild("EnemyLifeBar").gameObject.SetActive(true);
 			break;
 		case 3:
 			currentPhaseTime = phase3Time;
@@ -142,6 +143,7 @@ public class GameManager : MonoBehaviour {
 
 	private void StartLevel_MainM0(){
 		Application.LoadLevel("MainM0");
+		score = 0;
 	}
 	private void StartLevel_Phase1(){
         Application.LoadLevel("Phase1");
@@ -168,6 +170,7 @@ public class GameManager : MonoBehaviour {
 		else if(level == 2){
 			currentPhaseTime = phase2Time;
 			phaseOngoing = true;
+			GameObject.Find("Main_UI").transform.FindChild("EnemyLifeBar").gameObject.SetActive(true);
 		}
 		if(level == 3){
 			currentPhaseTime = phase3Time;
