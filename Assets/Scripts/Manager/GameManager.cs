@@ -21,12 +21,12 @@ public class GameManager : MonoBehaviour {
     public Inventory inventory;
 
 	//Game loop
-	private int numberOfLevels = 2;
+	private int numberOfLevels = 1;
 	internal int currentLevel = 0;
 	internal int currentPhase = 1;
 
 	//Score
-	private int score;
+	private int score = 0;
 	GamejoltAPI_Manager api = new GamejoltAPI_Manager();
 
 	//Round timer
@@ -71,13 +71,20 @@ public class GameManager : MonoBehaviour {
 		case 4:
 			phaseOngoing = false;
 			currentPhaseTime = 0;
-			api.ShowScore();
+			GameObject.Find("Main_UI").transform.FindChild("FinalScore").GetComponent<Text>().text = score.ToString("000000000");
+			
+			if(api.IsConnected()){
+				api.SendScore(score, score + " Justice");
+				StartCoroutine("DelayBeforeLeaderBoard");
+			}
+			else{
+				api.Login();
+				StartCoroutine("WaitForLogin");
+			}
 			break;
 		default:
 			break;
 		}
-
-
 	}
 	
 	private void Update(){
@@ -145,7 +152,6 @@ public class GameManager : MonoBehaviour {
     }
 	private  void StartLevel_EndGa4(){
 		Application.LoadLevel("EndGa4");
-
 	}
 
 
@@ -166,10 +172,18 @@ public class GameManager : MonoBehaviour {
 			phaseOngoing = true;
 		}
 		if(level == 4){
+			phaseOngoing = false;
+			currentPhaseTime = 0;
 			GameObject.Find("Main_UI").transform.FindChild("FinalScore").GetComponent<Text>().text = score.ToString("000000000");
 
-			api.SendScore(score, score + " Justice");
-			api.ShowScore();
+			if(api.IsConnected()){
+				api.SendScore(score, score + " Justice");
+				StartCoroutine("DelayBeforeLeaderBoard");
+			}
+			else{
+				api.Login();
+				StartCoroutine("WaitForLogin");
+			}
 		}
 	}
 	
@@ -184,8 +198,23 @@ public class GameManager : MonoBehaviour {
 			
 	}
 
-	#endregion
+	IEnumerator WaitForLogin() {
+		while (!api.IsConnected()){
+			yield return new WaitForEndOfFrame();
+		}
 
+		api.SendScore(score, score + " Justice");
+		api.ShowScore();
+		StartCoroutine("DelayBeforeLeaderBoard");
+	}
+
+	IEnumerator DelayBeforeLeaderBoard(){
+		yield return new WaitForSeconds(2);
+		api.ShowScore();
+	}
+	
+	#endregion
+	
 	#region UI calls
 
 	public void login(){
