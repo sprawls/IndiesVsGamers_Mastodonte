@@ -135,7 +135,8 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11466490, guid: db6dd42d7010ca440be4f7ac5b6cee3d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: db6dd42d7010ca440be4f7ac5b6cee3d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &19991052
@@ -404,6 +405,26 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2393d55c7e73c6c47b9479666d406551, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &88638180
+GameObject:
+  m_PrefabParentObject: {fileID: 180326, guid: db6dd42d7010ca440be4f7ac5b6cee3d, type: 2}
+  m_PrefabInternal: {fileID: 13597829}
+--- !u!114 &88638183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 88638180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e875294011954419f82436ebc3c2d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeDropped: 1
+  canBeUsed: 0
+  amt_points: 100
+  ScoreParticles: {fileID: 142672, guid: 96e9f07a342abe14481d69aa6860743c, type: 2}
+  _canScore: 1
 --- !u!1001 &89451478
 Prefab:
   m_ObjectHideFlags: 0
@@ -2620,14 +2641,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11466886, guid: f18112959dce32b4faba838fcab5f9d9, type: 2}
-      propertyPath: phase1Time
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 11466886, guid: f18112959dce32b4faba838fcab5f9d9, type: 2}
-      propertyPath: phase2Time
-      value: 90
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f18112959dce32b4faba838fcab5f9d9, type: 2}
   m_IsPrefabParent: 0
@@ -2757,6 +2770,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5448718, guid: 41a92112fa254a044b63fc694ca8fa69, type: 2}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5480462, guid: 41a92112fa254a044b63fc694ca8fa69, type: 2}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2367964, guid: 41a92112fa254a044b63fc694ca8fa69, type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2390632, guid: 41a92112fa254a044b63fc694ca8fa69, type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2346356, guid: 41a92112fa254a044b63fc694ca8fa69, type: 2}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41a92112fa254a044b63fc694ca8fa69, type: 2}
   m_IsPrefabParent: 0
@@ -2876,6 +2909,21 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2393d55c7e73c6c47b9479666d406551, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &1444220013
+GameObject:
+  m_PrefabParentObject: {fileID: 157266, guid: 60d2072314b4ea84287414427e289be5, type: 2}
+  m_PrefabInternal: {fileID: 1618141949}
+--- !u!114 &1444220016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1444220013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d98c84edcf994a942aeca802effffa9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1457517186
 Transform:
   m_PrefabParentObject: {fileID: 439914, guid: bfbdf920971540847b63a8d9f5fc4b0e, type: 2}
