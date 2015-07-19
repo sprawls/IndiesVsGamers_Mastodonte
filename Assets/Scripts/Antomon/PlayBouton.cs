@@ -23,6 +23,6 @@ public class PlayBouton : MonoBehaviour {
 	
 	void OnMouseDown()
 	{
-		Application.LoadLevel (1);
+		Application.LoadLevel (5);
 	}
 }

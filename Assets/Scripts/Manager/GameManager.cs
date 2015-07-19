@@ -140,6 +140,7 @@ public class GameManager : MonoBehaviour {
 
 	private void StartLevel_MainM0(){
 		Application.LoadLevel("MainM0");
+		score = 0;
 	}
 	private void StartLevel_Phase1(){
         Application.LoadLevel("Phase1");
