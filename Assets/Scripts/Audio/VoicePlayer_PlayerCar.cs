@@ -7,13 +7,20 @@ public class VoicePlayer_PlayerCar : VoicePlayer {
     public AudioClip[] CarHit;
     public AudioClip[] PedHit;
     public AudioClip[] Yeahs;
-    public AudioClip[] JobDone;
+    public AudioClip[] BehindBar;
     public AudioClip[] LikeNew;
     public AudioClip[] GameOver;
     public AudioClip[] Pause;
     public AudioClip[] Scores;
     public AudioClip[] Taunts;
+    public AudioClip[] PoliceAlarm;
+    public AudioClip[] Justice;
     public AudioClip nineThousands;
+
+    public override void Start() {
+        base.Start();
+        GameManager.instance.voices_player = this;
+    }
 
     public void PlayAirDown() {
         AudioClip random = AirDowns[Random.Range(0,AirDowns.Length)];
@@ -35,8 +42,8 @@ public class VoicePlayer_PlayerCar : VoicePlayer {
         PlaySoundFX(random);
     }
 
-    public void PlayJobDone() {
-        AudioClip random = JobDone[Random.Range(0, JobDone.Length)];
+    public void PlayBehindBars() {
+        AudioClip random = BehindBar[Random.Range(0, BehindBar.Length)];
         PlaySoundFX(random);
     }
 
@@ -52,6 +59,21 @@ public class VoicePlayer_PlayerCar : VoicePlayer {
 
     public void PlayPause() {
         AudioClip random = Pause[Random.Range(0, Pause.Length)];
+        PlaySoundFX(random);
+    }
+
+    public void PlayPolice() {
+        AudioClip random = PoliceAlarm[Random.Range(0, PoliceAlarm.Length)];
+        PlaySoundFX(random);
+    }
+
+    public void PlayJustice() {
+        AudioClip random = Justice[Random.Range(0, Justice.Length)];
+        PlaySoundFX(random);
+    }
+
+    public void PlayLikeNew() {
+        AudioClip random = LikeNew[Random.Range(0, LikeNew.Length)];
         PlaySoundFX(random);
     }
 
