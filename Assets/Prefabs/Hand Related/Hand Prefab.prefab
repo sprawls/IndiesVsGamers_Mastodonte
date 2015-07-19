@@ -89,6 +89,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 456844}
   - 135: {fileID: 13545402}
+  - 114: {fileID: 11446142}
   m_Layer: 10
   m_Name: Grab Anchor
   m_TagString: Untagged
@@ -135,7 +136,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 144406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.99000001, z: -8.02999973}
+  m_LocalPosition: {x: 0, y: 2.9000001, z: -8.02999973}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 480964}
@@ -187,7 +188,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 157266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.0299999993, z: 1.28699994}
+  m_LocalPosition: {x: 0, y: .0160000008, z: 1.36099994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 480964}
@@ -198,9 +199,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122130}
-  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .300000012, y: 3, z: .400000006}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: .363999993, y: .150000006, z: 1.14600003}
+  m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 437364}
   m_RootOrder: 0
@@ -225,8 +226,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148846}
-  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: 0, z: .699999988}
+  m_LocalRotation: {x: .768370807, y: -.0682547465, z: .0831530169, w: .630898654}
+  m_LocalPosition: {x: .151999995, y: .0610000007, z: .680999994}
   m_LocalScale: {x: .300000012, y: .75, z: .400000006}
   m_Children: []
   m_Father: {fileID: 430164}
@@ -238,10 +239,10 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122130}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 93173285c176cfb4cb7e9d06ba78f4a1, type: 2}
+  - {fileID: 2100000, guid: 822ab58b9587b5949915e62ace9e3bc6, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -262,7 +263,7 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183504}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_Materials:
   - {fileID: 2100000, guid: 93173285c176cfb4cb7e9d06ba78f4a1, type: 2}
@@ -285,7 +286,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122130}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 575314bb62d9bc74f999b4dbd422ee82, type: 3}
 --- !u!33 &3345328
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -308,6 +309,17 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 2
+--- !u!114 &11446142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d98c84edcf994a942aeca802effffa9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11453808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -322,12 +334,14 @@ MonoBehaviour:
   model: {fileID: 196374}
   grabAnchor: {fileID: 13545402}
   grabbedModel: {fileID: 183504}
-  Ypos_Idle: 2.25
-  Ypos_Grab: 1.25
-  sensibility: 200
+  Ypos_Idle: 3.5
+  Ypos_Grab: 1.5
+  sensibility: 300
   camSensibility: 500
   maxCameraMouvement: {x: 3, y: .5}
-  handMouvementToReachMax: {x: 3.5, y: 1.79999995}
+  handMouvementToReachMax: {x: 3.5, y: 1.5}
+  useClamp: 0
+  clampDistance: {x: 0, y: 0, z: 0}
   HandCollisionPlane:
     serializedVersion: 2
     m_Bits: 256
@@ -337,6 +351,7 @@ MonoBehaviour:
   armIsLowered: 0
   isGrabbing: 0
   _mousePosition: {x: 0, y: 0, z: 0}
+  _modelRB: {fileID: 0}
 --- !u!135 &13545402
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -347,7 +362,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: .25
+  m_Radius: .200000003
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &13633770
 CapsuleCollider:

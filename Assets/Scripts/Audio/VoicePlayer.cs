@@ -19,7 +19,7 @@ public class VoicePlayer : MonoBehaviour {
 	}
 
     protected bool PlaySoundFX(AudioClip audioClip) {
-        Debug.Log("Attempt to play : " + audioClip + "    isplaying? : " + isTalking);
+        //Debug.Log("Attempt to play : " + audioClip + "    isplaying? : " + isTalking);
         if (isTalking) return false;
         isTalking = true;
         

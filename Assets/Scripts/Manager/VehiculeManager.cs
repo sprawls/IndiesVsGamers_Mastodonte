@@ -117,7 +117,7 @@ public class VehiculeManager : MonoBehaviour {
 
     #region Wipers
     public void StartWipers() {
-        if (canSirene) StartCoroutine(CoroutineWipers());
+        if (canWipe) StartCoroutine(CoroutineWipers());
     }
 
     IEnumerator CoroutineWipers() {
@@ -126,6 +126,10 @@ public class VehiculeManager : MonoBehaviour {
         Transform[] ts = Window.GetComponentsInChildren<Transform>();
         foreach (Transform t in ts) {
             if (t != Window.transform) Destroy(t.gameObject);
+        }
+        wipe[] wipers = GetComponentsInChildren<wipe>();
+        foreach (wipe w in wipers) {
+            w.Wipe();
         }
         yield return new WaitForSeconds(wipersCooldown);
         canWipe = true;
