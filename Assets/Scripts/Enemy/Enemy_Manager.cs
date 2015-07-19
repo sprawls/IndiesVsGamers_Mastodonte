@@ -25,7 +25,7 @@ public class Enemy_Manager : MonoBehaviour{
         carTilt = gameObject.GetComponent<CarTilt>();
         SwitchState(State.RandomPathing);
         inRightLane = true;
-        healthBar = GameObject.Find("EnemyLifeBar").GetComponent<Slider>();
+        //healthBar = GameObject.Find("EnemyLifeBar").GetComponent<Slider>();
     }
 
     #region Utility Function

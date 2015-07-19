@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour {
     public Inventory inventory;
 
 	//Game loop
-	private int numberOfLevels = 1;
+	private int numberOfLevels = 2;
 	internal int currentLevel = 0;
 	internal int currentPhase = 1;
 
@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour {
 			GameObject.Find("Main_UI").transform.FindChild("Timer").GetComponent<Text>().text = currentPhaseTime.ToString("F2");
 			if(currentPhaseTime <= 0f){
 				phaseOngoing = false;
-				NextPhase();
+				EndPhase();
 			}
 
 			//Scoring
@@ -117,28 +117,50 @@ public class GameManager : MonoBehaviour {
 
 
 	#region game loop
-	private void NextPhase(){
+	private void EndPhase(){
+		Time.timeScale = 0.0f;
 		currentPhase = int.Parse(Application.loadedLevelName.Substring(5));
-
+		Debug.Log (currentPhase);
 		switch(currentPhase){
 			case 1:
-				currentPhaseTime = phase2Time;
-				StartLevel_Phase2();
-				phaseOngoing = true;
+				GameObject.Find("Main_UI").transform.FindChild("Phase1End").gameObject.SetActive(true);
 				break;
 			case 2:
-				currentPhaseTime = phase3Time;
-				StartLevel_Phase3();
-				phaseOngoing = true;
-			break;
+				GameObject.Find("Main_UI").transform.FindChild("Phase2End").gameObject.SetActive(true);
+				break;
 			case 3:
-				currentPhaseTime = phase3Time;
 				CompleteLevel();
 				break;
 			default:
 				StartLevel_Phase1();
 				phaseOngoing = true;
 				break;
+		}
+	}
+
+	private void NextPhase(){
+		Time.timeScale = 1.0f;
+
+		switch(currentPhase){
+		case 1:
+			GameObject.Find("Main_UI").transform.FindChild("Phase1End").gameObject.SetActive(false);
+			currentPhaseTime = phase2Time;
+			StartLevel_Phase2();
+			phaseOngoing = true;
+			break;
+		case 2:
+			GameObject.Find("Main_UI").transform.FindChild("Phase2End").gameObject.SetActive(false);
+			currentPhaseTime = phase3Time;
+			StartLevel_Phase3();
+			phaseOngoing = true;
+			break;
+		case 3:
+			GameObject.Find("Main_UI").transform.FindChild("Phase3End").gameObject.SetActive(false);
+			currentPhaseTime = phase1Time;
+			StartLevel_EndGa4();
+			break;
+		default:
+			break;
 		}
 	}
 
@@ -199,9 +221,9 @@ public class GameManager : MonoBehaviour {
 		if(currentLevel < numberOfLevels){
 			GameObject.Find("Main_UI").GetComponent<UI>().DisplayNextLevelPopUp();
 		}
-		else
-			StartLevel_EndGa4();
-			
+		else{
+			GameObject.Find("Main_UI").transform.FindChild("EndPopUp").gameObject.SetActive(true);
+		}
 	}
 
 	IEnumerator WaitForLogin() {
@@ -233,6 +255,11 @@ public class GameManager : MonoBehaviour {
 		StartLevel_Phase1();
 		currentPhaseTime = phase1Time;
 		phaseOngoing = true;
+		Time.timeScale = 1.0f;
+	}
+
+	public void NextPhaseMenu(){
+		NextPhase();
 	}
 
 	public void BackToMenu(){
