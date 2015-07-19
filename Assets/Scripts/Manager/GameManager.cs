@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void StartLevel_MainM0(){
-		//Application.LoadLevel("MainM0");
+		Application.LoadLevel("MainM0");
 	}
 	private void StartLevel_Phase1(){
         Application.LoadLevel("Phase1");
@@ -173,10 +173,9 @@ public class GameManager : MonoBehaviour {
 	
 	private void CompleteLevel() {
 		currentLevel++;
-
 		//End Game
 		if(currentLevel < (numberOfLevels)){
-			GameObject.Find("UI").GetComponent<UI>().DisplayNextLevelPopUp();
+			GameObject.Find("Main_UI").GetComponent<UI>().DisplayNextLevelPopUp();
 		}
 		else
 			StartLevel_EndGa4();
@@ -198,7 +197,6 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void BackToMenu(){
-		Debug.Log("mainmenu");
 		StartLevel_MainM0();
 	}
 
