@@ -46,10 +46,10 @@ GameObject:
   - 4: {fileID: 402052}
   - 114: {fileID: 11401348}
   - 54: {fileID: 5424248}
-  - 114: {fileID: 11458476}
   - 114: {fileID: 11400748}
   - 65: {fileID: 6509312}
   - 114: {fileID: 11413858}
+  - 114: {fileID: 11480680}
   m_Layer: 0
   m_Name: EnemyCar
   m_TagString: Enemy
@@ -105,7 +105,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 93173285c176cfb4cb7e9d06ba78f4a1, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -129,7 +129,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 93173285c176cfb4cb7e9d06ba78f4a1, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -223,6 +223,7 @@ MonoBehaviour:
   horizontalSpeed: 15
   leftLaneX: -7
   rightLaneX: 7
+  healthBar: {fileID: 0}
 --- !u!114 &11401348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,7 +250,7 @@ MonoBehaviour:
   maxTiltRoll: 2
   maxTiltYaw: 1
   tiltSpeed: .100000001
---- !u!114 &11458476
+--- !u!114 &11480680
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -257,16 +258,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 178042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71d24a9e256781c4781d9b9edf215318, type: 3}
+  m_Script: {fileID: 11500000, guid: 5457d18e719bac74989afd2851292238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  ForceMinSpeed: 1000
-  ForceMaxSpeed: 2000
-  YvectorRangeMin: 1000
-  YvectorRangeMax: 2000
-  maxTorqueSpeed: 1000
-  Explosion: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
+  maxTiltRoll: 2
+  maxTiltYaw: 1
+  tiltSpeed: .100000001
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
