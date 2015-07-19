@@ -805,7 +805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &400384
 Transform:
   m_ObjectHideFlags: 1
@@ -851,7 +851,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: .650465965, y: .434385449, z: .00227056327}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 442730}
@@ -1039,7 +1039,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181752}
   m_LocalRotation: {x: -.00351510593, y: .993591785, z: -.112973101, w: -.0003998334}
-  m_LocalPosition: {x: -.800000012, y: 12.3999996, z: 165.699997}
+  m_LocalPosition: {x: 21.2998409, y: 12.0091963, z: 164.919769}
   m_LocalScale: {x: .899999976, y: .884999812, z: .0999999791}
   m_Children: []
   m_Father: {fileID: 471642}
@@ -1299,7 +1299,7 @@ Transform:
   m_GameObject: {fileID: 133112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.464999974, y: 3.22500014, z: -.622001648}
-  m_LocalScale: {x: 133.333359, y: 200, z: 199.999969}
+  m_LocalScale: {x: 131.842697, y: 197.764023, z: 197.763992}
   m_Children: []
   m_Father: {fileID: 416768}
   m_RootOrder: 8
@@ -2207,7 +2207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vehicle: {fileID: 11493650}
-  meshRenderer: {fileID: 0}
+  meshRenderer: {fileID: 2307542}
 --- !u!114 &11425642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2254,7 +2254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vehicle: {fileID: 11493650}
-  meshRenderer: {fileID: 0}
+  meshRenderer: {fileID: 2398216}
 --- !u!114 &11477972
 MonoBehaviour:
   m_ObjectHideFlags: 1

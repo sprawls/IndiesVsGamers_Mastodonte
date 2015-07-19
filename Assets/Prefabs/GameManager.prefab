@@ -34,6 +34,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &103588
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 451662}
+  - 82: {fileID: 8226156}
+  - 114: {fileID: 11467216}
+  m_Layer: 11
+  m_Name: PencilVoices
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &104960
 GameObject:
   m_ObjectHideFlags: 1
@@ -63,23 +80,6 @@ GameObject:
   - 114: {fileID: 11441828}
   m_Layer: 5
   m_Name: Darkenator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &107608
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 475886}
-  - 82: {fileID: 8212004}
-  - 114: {fileID: 11403336}
-  m_Layer: 11
-  m_Name: PlayerVoices
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,6 +187,23 @@ GameObject:
   - 225: {fileID: 22532198}
   m_Layer: 5
   m_Name: UsernameField
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &119922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 488682}
+  - 82: {fileID: 8248804}
+  - 114: {fileID: 11475734}
+  m_Layer: 11
+  m_Name: PlayerVoices
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -664,23 +681,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!1 &174020
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 453122}
-  - 82: {fileID: 8282908}
-  - 114: {fileID: 11484300}
-  m_Layer: 11
-  m_Name: StalinVoices
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &174244
 GameObject:
   m_ObjectHideFlags: 1
@@ -855,6 +855,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &195534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 461802}
+  - 82: {fileID: 8242414}
+  - 114: {fileID: 11442284}
+  m_Layer: 11
+  m_Name: StalinVoices
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &196048
 GameObject:
   m_ObjectHideFlags: 1
@@ -919,8 +936,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 439452}
-  - {fileID: 475886}
-  - {fileID: 453122}
+  - {fileID: 488682}
+  - {fileID: 461802}
+  - {fileID: 451662}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &439452
@@ -936,36 +954,48 @@ Transform:
   - {fileID: 22468906}
   m_Father: {fileID: 424670}
   m_RootOrder: 0
---- !u!4 &453122
+--- !u!4 &451662
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 174020}
+  m_GameObject: {fileID: 103588}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: -89.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 424670}
+  m_RootOrder: 3
+--- !u!4 &461802
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: -89.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 424670}
   m_RootOrder: 2
---- !u!4 &475886
+--- !u!4 &488682
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 107608}
+  m_GameObject: {fileID: 119922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: -89.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 424670}
   m_RootOrder: 1
---- !u!82 &8212004
+--- !u!82 &8226156
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 107608}
+  m_GameObject: {fileID: 103588}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24324056, guid: 6724317c086cc054b9195e3523e71a15,
@@ -1030,12 +1060,82 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!82 &8282908
+--- !u!82 &8242414
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 174020}
+  m_GameObject: {fileID: 195534}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24324056, guid: 6724317c086cc054b9195e3523e71a15,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!82 &8248804
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119922}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24324056, guid: 6724317c086cc054b9195e3523e71a15,
@@ -1169,96 +1269,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
---- !u!114 &11403336
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 107608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc38969021684c34c912b20fb1fdb565, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  AirDowns:
-  - {fileID: 8300000, guid: 695a2c9b06c52d346876ba9a1501c9d8, type: 3}
-  - {fileID: 8300000, guid: 3768a32fb0102354e9c9ff4f36987a15, type: 3}
-  - {fileID: 8300000, guid: 6da349f9579b3954a8655809b77a876f, type: 3}
-  - {fileID: 8300000, guid: 9f6cf45865e6d504d95e1e7c94cd2889, type: 3}
-  - {fileID: 8300000, guid: cc566ef4fea510740ac93b16b69f73a3, type: 3}
-  - {fileID: 8300000, guid: 7d18e559591f8d7449cee53279e85036, type: 3}
-  - {fileID: 8300000, guid: a38e765c8e500814ebd1526feed9db73, type: 3}
-  - {fileID: 8300000, guid: 2f8843102b1b43c4f990430b55dcb60a, type: 3}
-  - {fileID: 8300000, guid: 988d64758cb975649bb52ba214bf911c, type: 3}
-  CarHit:
-  - {fileID: 8300000, guid: 9fb3f205c232d2b4c96379b13a9a09e6, type: 3}
-  - {fileID: 8300000, guid: 49cdce4d605adcc479a0ec50965b38ef, type: 3}
-  - {fileID: 8300000, guid: 370e0f9eb1bfda6469efad83abb8e19b, type: 3}
-  - {fileID: 8300000, guid: 56e963c23c96a7146a432362a55f147d, type: 3}
-  - {fileID: 8300000, guid: 931574502b7db2041b04580cb51ec399, type: 3}
-  - {fileID: 8300000, guid: 90d420c254e2eb4499b58457059df923, type: 3}
-  - {fileID: 8300000, guid: 7c227a5c986f90d4e825852b1abadf71, type: 3}
-  - {fileID: 8300000, guid: 708270d2327700040b79fd82a3b2b52d, type: 3}
-  - {fileID: 8300000, guid: e74cc4964d464a84a877325306ff555c, type: 3}
-  - {fileID: 8300000, guid: 1d57650306432d74fb5021be081d845f, type: 3}
-  - {fileID: 8300000, guid: ab6025f2452069c4eb8667f2fd57b921, type: 3}
-  - {fileID: 8300000, guid: 29cc629fe3b61a041a16a7723cd9e030, type: 3}
-  PedHit:
-  - {fileID: 8300000, guid: 987776ab8d687bf468a9d040dd97dc05, type: 3}
-  - {fileID: 8300000, guid: 4bd1bc9aaa03f7c4a9825afb4ff4952d, type: 3}
-  - {fileID: 8300000, guid: 06978f67d1c79e84e8efd21005602fe8, type: 3}
-  - {fileID: 8300000, guid: 9a2e5eedb9f85be49b8ced32496c7156, type: 3}
-  - {fileID: 8300000, guid: ad25d3457b49e7142956180b86dcb492, type: 3}
-  - {fileID: 8300000, guid: fc8f05cee9918414890cdd6f3699ba7c, type: 3}
-  Yeahs: []
-  BehindBar:
-  - {fileID: 8300000, guid: 90826418dd6a42f49996cc387a808bb0, type: 3}
-  LikeNew:
-  - {fileID: 8300000, guid: 95e1fa8a727e1d6449e548cdee52c17d, type: 3}
-  - {fileID: 8300000, guid: daf158aad55c3f44bbe1fda2d4b3fd22, type: 3}
-  - {fileID: 8300000, guid: c46ade8909e7e484a87d289822b10577, type: 3}
-  GameOver:
-  - {fileID: 8300000, guid: 70e104fdf8e75aa44807d11d0ba27792, type: 3}
-  - {fileID: 8300000, guid: bb59a170280ccaa4d8232ea160d3cace, type: 3}
-  - {fileID: 8300000, guid: ffc621738a22b874093ddee5d5d31878, type: 3}
-  - {fileID: 8300000, guid: 78e339361d9204445b2d793d34a4a267, type: 3}
-  Pause:
-  - {fileID: 8300000, guid: 03f12ed5e57ec7d4280b7f5f2f72ed40, type: 3}
-  - {fileID: 8300000, guid: 35adc20204d71c84da883d2a3ddf85d1, type: 3}
-  - {fileID: 8300000, guid: bcf51764dd617d948bd848b912e7919e, type: 3}
-  - {fileID: 8300000, guid: 8bbed3d1c7480204fb93be30edc06021, type: 3}
-  - {fileID: 8300000, guid: 88c476a2e324be041b81a12fc49c61a2, type: 3}
-  Scores:
-  - {fileID: 8300000, guid: 581c55802bedc4e4f90d9f684b86830f, type: 3}
-  - {fileID: 8300000, guid: ab813c2a18fac5a43bc048bd404588e5, type: 3}
-  - {fileID: 8300000, guid: 1e070efbfad05a0499c6cd68a8780150, type: 3}
-  - {fileID: 8300000, guid: 612b045ff0d40884795e5aac87574a66, type: 3}
-  - {fileID: 8300000, guid: c78547c3cbddb5045a580a059a19cb99, type: 3}
-  - {fileID: 8300000, guid: 1a91fdd9e072cc9429a62b41dd66a002, type: 3}
-  - {fileID: 8300000, guid: b510fd7dec2bd1848beb6baedb78768c, type: 3}
-  - {fileID: 8300000, guid: 1e89e1e4d02fa07488fe51ae3697d7f1, type: 3}
-  - {fileID: 8300000, guid: 1e39067227821e54c94705179abf1b66, type: 3}
-  Taunts:
-  - {fileID: 8300000, guid: 52abe0e70e1db464aa5f8d9597a08ef5, type: 3}
-  - {fileID: 8300000, guid: 0ec257d0d03267e4a83a5064f0f87d11, type: 3}
-  - {fileID: 8300000, guid: 7cc6570d756d2744c9ddbca3aa739b9c, type: 3}
-  - {fileID: 8300000, guid: 8e776cd889230a5488890bc4cffdcc7d, type: 3}
-  - {fileID: 8300000, guid: 57838c29cb11b574e85b61c07746d77f, type: 3}
-  - {fileID: 8300000, guid: 7cc6570d756d2744c9ddbca3aa739b9c, type: 3}
-  - {fileID: 8300000, guid: 67862e49cd0c2b6409432ad60e4c1ae0, type: 3}
-  - {fileID: 8300000, guid: c9258f7c77f2422468b4e6670573374c, type: 3}
-  PoliceAlarm:
-  - {fileID: 8300000, guid: 18d5995782b9387498a89eb5bb41f66d, type: 3}
-  Justice:
-  - {fileID: 8300000, guid: 6b8f56ef28f142b498a789813759b552, type: 3}
-  - {fileID: 8300000, guid: 6a76021a55a2d4a4db7e5ef3d3d66a34, type: 3}
-  - {fileID: 8300000, guid: 0f9fa1c248bd8414886ff3b6dc6dd139, type: 3}
-  - {fileID: 8300000, guid: b3c38da4c5e99524382bee4748782148, type: 3}
-  - {fileID: 8300000, guid: cb2fb3c6683b1af48ae8aca3b98532b5, type: 3}
-  - {fileID: 8300000, guid: a47b8f74b6ee63e4189dbb8ed4e4b9ac, type: 3}
-  - {fileID: 8300000, guid: 5c527ff557b350943acc40311df75427, type: 3}
-  nineThousands: {fileID: 8300000, guid: 2527417dcb6778244a28a3b0bd2e8525, type: 3}
 --- !u!114 &11403536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1785,6 +1795,58 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11442284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c9a5241b1c921469ff6e9102c57d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  AirDowns: []
+  CarHit: []
+  PedHit:
+  - {fileID: 8300000, guid: 8a5cbf8b0811a1c4ab15e3574fb6c7d3, type: 3}
+  - {fileID: 8300000, guid: d245bf7c54edb9a4da9454b9d12e77e6, type: 3}
+  - {fileID: 8300000, guid: eacae6898b5f41543a0d2c57a37b1016, type: 3}
+  Yeahs: []
+  BehindBar: []
+  LikeNew: []
+  GameOver: []
+  Pause: []
+  Scores: []
+  Taunts:
+  - {fileID: 8300000, guid: 76f876dfbf8cd9a42bc6a183140c7864, type: 3}
+  - {fileID: 8300000, guid: 6a4485a3818a83747b5c94f0771bdb54, type: 3}
+  - {fileID: 8300000, guid: 48fad6e96dc6ecf4f9947080c192edaf, type: 3}
+  - {fileID: 8300000, guid: 0eedf1c3610b9df438d8d93b469841db, type: 3}
+  - {fileID: 8300000, guid: 1a131e5c9028dbe46af133f7cbb6d08f, type: 3}
+  - {fileID: 8300000, guid: bf43a5605c755774a92201d72fe9c17f, type: 3}
+  - {fileID: 8300000, guid: 4674625ae5346ca4e94e552d1eda43bf, type: 3}
+  - {fileID: 8300000, guid: 3f3f2cb2b5a12a94f9155b64afba0b7f, type: 3}
+  - {fileID: 8300000, guid: 94d0c845b4fd05149be73dbd980ca491, type: 3}
+  - {fileID: 8300000, guid: c1bb97223b940b9419eed17cc058701a, type: 3}
+  - {fileID: 8300000, guid: aa7bf2d1314f919458760c3b501c59ab, type: 3}
+  - {fileID: 8300000, guid: 53e8f370f8e0a284687b35cbc9ead3f9, type: 3}
+  - {fileID: 8300000, guid: 4a4c1f5ad381a434ea7ef930a9c4d14a, type: 3}
+  - {fileID: 8300000, guid: 7119fae8245fb5d428d0e8f4dbfc0455, type: 3}
+  - {fileID: 8300000, guid: 15d13b4d96a626e42819438435dd5f56, type: 3}
+  - {fileID: 8300000, guid: 60e336362b299ba4a8b34308a4a50af2, type: 3}
+  - {fileID: 8300000, guid: 5bc78b7ff83ba7f4d9f70613d231d164, type: 3}
+  - {fileID: 8300000, guid: fe7d9825a25c41e4f8118c94f5de36de, type: 3}
+  PoliceAlarm: []
+  Justice: []
+  nineThousands: {fileID: 0}
+  onHit:
+  - {fileID: 8300000, guid: e33f4c74730d8644e8edad1b6900e4fd, type: 3}
+  - {fileID: 8300000, guid: 5ec793d4dd273a546bb59fbd4529e246, type: 3}
+  - {fileID: 8300000, guid: 3bcab6683e76c3645a3c5028dee8d3db, type: 3}
+  intro:
+  - {fileID: 8300000, guid: 76f876dfbf8cd9a42bc6a183140c7864, type: 3}
 --- !u!114 &11446050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2160,6 +2222,7 @@ MonoBehaviour:
   phase3Time: 15
   voices_player: {fileID: 0}
   voices_stalin: {fileID: 0}
+  voices_pencil: {fileID: 0}
 --- !u!114 &11467118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2233,6 +2296,34 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &11467216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39bbb6dfca35c9a49bff8a299e38377b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  AirDowns: []
+  CarHit: []
+  PedHit: []
+  Yeahs: []
+  BehindBar: []
+  LikeNew: []
+  GameOver: []
+  Pause: []
+  Scores: []
+  Taunts: []
+  PoliceAlarm: []
+  Justice: []
+  nineThousands: {fileID: 0}
+  intro:
+  - {fileID: 8300000, guid: 247602f82212a70408bf35ac2b175bb3, type: 3}
+  - {fileID: 8300000, guid: d2d2afdf443784c4f92394317df791cd, type: 3}
 --- !u!114 &11467816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2378,6 +2469,96 @@ MonoBehaviour:
   m_EffectColor: {r: .152941182, g: .152941182, b: .152941182, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &11475734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc38969021684c34c912b20fb1fdb565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  AirDowns:
+  - {fileID: 8300000, guid: 695a2c9b06c52d346876ba9a1501c9d8, type: 3}
+  - {fileID: 8300000, guid: 3768a32fb0102354e9c9ff4f36987a15, type: 3}
+  - {fileID: 8300000, guid: 6da349f9579b3954a8655809b77a876f, type: 3}
+  - {fileID: 8300000, guid: 9f6cf45865e6d504d95e1e7c94cd2889, type: 3}
+  - {fileID: 8300000, guid: cc566ef4fea510740ac93b16b69f73a3, type: 3}
+  - {fileID: 8300000, guid: 7d18e559591f8d7449cee53279e85036, type: 3}
+  - {fileID: 8300000, guid: a38e765c8e500814ebd1526feed9db73, type: 3}
+  - {fileID: 8300000, guid: 2f8843102b1b43c4f990430b55dcb60a, type: 3}
+  - {fileID: 8300000, guid: 988d64758cb975649bb52ba214bf911c, type: 3}
+  CarHit:
+  - {fileID: 8300000, guid: 9fb3f205c232d2b4c96379b13a9a09e6, type: 3}
+  - {fileID: 8300000, guid: 49cdce4d605adcc479a0ec50965b38ef, type: 3}
+  - {fileID: 8300000, guid: 370e0f9eb1bfda6469efad83abb8e19b, type: 3}
+  - {fileID: 8300000, guid: 56e963c23c96a7146a432362a55f147d, type: 3}
+  - {fileID: 8300000, guid: 931574502b7db2041b04580cb51ec399, type: 3}
+  - {fileID: 8300000, guid: 90d420c254e2eb4499b58457059df923, type: 3}
+  - {fileID: 8300000, guid: 7c227a5c986f90d4e825852b1abadf71, type: 3}
+  - {fileID: 8300000, guid: 708270d2327700040b79fd82a3b2b52d, type: 3}
+  - {fileID: 8300000, guid: e74cc4964d464a84a877325306ff555c, type: 3}
+  - {fileID: 8300000, guid: 1d57650306432d74fb5021be081d845f, type: 3}
+  - {fileID: 8300000, guid: ab6025f2452069c4eb8667f2fd57b921, type: 3}
+  - {fileID: 8300000, guid: 29cc629fe3b61a041a16a7723cd9e030, type: 3}
+  PedHit:
+  - {fileID: 8300000, guid: 987776ab8d687bf468a9d040dd97dc05, type: 3}
+  - {fileID: 8300000, guid: 4bd1bc9aaa03f7c4a9825afb4ff4952d, type: 3}
+  - {fileID: 8300000, guid: 06978f67d1c79e84e8efd21005602fe8, type: 3}
+  - {fileID: 8300000, guid: 9a2e5eedb9f85be49b8ced32496c7156, type: 3}
+  - {fileID: 8300000, guid: ad25d3457b49e7142956180b86dcb492, type: 3}
+  - {fileID: 8300000, guid: fc8f05cee9918414890cdd6f3699ba7c, type: 3}
+  Yeahs: []
+  BehindBar:
+  - {fileID: 8300000, guid: 90826418dd6a42f49996cc387a808bb0, type: 3}
+  LikeNew:
+  - {fileID: 8300000, guid: 95e1fa8a727e1d6449e548cdee52c17d, type: 3}
+  - {fileID: 8300000, guid: daf158aad55c3f44bbe1fda2d4b3fd22, type: 3}
+  - {fileID: 8300000, guid: c46ade8909e7e484a87d289822b10577, type: 3}
+  GameOver:
+  - {fileID: 8300000, guid: 70e104fdf8e75aa44807d11d0ba27792, type: 3}
+  - {fileID: 8300000, guid: bb59a170280ccaa4d8232ea160d3cace, type: 3}
+  - {fileID: 8300000, guid: ffc621738a22b874093ddee5d5d31878, type: 3}
+  - {fileID: 8300000, guid: 78e339361d9204445b2d793d34a4a267, type: 3}
+  Pause:
+  - {fileID: 8300000, guid: 03f12ed5e57ec7d4280b7f5f2f72ed40, type: 3}
+  - {fileID: 8300000, guid: 35adc20204d71c84da883d2a3ddf85d1, type: 3}
+  - {fileID: 8300000, guid: bcf51764dd617d948bd848b912e7919e, type: 3}
+  - {fileID: 8300000, guid: 8bbed3d1c7480204fb93be30edc06021, type: 3}
+  - {fileID: 8300000, guid: 88c476a2e324be041b81a12fc49c61a2, type: 3}
+  Scores:
+  - {fileID: 8300000, guid: 581c55802bedc4e4f90d9f684b86830f, type: 3}
+  - {fileID: 8300000, guid: ab813c2a18fac5a43bc048bd404588e5, type: 3}
+  - {fileID: 8300000, guid: 1e070efbfad05a0499c6cd68a8780150, type: 3}
+  - {fileID: 8300000, guid: 612b045ff0d40884795e5aac87574a66, type: 3}
+  - {fileID: 8300000, guid: c78547c3cbddb5045a580a059a19cb99, type: 3}
+  - {fileID: 8300000, guid: 1a91fdd9e072cc9429a62b41dd66a002, type: 3}
+  - {fileID: 8300000, guid: b510fd7dec2bd1848beb6baedb78768c, type: 3}
+  - {fileID: 8300000, guid: 1e89e1e4d02fa07488fe51ae3697d7f1, type: 3}
+  - {fileID: 8300000, guid: 1e39067227821e54c94705179abf1b66, type: 3}
+  Taunts:
+  - {fileID: 8300000, guid: 52abe0e70e1db464aa5f8d9597a08ef5, type: 3}
+  - {fileID: 8300000, guid: 0ec257d0d03267e4a83a5064f0f87d11, type: 3}
+  - {fileID: 8300000, guid: 7cc6570d756d2744c9ddbca3aa739b9c, type: 3}
+  - {fileID: 8300000, guid: 8e776cd889230a5488890bc4cffdcc7d, type: 3}
+  - {fileID: 8300000, guid: 57838c29cb11b574e85b61c07746d77f, type: 3}
+  - {fileID: 8300000, guid: 7cc6570d756d2744c9ddbca3aa739b9c, type: 3}
+  - {fileID: 8300000, guid: 67862e49cd0c2b6409432ad60e4c1ae0, type: 3}
+  - {fileID: 8300000, guid: c9258f7c77f2422468b4e6670573374c, type: 3}
+  PoliceAlarm:
+  - {fileID: 8300000, guid: 18d5995782b9387498a89eb5bb41f66d, type: 3}
+  Justice:
+  - {fileID: 8300000, guid: 6b8f56ef28f142b498a789813759b552, type: 3}
+  - {fileID: 8300000, guid: 6a76021a55a2d4a4db7e5ef3d3d66a34, type: 3}
+  - {fileID: 8300000, guid: 0f9fa1c248bd8414886ff3b6dc6dd139, type: 3}
+  - {fileID: 8300000, guid: b3c38da4c5e99524382bee4748782148, type: 3}
+  - {fileID: 8300000, guid: cb2fb3c6683b1af48ae8aca3b98532b5, type: 3}
+  - {fileID: 8300000, guid: a47b8f74b6ee63e4189dbb8ed4e4b9ac, type: 3}
+  - {fileID: 8300000, guid: 5c527ff557b350943acc40311df75427, type: 3}
+  nineThousands: {fileID: 8300000, guid: 2527417dcb6778244a28a3b0bd2e8525, type: 3}
 --- !u!114 &11476840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2470,56 +2651,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 1
---- !u!114 &11484300
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 174020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29c9a5241b1c921469ff6e9102c57d0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  AirDowns: []
-  CarHit: []
-  PedHit:
-  - {fileID: 8300000, guid: 8a5cbf8b0811a1c4ab15e3574fb6c7d3, type: 3}
-  - {fileID: 8300000, guid: d245bf7c54edb9a4da9454b9d12e77e6, type: 3}
-  - {fileID: 8300000, guid: eacae6898b5f41543a0d2c57a37b1016, type: 3}
-  Yeahs: []
-  BehindBar: []
-  LikeNew: []
-  GameOver: []
-  Pause: []
-  Scores: []
-  Taunts:
-  - {fileID: 8300000, guid: 76f876dfbf8cd9a42bc6a183140c7864, type: 3}
-  - {fileID: 8300000, guid: 6a4485a3818a83747b5c94f0771bdb54, type: 3}
-  - {fileID: 8300000, guid: 48fad6e96dc6ecf4f9947080c192edaf, type: 3}
-  - {fileID: 8300000, guid: 0eedf1c3610b9df438d8d93b469841db, type: 3}
-  - {fileID: 8300000, guid: 1a131e5c9028dbe46af133f7cbb6d08f, type: 3}
-  - {fileID: 8300000, guid: bf43a5605c755774a92201d72fe9c17f, type: 3}
-  - {fileID: 8300000, guid: 4674625ae5346ca4e94e552d1eda43bf, type: 3}
-  - {fileID: 8300000, guid: 3f3f2cb2b5a12a94f9155b64afba0b7f, type: 3}
-  - {fileID: 8300000, guid: 94d0c845b4fd05149be73dbd980ca491, type: 3}
-  - {fileID: 8300000, guid: c1bb97223b940b9419eed17cc058701a, type: 3}
-  - {fileID: 8300000, guid: aa7bf2d1314f919458760c3b501c59ab, type: 3}
-  - {fileID: 8300000, guid: 53e8f370f8e0a284687b35cbc9ead3f9, type: 3}
-  - {fileID: 8300000, guid: 4a4c1f5ad381a434ea7ef930a9c4d14a, type: 3}
-  - {fileID: 8300000, guid: 7119fae8245fb5d428d0e8f4dbfc0455, type: 3}
-  - {fileID: 8300000, guid: 15d13b4d96a626e42819438435dd5f56, type: 3}
-  - {fileID: 8300000, guid: 60e336362b299ba4a8b34308a4a50af2, type: 3}
-  - {fileID: 8300000, guid: 5bc78b7ff83ba7f4d9f70613d231d164, type: 3}
-  - {fileID: 8300000, guid: fe7d9825a25c41e4f8118c94f5de36de, type: 3}
-  PoliceAlarm: []
-  Justice: []
-  nineThousands: {fileID: 0}
-  onHit:
-  - {fileID: 8300000, guid: e33f4c74730d8644e8edad1b6900e4fd, type: 3}
-  - {fileID: 8300000, guid: 5ec793d4dd273a546bb59fbd4529e246, type: 3}
-  - {fileID: 8300000, guid: 3bcab6683e76c3645a3c5028dee8d3db, type: 3}
 --- !u!114 &11484522
 MonoBehaviour:
   m_ObjectHideFlags: 1

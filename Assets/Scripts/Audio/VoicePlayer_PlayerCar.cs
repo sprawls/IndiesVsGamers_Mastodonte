@@ -28,7 +28,9 @@ public class VoicePlayer_PlayerCar : VoicePlayer {
     }
 
     public void PlayCarHit() {
-        AudioClip random = CarHit[Random.Range(0, CarHit.Length)];
+        int i = Random.Range(0, CarHit.Length);
+        Debug.Log(i);
+        AudioClip random = CarHit[i];
         PlaySoundFX(random);
     }
 
