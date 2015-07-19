@@ -2863,7 +2863,15 @@ MonoBehaviour:
   LikeNew: []
   GameOver: []
   Pause: []
-  Scores: []
+  Scores:
+  - {fileID: 8300000, guid: b5d8c9dea96dd924a8e8ff95ad43b55e, type: 3}
+  - {fileID: 8300000, guid: 7dae47b1033282d47970275d0c05860b, type: 3}
+  - {fileID: 8300000, guid: 50cbc825e71541944a2a4ffd8152bd8f, type: 3}
+  - {fileID: 8300000, guid: fa1ee8e2709a64c4182fefec05352583, type: 3}
+  - {fileID: 8300000, guid: d62403b61c7d5b54c90849638ce3dfce, type: 3}
+  - {fileID: 8300000, guid: 9547e262243a93f46ad695475ad16419, type: 3}
+  - {fileID: 8300000, guid: bfd349c465292a5458262e1fa2727cfd, type: 3}
+  - {fileID: 8300000, guid: d3efe7968939c01439bb05b254a974d1, type: 3}
   Taunts: []
   PoliceAlarm: []
   Justice: []
