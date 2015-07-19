@@ -6,7 +6,7 @@ public class Obstacle : MonoBehaviour {
     //VARIABLES
     public enum Type { car, parkedCar, cone, pedestrian, flying}
     public Type type;
-    private bool knockInTheAir = false;
+    public bool knockInTheAir = false;
     [Header("Stats")]
     public int maxHealth;
     private int health;

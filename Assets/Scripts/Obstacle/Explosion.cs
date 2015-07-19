@@ -25,6 +25,7 @@ public class Explosion : MonoBehaviour {
         if (obstacle != null && !target.Contains(obstacle.gameObject)) {
             target.Add(obstacle.gameObject);
             other.transform.GetComponentInParent<Rigidbody>().AddExplosionForce(explosionForce, gameObject.transform.position, radius, 400f);
+            other.transform.GetComponentInParent<Obstacle>().knockInTheAir = true;
         }
         Enemy_Manager enemy = other.GetComponentInParent<Enemy_Manager>();
         if ( enemy != null && !target.Contains(enemy.gameObject)) {
