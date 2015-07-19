@@ -25,14 +25,20 @@ public class Enemy_Manager : MonoBehaviour{
         carTilt = gameObject.GetComponent<CarTilt>();
         SwitchState(State.RandomPathing);
         inRightLane = true;
-        healthBar = GameObject.Find("EnemyLifeBar").GetComponent<Slider>();
+        //healthBar = GameObject.Find("EnemyLifeBar").GetComponent<Slider>();
     }
 
     #region Utility Function
 
     public void TakeDamage(int damageTaken) {
-        if (health - damageTaken <= 0) Death();
-        else health -= damageTaken;
+        if (health - damageTaken <= 0) {
+            GameManager.instance.scoreSystem.AddScore(10000, gameObject, new Vector3(0, 10, 0));
+            Death();
+        }
+        else {
+            GameManager.instance.scoreSystem.AddScore(10 * damageTaken, gameObject, new Vector3(0, 10, 0));
+            health -= damageTaken;
+        }
         UpdateHealthBar();
         
     }

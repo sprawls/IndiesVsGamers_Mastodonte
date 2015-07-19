@@ -23,6 +23,11 @@ public class Obstacle : MonoBehaviour {
     [Header("Explosion")]
     public GameObject Explosion;
 
+    [Header("Points")]
+    public int scoreGivenOnDeath;
+    public int scoreGivenOnBump;
+    private bool hitByPlayer;
+
     //cooldown
     private float cooldownTimer = 0.5f;
     private bool onCooldown = false;
@@ -34,6 +39,7 @@ public class Obstacle : MonoBehaviour {
 
     void Awake() {
         health = maxHealth;
+        hitByPlayer = false;
     }
 
     #region when hit by the player
@@ -76,6 +82,10 @@ public class Obstacle : MonoBehaviour {
     #endregion
 
     void OnDeath() {
+        if (hitByPlayer) {
+            GameManager.instance.scoreSystem.AddScore(scoreGivenOnDeath, gameObject, new Vector3(0,0,0));
+            GameManager.instance.scoreSystem.AddKill(type);
+        }
         switch (type) {
             case Type.car:
                 Instantiate(Explosion, transform.position, Quaternion.identity);
@@ -100,23 +110,40 @@ public class Obstacle : MonoBehaviour {
     public void TakeDamage(int damage) {
         if (health > 0) {
             health -= damage;
+            if (type == Type.flying) GameManager.instance.scoreSystem.AddScore(100, gameObject, new Vector3(0, -20, 0));
             if (health <= 0) {
-                if (type != Type.flying) OnDeath();
+                if (type != Type.flying) {
+                    GameManager.instance.scoreSystem.AddScore(scoreGivenOnBump, gameObject, new Vector3(0, 0, 0));
+                    OnDeath();
+                }
                 else {
                     GameManager.instance.voices_player.PlayAirDown();
                     gameObject.GetComponent<Rigidbody>().useGravity = true;
                     RotationRandomDerp();
                     gameObject.GetComponent<Rigidbody>().AddForce(Random.Range(ForceMinSpeed, ForceMaxSpeed) * gameObject.transform.forward);
                     knockInTheAir = true;
+                    hitByPlayer = true;
                 }
             }
         }
     }
 
     void OnCollisionEnter(Collision other) {
+        if (knockInTheAir && hitByPlayer && other.gameObject.GetComponentInParent<Obstacle>()) { //Combo points
+            GameManager.instance.scoreSystem.AddScore(scoreGivenOnBump * 2, gameObject, new Vector3(0,10,0), true);
+        }
+
         //When colliding with the player or enemy vehicle get thrown into the air, otherwise explode on impact
         if (type == Type.flying && other.gameObject.GetComponentInParent<Enemy_Manager>() != null && knockInTheAir) OnDeath();
         else if (other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy") {
+            if (other.gameObject.tag == "Player") {
+                GameManager.instance.scoreSystem.AddScore(scoreGivenOnBump, gameObject, new Vector3(0, 0, 30));
+                hitByPlayer = true;
+            }
+            if (other.gameObject.tag == "Enemy" && hitByPlayer && type != Type.flying) {
+                GameManager.instance.scoreSystem.AddScore(5000, gameObject, new Vector3(0, 10, 0), true);
+                other.gameObject.GetComponent<Enemy_Manager>().TakeDamage(10);
+            }
             OnHit(other.transform);
             float randomChange = Random.Range(0f,1f);
 
@@ -152,5 +179,6 @@ public class Obstacle : MonoBehaviour {
                 }
             }
         } else if (knockInTheAir) OnDeath();
+        
     }
 }
