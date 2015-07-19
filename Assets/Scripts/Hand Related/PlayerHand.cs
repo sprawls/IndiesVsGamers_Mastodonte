@@ -40,7 +40,7 @@ public class PlayerHand : MonoBehaviour {
         _startModelPos = model.transform.localPosition;
         _modelRB = GetComponentInChildren<Rigidbody>();
         _mainCam = Camera.main;
-        grabbedModel.SetActive(false);
+        if(grabbedModel !=null )grabbedModel.SetActive(false);
     }
 
 
@@ -142,7 +142,7 @@ public class PlayerHand : MonoBehaviour {
 
     public void GrabAnObject(GrabbableObject grabbedObject) {
         isGrabbing = true;
-        grabbedModel.SetActive(true);
+        if (grabbedModel != null) grabbedModel.SetActive(true);
         _grabbedObject = grabbedObject;
         _grabbedObject.Grab(grabAnchor.transform, _modelRB);
     }
@@ -151,7 +151,7 @@ public class PlayerHand : MonoBehaviour {
         if (_grabbedObject.canBeDropped) {
             isGrabbing = false;
             StartCoroutine(GrabCooldown());
-            grabbedModel.SetActive(false);
+            if (grabbedModel != null) grabbedModel.SetActive(false);
             _grabbedObject.Release();
             _grabbedObject = null;
         }
@@ -160,7 +160,7 @@ public class PlayerHand : MonoBehaviour {
     public void ForceDropObject() {
         isGrabbing = false;
         StartCoroutine(GrabCooldown());
-        grabbedModel.SetActive(false);
+        if (grabbedModel != null) grabbedModel.SetActive(false);
         _grabbedObject.ForceRelease();
         _grabbedObject = null;
     }
