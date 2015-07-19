@@ -40,4 +40,8 @@ public class UI : MonoBehaviour {
     {
         GameManager.instance.DisplayLogin();
     }
+
+    public void GameOver() {
+        GameManager.instance.GameOver();
+    }
 }
