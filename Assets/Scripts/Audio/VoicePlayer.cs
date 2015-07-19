@@ -7,7 +7,7 @@ public class VoicePlayer : MonoBehaviour {
 
     protected bool isTalking = false;
 
-	void Start () {
+	public virtual void Start () {
         audioSource = GetComponent<AudioSource>();
 	}
 	
