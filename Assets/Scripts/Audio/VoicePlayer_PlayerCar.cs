@@ -16,6 +16,7 @@ public class VoicePlayer_PlayerCar : VoicePlayer {
     public AudioClip[] PoliceAlarm;
     public AudioClip[] Justice;
     public AudioClip nineThousands;
+    public AudioClip Carl;
 
     public override void Start() {
         audioSource = GetComponent<AudioSource>();
@@ -81,5 +82,9 @@ public class VoicePlayer_PlayerCar : VoicePlayer {
 
     public void Play9000() {
         PlaySoundFX(nineThousands);
+    }
+
+    public bool PlayCarl() {
+        return(PlaySoundFX(Carl));
     }
 }

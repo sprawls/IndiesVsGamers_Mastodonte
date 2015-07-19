@@ -18,13 +18,14 @@ public class VoicePlayer : MonoBehaviour {
         }
 	}
 
-    protected void PlaySoundFX(AudioClip audioClip) {
+    protected bool PlaySoundFX(AudioClip audioClip) {
         Debug.Log("Attempt to play : " + audioClip + "    isplaying? : " + isTalking);
-        if (isTalking) return;
+        if (isTalking) return false;
         isTalking = true;
         
         audioSource.clip = audioClip;
         audioSource.Play();
+        return true;
     }
 
 }

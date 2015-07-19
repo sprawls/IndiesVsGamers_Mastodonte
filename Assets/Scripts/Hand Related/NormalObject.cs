@@ -85,6 +85,7 @@ public class NormalObject : GrabbableObject {
             _canScore = false;
             GameManager.instance.addScore( (int)(amt_points * multiplier) );
             if (ScoreParticles != null) Instantiate(ScoreParticles,transform.position, Quaternion.identity);
+            PlaySound();
         }
     }
     public bool CanBeScored() {
@@ -93,6 +94,10 @@ public class NormalObject : GrabbableObject {
 
     public void Push(Vector3 point) {
         Debug.Log("Push not implemented yet!");
+    }
+
+    public virtual void PlaySound(){
+        GameManager.instance.voices_player.PlayScores();
     }
 
 }
