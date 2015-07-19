@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3336540}
   - 23: {fileID: 2326994}
   - 95: {fileID: 9537750}
+  - 65: {fileID: 6567932}
   m_Layer: 0
   m_Name: Building (4)
   m_TagString: Untagged
@@ -44,6 +45,7 @@ GameObject:
   - 33: {fileID: 3382426}
   - 23: {fileID: 2306208}
   - 95: {fileID: 9509402}
+  - 65: {fileID: 6562160}
   m_Layer: 0
   m_Name: Building (5)
   m_TagString: Untagged
@@ -157,6 +159,7 @@ GameObject:
   - 33: {fileID: 3340512}
   - 23: {fileID: 2340764}
   - 95: {fileID: 9507268}
+  - 65: {fileID: 6525326}
   m_Layer: 0
   m_Name: Building (1)
   m_TagString: Untagged
@@ -190,6 +193,7 @@ GameObject:
   - 33: {fileID: 3301204}
   - 23: {fileID: 2348220}
   - 95: {fileID: 9582218}
+  - 65: {fileID: 6545142}
   m_Layer: 0
   m_Name: Building (3)
   m_TagString: Untagged
@@ -208,6 +212,7 @@ GameObject:
   - 33: {fileID: 3313490}
   - 23: {fileID: 2360036}
   - 95: {fileID: 9578194}
+  - 65: {fileID: 6574894}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -336,6 +341,7 @@ GameObject:
   - 33: {fileID: 3317554}
   - 23: {fileID: 2342926}
   - 95: {fileID: 9587388}
+  - 65: {fileID: 6506790}
   m_Layer: 0
   m_Name: Building (2)
   m_TagString: Untagged
@@ -446,6 +452,7 @@ GameObject:
   - 33: {fileID: 3382368}
   - 23: {fileID: 2378742}
   - 95: {fileID: 9511646}
+  - 65: {fileID: 6553310}
   m_Layer: 0
   m_Name: Building (6)
   m_TagString: Untagged
@@ -1452,6 +1459,90 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105770}
   m_Mesh: {fileID: 4300000, guid: 80748d9caf4584b449bbc3c27fcf526b, type: 3}
+--- !u!65 &6506790
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165722}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 99.6233978, y: 120.610809, z: 84.8711548}
+  m_Center: {x: 1.34399021, y: 60.3054047, z: 114.430206}
+--- !u!65 &6525326
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 120818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 99.6233978, y: 120.610809, z: 84.8711548}
+  m_Center: {x: 1.34399784, y: 60.3054047, z: 114.430222}
+--- !u!65 &6545142
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135322}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 99.6234131, y: 120.610809, z: 84.8711624}
+  m_Center: {x: 1.34399796, y: 60.3054047, z: 114.430206}
+--- !u!65 &6553310
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 99.6233978, y: 120.610809, z: 84.8711548}
+  m_Center: {x: 1.34399021, y: 60.3054047, z: 114.430206}
+--- !u!65 &6562160
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 105770}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 99.6233978, y: 120.610809, z: 84.8711472}
+  m_Center: {x: 1.34399772, y: 60.3054047, z: 114.430214}
+--- !u!65 &6567932
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 99.6234131, y: 120.610809, z: 84.8711624}
+  m_Center: {x: 1.34400558, y: 60.3054047, z: 114.430237}
+--- !u!65 &6574894
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137280}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 99.6234131, y: 120.610809, z: 84.8711624}
+  m_Center: {x: 1.34399796, y: 60.3054047, z: 114.430237}
 --- !u!65 &6589026
 BoxCollider:
   m_ObjectHideFlags: 1
