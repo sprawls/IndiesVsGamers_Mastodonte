@@ -159,7 +159,7 @@ public class GameManager : MonoBehaviour {
 
 	void OnLevelWasLoaded(int level){
 		if(level == 0){
-
+			phaseOngoing = false;
 		}
 		else if(level == 1){
 			currentPhaseTime = phase1Time;
@@ -232,6 +232,7 @@ public class GameManager : MonoBehaviour {
 
 	public void BackToMenu(){
 		StartLevel_MainM0();
+		Time.timeScale = 1.0f;
 	}
 
 	public void Pause(){

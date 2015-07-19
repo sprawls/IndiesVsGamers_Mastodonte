@@ -18,10 +18,12 @@ public class UI : MonoBehaviour {
 	public void Pause(){
 		GameManager.instance.Pause();
 		transform.FindChild("PauseMenu").gameObject.SetActive(true);
+		transform.FindChild("Pause").gameObject.SetActive(false);
 	}
 
 	public void UnPause(){
 		GameManager.instance.UnPause();
 		transform.FindChild("PauseMenu").gameObject.SetActive(false);
+		transform.FindChild("Pause").gameObject.SetActive(true);
 	}
 }
