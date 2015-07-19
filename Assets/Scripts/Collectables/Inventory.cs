@@ -3,9 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Inventory {
-    public List<Collectable> collectables = new List<Collectable>();
+    public List<UpgradeType> gunUpgrade = new List<UpgradeType>();
+    //List of possible upgrade
+    public enum UpgradeType {
 
-    public void AddToInventory(Collectable collectable) {
-        collectables.Add(collectable);
+    }
+
+    public void AddToGunUpgrade(GunUpgrade upgrade) {
+        
+        gunUpgrade.Add(upgrade.type);
     }
 }
