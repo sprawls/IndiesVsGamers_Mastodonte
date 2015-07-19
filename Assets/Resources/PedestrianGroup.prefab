@@ -519,6 +519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  knockInTheAir: 0
   maxHealth: 0
   ForceMinSpeed: 700
   ForceMaxSpeed: 1500
@@ -540,6 +541,7 @@ MonoBehaviour:
   multiplier: 1
   minSpeed: 5
   maxSpeed: 7
+  mixerGroup: {fileID: 24363466, guid: 6724317c086cc054b9195e3523e71a15, type: 2}
 --- !u!114 &11423914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -554,6 +556,7 @@ MonoBehaviour:
   multiplier: 1
   minSpeed: 5
   maxSpeed: 7
+  mixerGroup: {fileID: 24363466, guid: 6724317c086cc054b9195e3523e71a15, type: 2}
 --- !u!114 &11436658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -568,6 +571,7 @@ MonoBehaviour:
   multiplier: 1
   minSpeed: 5
   maxSpeed: 7
+  mixerGroup: {fileID: 24363466, guid: 6724317c086cc054b9195e3523e71a15, type: 2}
 --- !u!114 &11441646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -580,6 +584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  knockInTheAir: 0
   maxHealth: 0
   ForceMinSpeed: 700
   ForceMaxSpeed: 1500
@@ -601,6 +606,7 @@ MonoBehaviour:
   multiplier: 1
   minSpeed: 5
   maxSpeed: 7
+  mixerGroup: {fileID: 24363466, guid: 6724317c086cc054b9195e3523e71a15, type: 2}
 --- !u!114 &11450666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -615,6 +621,7 @@ MonoBehaviour:
   multiplier: 1
   minSpeed: 5
   maxSpeed: 7
+  mixerGroup: {fileID: 24363466, guid: 6724317c086cc054b9195e3523e71a15, type: 2}
 --- !u!114 &11456522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -627,6 +634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  knockInTheAir: 0
   maxHealth: 0
   ForceMinSpeed: 700
   ForceMaxSpeed: 1500
@@ -646,6 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  knockInTheAir: 0
   maxHealth: 0
   ForceMinSpeed: 700
   ForceMaxSpeed: 1500
@@ -665,6 +674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  knockInTheAir: 0
   maxHealth: 0
   ForceMinSpeed: 700
   ForceMaxSpeed: 1500
@@ -684,6 +694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  knockInTheAir: 0
   maxHealth: 0
   ForceMinSpeed: 700
   ForceMaxSpeed: 1500
@@ -705,6 +716,7 @@ MonoBehaviour:
   multiplier: 1
   minSpeed: 5
   maxSpeed: 7
+  mixerGroup: {fileID: 24363466, guid: 6724317c086cc054b9195e3523e71a15, type: 2}
 --- !u!136 &13612372
 CapsuleCollider:
   m_ObjectHideFlags: 1

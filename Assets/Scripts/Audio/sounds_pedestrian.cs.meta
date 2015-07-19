@@ -1,11 +1,10 @@
 fileFormatVersion: 2
-guid: 2a2da7682b3520d409cb81dba81eb0b5
-timeCreated: 1437288094
+guid: 3cc5f7a23748b8047a4e26c9e16347ec
+timeCreated: 1437288447
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences:
-  - mixerGroup: {fileID: 24363466, guid: 6724317c086cc054b9195e3523e71a15, type: 2}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
