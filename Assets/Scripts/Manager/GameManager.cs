@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour {
     public Inventory inventory;
 
 	//Game loop
-	private int numberOfLevels = 2;
+	private int numberOfLevels = 1;
 	internal int currentLevel = 0;
 	internal int currentPhase = 1;
 
@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour {
 	private void EndPhase(){
 		Time.timeScale = 0.0f;
 		currentPhase = int.Parse(Application.loadedLevelName.Substring(5));
-		Debug.Log (currentPhase);
+		
 		switch(currentPhase){
 			case 1:
 				GameObject.Find("Main_UI").transform.FindChild("Phase1End").gameObject.SetActive(true);
@@ -155,8 +155,7 @@ public class GameManager : MonoBehaviour {
 			phaseOngoing = true;
 			break;
 		case 3:
-			GameObject.Find("Main_UI").transform.FindChild("Phase3End").gameObject.SetActive(false);
-			currentPhaseTime = phase1Time;
+            phaseOngoing = false;
 			StartLevel_EndGa4();
 			break;
 		default:
@@ -218,8 +217,8 @@ public class GameManager : MonoBehaviour {
 	private void CompleteLevel() {
 		currentLevel++;
 		//End Game
-		if(currentLevel < numberOfLevels){
-			GameObject.Find("Main_UI").GetComponent<UI>().DisplayNextLevelPopUp();
+		if(currentLevel < numberOfLevels){currentPhaseTime = phase1Time;
+            GameObject.Find("Main_UI").transform.FindChild("Phase3End").gameObject.SetActive(true);
 		}
 		else{
 			GameObject.Find("Main_UI").transform.FindChild("EndPopUp").gameObject.SetActive(true);
