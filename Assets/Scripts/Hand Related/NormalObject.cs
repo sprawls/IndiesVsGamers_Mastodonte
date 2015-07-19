@@ -6,7 +6,7 @@ public class NormalObject : GrabbableObject {
     public int amt_points = 10;
     public GameObject ScoreParticles;
 
-    private bool _canScore = true;
+    public bool _canScore = true;
     private Transform originalParent;
     private ConfigurableJoint confJoint;
     private Rigidbody rb;
@@ -85,6 +85,7 @@ public class NormalObject : GrabbableObject {
             _canScore = false;
             GameManager.instance.addScore( (int)(amt_points * multiplier) );
             if (ScoreParticles != null) Instantiate(ScoreParticles,transform.position, Quaternion.identity);
+            PlaySound();
         }
     }
     public bool CanBeScored() {
@@ -93,6 +94,10 @@ public class NormalObject : GrabbableObject {
 
     public void Push(Vector3 point) {
         Debug.Log("Push not implemented yet!");
+    }
+
+    public virtual void PlaySound(){
+        GameManager.instance.voices_player.PlayScores();
     }
 
 }
