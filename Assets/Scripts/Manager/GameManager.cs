@@ -80,12 +80,11 @@ public class GameManager : MonoBehaviour {
 			
 			if(api.IsConnected()){
 				api.SendScore(score, score + " Justice");
-				StartCoroutine("DelayBeforeLeaderBoard");
 			}
-			else{
+			/*else{
 				api.Login();
 				StartCoroutine("WaitForLogin");
-			}
+			}*/
 			break;
 		default:
 			break;
@@ -185,12 +184,12 @@ public class GameManager : MonoBehaviour {
 
 			if(api.IsConnected()){
 				api.SendScore(score, score + " Justice");
-				StartCoroutine("DelayBeforeLeaderBoard");
+				//StartCoroutine("DelayBeforeLeaderBoard");
 			}
-			else{
+			/*else{
 				api.Login();
 				StartCoroutine("WaitForLogin");
-			}
+			}*/
 		}
 	}
 	
@@ -206,26 +205,28 @@ public class GameManager : MonoBehaviour {
 	}
 
 	IEnumerator WaitForLogin() {
-		while (!api.IsConnected()){
+        float timerCount = 0;
+		while (!api.IsConnected() && timerCount < 10f){
+            timerCount += Time.deltaTime;
 			yield return new WaitForEndOfFrame();
 		}
 
 		api.SendScore(score, score + " Justice");
-		api.ShowScore();
-		StartCoroutine("DelayBeforeLeaderBoard");
 	}
 
-	IEnumerator DelayBeforeLeaderBoard(){
+	/*IEnumerator DelayBeforeLeaderBoard(){
 		yield return new WaitForSeconds(2);
 		api.ShowScore();
-	}
+	}*/
 	
 	#endregion
 	
 	#region UI calls
 
 	public void login(){
-		api.Login();
+        api.Login();
+        score = 1000;
+        StartCoroutine(WaitForLogin());
 	}
 
 	public void NextLevel(){
