@@ -77,4 +77,8 @@ public class VehiculeManager : MonoBehaviour {
     }
 
     #endregion
+
+    #region Gyrophares
+
+    #endregion
 }
