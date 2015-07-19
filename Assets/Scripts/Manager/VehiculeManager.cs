@@ -127,6 +127,10 @@ public class VehiculeManager : MonoBehaviour {
         foreach (Transform t in ts) {
             if (t != Window.transform) Destroy(t.gameObject);
         }
+        wipe[] wipers = GetComponentsInChildren<wipe>();
+        foreach (wipe w in wipers) {
+            w.Wipe();
+        }
         yield return new WaitForSeconds(wipersCooldown);
         canWipe = true;
 
