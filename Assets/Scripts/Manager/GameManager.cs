@@ -132,12 +132,15 @@ public class GameManager : MonoBehaviour {
 		switch(currentPhase){
 			case 1:
 				GameObject.Find("Main_UI").transform.FindChild("Phase1End").gameObject.SetActive(true);
+                Cursor.visible = true;
 				break;
 			case 2:
 				GameObject.Find("Main_UI").transform.FindChild("Phase2End").gameObject.SetActive(true);
+                Cursor.visible = true;
 				break;
 			case 3:
 				CompleteLevel();
+                Cursor.visible = true;
 				break;
 			default:
 				StartLevel_Phase1();
@@ -192,24 +195,29 @@ public class GameManager : MonoBehaviour {
 	void OnLevelWasLoaded(int level){
 		if(level == 0){
 			phaseOngoing = false;
+            Cursor.visible = true;
 		}
 		else if(level == 1){
 			currentPhaseTime = phase1Time;
 			phaseOngoing = true;
+            Cursor.visible = false;
 		}
 		else if(level == 2){
 			currentPhaseTime = phase2Time;
 			phaseOngoing = true;
 			GameObject.Find("Main_UI").transform.FindChild("EnemyLifeBar").gameObject.SetActive(true);
+            Cursor.visible = false;
 		}
 		if(level == 3){
 			currentPhaseTime = phase3Time;
 			phaseOngoing = true;
+            Cursor.visible = false;
 		}
 		if(level == 4){
 			phaseOngoing = false;
 			currentPhaseTime = 0;
 			GameObject.Find("Main_UI").transform.FindChild("FinalScore").GetComponent<Text>().text = score.ToString("000000000");
+            Cursor.visible = true;
 
 			if(api.IsConnected()){
 				api.SendScore(score, score + " Justice");
@@ -289,6 +297,16 @@ public class GameManager : MonoBehaviour {
 	public void Quit(){
 		Application.Quit();
 	}
+
+
+    public void DisplayScoreBoard()
+    {
+        api.ShowScore();
+    }
+    public void DisplayLogin()
+    {
+        api.Login();
+    }
 	
 	#endregion
 

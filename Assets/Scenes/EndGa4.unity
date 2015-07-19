@@ -855,13 +855,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1979439249}
-        m_MethodName: ShowLeaderboards
+      - m_Target: {fileID: 1949784997}
+        m_MethodName: DisplayScoreBoard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1137,6 +1136,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
 --- !u!4 &1170477045
 Transform:
   m_ObjectHideFlags: 0
@@ -1209,6 +1209,7 @@ MonoBehaviour:
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
+  m_RepeatDelay: .5
   m_AllowActivationOnMobileDevice: 0
 --- !u!114 &1367861332
 MonoBehaviour:
@@ -1483,13 +1484,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1979439249}
-        m_MethodName: ShowSignIn
+      - m_Target: {fileID: 1949784997}
+        m_MethodName: DisplayLogin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1665,9 +1665,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 926ab5fa5bf4c354b99400badde89012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1979439249 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11495756, guid: f18112959dce32b4faba838fcab5f9d9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1085697607}
-  m_Script: {fileID: 11500000, guid: 2549765799de33e4c92ba783cf32d16b, type: 3}
