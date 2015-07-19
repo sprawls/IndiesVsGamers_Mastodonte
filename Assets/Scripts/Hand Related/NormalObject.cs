@@ -6,7 +6,7 @@ public class NormalObject : GrabbableObject {
     public int amt_points = 10;
     public GameObject ScoreParticles;
 
-    private bool _canScore = true;
+    public bool _canScore = true;
     private Transform originalParent;
     private ConfigurableJoint confJoint;
     private Rigidbody rb;
