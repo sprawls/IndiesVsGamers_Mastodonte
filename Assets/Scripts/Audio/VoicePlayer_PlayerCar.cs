@@ -16,6 +16,7 @@ public class VoicePlayer_PlayerCar : VoicePlayer {
     public AudioClip[] PoliceAlarm;
     public AudioClip[] Justice;
     public AudioClip nineThousands;
+    public AudioClip Carl;
 
     public override void Start() {
         audioSource = GetComponent<AudioSource>();
@@ -29,7 +30,7 @@ public class VoicePlayer_PlayerCar : VoicePlayer {
 
     public void PlayCarHit() {
         int i = Random.Range(0, CarHit.Length);
-        Debug.Log(i);
+        //Debug.Log(i);
         AudioClip random = CarHit[i];
         PlaySoundFX(random);
     }
@@ -81,5 +82,9 @@ public class VoicePlayer_PlayerCar : VoicePlayer {
 
     public void Play9000() {
         PlaySoundFX(nineThousands);
+    }
+
+    public bool PlayCarl() {
+        return(PlaySoundFX(Carl));
     }
 }

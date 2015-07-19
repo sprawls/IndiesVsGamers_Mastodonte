@@ -1,21 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &101566
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 430998}
-  - 136: {fileID: 13668452}
-  m_Layer: 10
-  m_Name: Capsule
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &103796
 GameObject:
   m_ObjectHideFlags: 1
@@ -28,6 +12,22 @@ GameObject:
   - 23: {fileID: 2321034}
   m_Layer: 10
   m_Name: grabbed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &132440
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 437728}
+  - 136: {fileID: 13676788}
+  m_Layer: 10
+  m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,18 +154,6 @@ Transform:
   - {fileID: 447066}
   m_Father: {fileID: 461346}
   m_RootOrder: 0
---- !u!4 &430998
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101566}
-  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: 0, z: .699999988}
-  m_LocalScale: {x: .300000012, y: .75, z: .400000006}
-  m_Children: []
-  m_Father: {fileID: 444814}
-  m_RootOrder: 0
 --- !u!4 &431416
 Transform:
   m_ObjectHideFlags: 1
@@ -191,6 +179,18 @@ Transform:
   - {fileID: 461346}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &437728
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132440}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: 0, y: 0, z: .699999988}
+  m_LocalScale: {x: .300000012, y: .75, z: .400000006}
+  m_Children: []
+  m_Father: {fileID: 444814}
+  m_RootOrder: 0
 --- !u!4 &444814
 Transform:
   m_ObjectHideFlags: 1
@@ -201,7 +201,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 430998}
+  - {fileID: 437728}
   m_Father: {fileID: 461346}
   m_RootOrder: 2
 --- !u!4 &447066
@@ -322,7 +322,7 @@ MonoBehaviour:
   model: {fileID: 134858}
   grabAnchor: {fileID: 13560048}
   grabbedModel: {fileID: 103796}
-  Ypos_Idle: 1.60000002
+  Ypos_Idle: 2.5
   Ypos_Grab: .899999976
   sensibility: 400
   camSensibility: 1000
@@ -352,12 +352,12 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: .25
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &13668452
+--- !u!136 &13676788
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101566}
+  m_GameObject: {fileID: 132440}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1

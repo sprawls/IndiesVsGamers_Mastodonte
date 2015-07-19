@@ -1303,6 +1303,7 @@ MonoBehaviour:
   PoliceAlarm: []
   Justice: []
   nineThousands: {fileID: 0}
+  Carl: {fileID: 0}
   onHit:
   - {fileID: 8300000, guid: e33f4c74730d8644e8edad1b6900e4fd, type: 3}
   - {fileID: 8300000, guid: 5ec793d4dd273a546bb59fbd4529e246, type: 3}
@@ -2217,8 +2218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 437fc7f014a7f1344be12d4b2a07655c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phase1Time: 15
-  phase2Time: 45
+  phase1Time: 35
+  phase2Time: 90
   phase3Time: 15
   voices_player: {fileID: 0}
   voices_stalin: {fileID: 0}
@@ -2438,6 +2439,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a47b8f74b6ee63e4189dbb8ed4e4b9ac, type: 3}
   - {fileID: 8300000, guid: 5c527ff557b350943acc40311df75427, type: 3}
   nineThousands: {fileID: 0}
+  Carl: {fileID: 8300000, guid: c0f9d17f3a8dce34abf88784907f17e0, type: 3}
 --- !u!114 &11471348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2866,6 +2868,7 @@ MonoBehaviour:
   PoliceAlarm: []
   Justice: []
   nineThousands: {fileID: 8300000, guid: 2527417dcb6778244a28a3b0bd2e8525, type: 3}
+  Carl: {fileID: 0}
   intro:
   - {fileID: 8300000, guid: 247602f82212a70408bf35ac2b175bb3, type: 3}
   - {fileID: 8300000, guid: d2d2afdf443784c4f92394317df791cd, type: 3}
