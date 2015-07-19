@@ -41,11 +41,11 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: .899999976
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Priority: 128
+  Priority: 200
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -149,6 +149,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e33f4c74730d8644e8edad1b6900e4fd, type: 3}
   - {fileID: 8300000, guid: 5ec793d4dd273a546bb59fbd4529e246, type: 3}
   - {fileID: 8300000, guid: 3bcab6683e76c3645a3c5028dee8d3db, type: 3}
+  intro:
+  - {fileID: 8300000, guid: 76f876dfbf8cd9a42bc6a183140c7864, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

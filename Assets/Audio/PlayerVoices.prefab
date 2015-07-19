@@ -45,7 +45,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -188,7 +188,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cb2fb3c6683b1af48ae8aca3b98532b5, type: 3}
   - {fileID: 8300000, guid: a47b8f74b6ee63e4189dbb8ed4e4b9ac, type: 3}
   - {fileID: 8300000, guid: 5c527ff557b350943acc40311df75427, type: 3}
-  nineThousands: {fileID: 8300000, guid: 2527417dcb6778244a28a3b0bd2e8525, type: 3}
+  nineThousands: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

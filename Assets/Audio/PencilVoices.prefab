@@ -113,7 +113,11 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   AirDowns: []
   CarHit: []
-  PedHit: []
+  PedHit:
+  - {fileID: 8300000, guid: fa1ee8e2709a64c4182fefec05352583, type: 3}
+  - {fileID: 8300000, guid: d62403b61c7d5b54c90849638ce3dfce, type: 3}
+  - {fileID: 8300000, guid: 3ff5d8e99ccf8cd4b8961d7d998b1d38, type: 3}
+  - {fileID: 8300000, guid: d3efe7968939c01439bb05b254a974d1, type: 3}
   Yeahs: []
   BehindBar: []
   LikeNew: []
@@ -123,8 +127,10 @@ MonoBehaviour:
   Taunts: []
   PoliceAlarm: []
   Justice: []
-  nineThousands: {fileID: 0}
-  intro: []
+  nineThousands: {fileID: 8300000, guid: 2527417dcb6778244a28a3b0bd2e8525, type: 3}
+  intro:
+  - {fileID: 8300000, guid: 247602f82212a70408bf35ac2b175bb3, type: 3}
+  - {fileID: 8300000, guid: d2d2afdf443784c4f92394317df791cd, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

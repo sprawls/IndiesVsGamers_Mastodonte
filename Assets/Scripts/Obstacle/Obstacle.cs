@@ -30,6 +30,7 @@ public class Obstacle : MonoBehaviour {
     //Audio Chances
     private float sharkAudioChance = 0.2f;
     private float stalinAudioChance = 0.1f;
+    private float pencilAudioChance = 0.025f;
 
     void Awake() {
         health = maxHealth;
@@ -127,6 +128,16 @@ public class Obstacle : MonoBehaviour {
                         break;
                     case Type.pedestrian :
                         GameManager.instance.voices_player.PlayPedHit();
+                        break;
+                }
+            } else if (other.gameObject.tag == "Player" && randomChange < pencilAudioChance) {
+                switch (type) {
+                    case Type.parkedCar:
+                    case Type.car:
+                        GameManager.instance.voices_pencil.PlayPedHit();
+                        break;
+                    case Type.pedestrian:
+                        GameManager.instance.voices_pencil.PlayPedHit();
                         break;
                 }
             } else if (other.gameObject.tag == "Enemy" && randomChange < stalinAudioChance) {
