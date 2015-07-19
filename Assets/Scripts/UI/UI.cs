@@ -26,4 +26,8 @@ public class UI : MonoBehaviour {
 		transform.FindChild("PauseMenu").gameObject.SetActive(false);
 		transform.FindChild("Pause").gameObject.SetActive(true);
 	}
+
+	public void NextPhase(){
+		GameManager.instance.NextPhaseMenu();
+	}
 }
