@@ -7,14 +7,23 @@ public class PedestrianMoveForward : MonoBehaviour {
     public float minSpeed;
     public float maxSpeed;
     private float speed;
+    private bool sirensOn;
+    public float rotateSpeed;
+    private Vector3 mouvementVector;
+    public bool isCar;
+    private float jumpMin;
+    private float jumpMax;
+    private float jumpSpeed;
 
     void Awake() {
         speed = Random.Range(minSpeed, maxSpeed);
+        mouvementVector = new Vector3(speed * Time.deltaTime, 0, 0);
+        jumpSpeed = 4;
+        jumpMin = transform.position.y;
+        jumpMax = jumpMin + 4;
     }
 
     void Update() {
-        gameObject.transform.position = new Vector3(gameObject.transform.position.x + speed * multiplier * Time.deltaTime,
-                                                    gameObject.transform.position.y,
-                                                    gameObject.transform.position.z); 
+        gameObject.transform.position += mouvementVector * multiplier;
     }
 }

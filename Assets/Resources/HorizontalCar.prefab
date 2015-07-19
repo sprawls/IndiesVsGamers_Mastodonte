@@ -286,6 +286,8 @@ MonoBehaviour:
   multiplier: 1
   minSpeed: 5
   maxSpeed: 10
+  rotateSpeed: 3
+  isCar: 1
 --- !u!114 &11459044
 MonoBehaviour:
   m_ObjectHideFlags: 1
