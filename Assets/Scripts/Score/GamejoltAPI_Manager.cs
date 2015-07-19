@@ -41,7 +41,7 @@ public class GamejoltAPI_Manager {
 
     #region Score Related
 
-    public void SendScore(int scoreValue = 0, string scoreText = "", int tableID = 0, string extraData = "") {
+    public void SendScore(int scoreValue = 0, string scoreText = "", int tableID = 83441, string extraData = "") {
         if (!userConnected) {
             Debug.LogError("Trying to use the method for sending score while connected, use SendScoreGuest() instead.");
             return;
