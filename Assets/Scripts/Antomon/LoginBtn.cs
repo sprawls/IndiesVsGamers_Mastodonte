@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class JoinBtn : MonoBehaviour {
+public class LoginBtn : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
