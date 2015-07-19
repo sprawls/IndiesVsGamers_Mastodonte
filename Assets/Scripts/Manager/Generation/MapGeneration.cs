@@ -42,11 +42,20 @@ public class MapGeneration : MonoBehaviour {
         currentChunckPos = new Vector3(currentChunckPos.x, currentChunckPos.y, currentChunckPos.z + distanceNextChunck);
 
         switch (type) {
-            case ChunckType.normal: chunck = Instantiate(Resources.Load("Chunck_Normal"), currentChunckPos, Quaternion.identity) as GameObject; break;
+            case ChunckType.normal: chunck = ChooseNormalToSpawn(); break;
             case ChunckType.intersection: chunck = Instantiate(Resources.Load("Chunck_Intersection"), currentChunckPos, Quaternion.identity) as GameObject; break;
         }
 
         chunckList.Add(chunck);
         chunck.GetComponent<Chunck>().Spawn();
+    }
+
+    GameObject ChooseNormalToSpawn() {
+        switch (Random.Range(0, 4)) {
+            case 0: return Instantiate(Resources.Load("Chunck_Normal1"), currentChunckPos, Quaternion.identity) as GameObject;
+            case 1: return Instantiate(Resources.Load("Chunck_Normal2"), currentChunckPos, Quaternion.identity) as GameObject;
+            case 2: return Instantiate(Resources.Load("Chunck_Normal3"), currentChunckPos, Quaternion.identity) as GameObject;
+            default: return Instantiate(Resources.Load("Chunck_Normal4"), currentChunckPos, Quaternion.identity) as GameObject;
+        }
     }
 }

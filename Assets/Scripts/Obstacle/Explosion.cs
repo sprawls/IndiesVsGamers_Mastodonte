@@ -33,7 +33,8 @@ public class Explosion : MonoBehaviour {
         }
     }
 
-    void OnDestroy() {
-        GameManager.instance.scoreSystem.AddScore((int)Mathf.Pow((target.Count), 1.2f) * target.Count * 1000 , gameObject, new Vector3(0,10,0), true);
+    IEnumerator CountdownBeforeDestroy() {
+        yield return new WaitForSeconds(0.09f);
+        GameManager.instance.scoreSystem.AddScore((int)Mathf.Pow((target.Count), 1.2f) * target.Count * 1000, gameObject, new Vector3(0, 10, 0), true);
     }
 }
