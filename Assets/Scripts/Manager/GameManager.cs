@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour {
     public Inventory inventory;
 
 	//Game loop
-	public int numberOfLevels = 4;
+	private int numberOfLevels = 2;
 	internal int currentLevel = 0;
 	internal int currentPhase = 1;
 
@@ -166,7 +166,9 @@ public class GameManager : MonoBehaviour {
 			phaseOngoing = true;
 		}
 		if(level == 4){
-			//api.SendScore();//TODO
+			GameObject.Find("Main_UI").transform.FindChild("FinalScore").GetComponent<Text>().text = score.ToString("000000000");
+
+			api.SendScore(score, score + " Justice");
 			api.ShowScore();
 		}
 	}
@@ -174,7 +176,7 @@ public class GameManager : MonoBehaviour {
 	private void CompleteLevel() {
 		currentLevel++;
 		//End Game
-		if(currentLevel < (numberOfLevels)){
+		if(currentLevel < numberOfLevels){
 			GameObject.Find("Main_UI").GetComponent<UI>().DisplayNextLevelPopUp();
 		}
 		else
