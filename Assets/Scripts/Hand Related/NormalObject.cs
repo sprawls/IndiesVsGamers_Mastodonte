@@ -97,7 +97,10 @@ public class NormalObject : GrabbableObject {
     }
 
     public virtual void PlaySound(){
-        GameManager.instance.voices_player.PlayScores();
+        float chance = 0.3f;
+        float randomVal = Random.Range(0f, 1f);
+
+        if(randomVal <= chance) GameManager.instance.voices_player.PlayScores();
     }
 
 }
