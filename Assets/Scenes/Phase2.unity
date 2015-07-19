@@ -166,33 +166,13 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11444346, guid: 21ddd1e6e3588724dbd1a5ebcfb7c254, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2093592570}
-    - target: {fileID: 11444346, guid: 21ddd1e6e3588724dbd1a5ebcfb7c254, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NextLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 11443826, guid: 21ddd1e6e3588724dbd1a5ebcfb7c254, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2093592570}
-    - target: {fileID: 11443826, guid: 21ddd1e6e3588724dbd1a5ebcfb7c254, type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MainMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 165218, guid: 21ddd1e6e3588724dbd1a5ebcfb7c254, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 22440618, guid: 21ddd1e6e3588724dbd1a5ebcfb7c254, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22440618, guid: 21ddd1e6e3588724dbd1a5ebcfb7c254, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 21ddd1e6e3588724dbd1a5ebcfb7c254, type: 2}
@@ -2441,12 +2421,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 231295171}
   m_RootOrder: 1
---- !u!114 &2093592570 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11494938, guid: 21ddd1e6e3588724dbd1a5ebcfb7c254,
-    type: 2}
-  m_PrefabInternal: {fileID: 14601338}
-  m_Script: {fileID: 11500000, guid: 926ab5fa5bf4c354b99400badde89012, type: 3}
 --- !u!1 &2112328472
 GameObject:
   m_ObjectHideFlags: 0
