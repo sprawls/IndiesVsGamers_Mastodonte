@@ -57,11 +57,10 @@ public class GameManager : MonoBehaviour {
 
 		switch(currentPhase){
 		case 0:
-			api.Login();
+			phaseOngoing = false;
 			break;
 		case 1:
 			currentPhaseTime = phase1Time;
-			api.Login();//TODO remove to leave only in main menu
 			break;
 		case 2:
 			currentPhaseTime = phase2Time;
@@ -149,26 +148,26 @@ public class GameManager : MonoBehaviour {
 
 	}
 
-	//TODO change when have main menu
+
 	void OnLevelWasLoaded(int level){
 		if(level == 0){
+
+		}
+		else if(level == 1){
 			currentPhaseTime = phase1Time;
 			phaseOngoing = true;
 		}
-		else if(level == 1){
+		else if(level == 2){
 			currentPhaseTime = phase2Time;
 			phaseOngoing = true;
 		}
-		else if(level == 2){
+		if(level == 3){
 			currentPhaseTime = phase3Time;
 			phaseOngoing = true;
 		}
-		if(level == 3){
+		if(level == 4){
 			//api.SendScore();//TODO
 			api.ShowScore();
-		}
-		if(level == 4){
-
 		}
 	}
 	
@@ -184,6 +183,14 @@ public class GameManager : MonoBehaviour {
 			
 	}
 
+	#endregion
+
+	#region UI calls
+
+	public void login(){
+		api.Login();
+	}
+
 	public void NextLevel(){
 		StartLevel_Phase1();
 		currentPhaseTime = phase1Time;
@@ -193,6 +200,18 @@ public class GameManager : MonoBehaviour {
 	public void BackToMenu(){
 		Debug.Log("mainmenu");
 		StartLevel_MainM0();
+	}
+
+	public void Pause(){
+		Time.timeScale = 0.0f;
+	}
+
+	public void UnPause(){
+		Time.timeScale = 1.0f;
+	}
+
+	public void Quit(){
+		Application.Quit();
 	}
 	
 	#endregion
