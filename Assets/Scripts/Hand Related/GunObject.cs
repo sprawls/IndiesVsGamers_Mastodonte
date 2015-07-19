@@ -135,7 +135,9 @@ public class GunObject : GrabbableObject {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 1000, ShootLayerMask)) {
-            if (hit.collider.gameObject.layer == 9) { //Physics object
+            CarButton carButton = hit.collider.gameObject.GetComponentInChildren<CarButton>();
+            if (carButton != null && carButton.canBePressed()) { //Physics object
+                carButton.buttonPressed();
                 GameObject GO = (GameObject)Instantiate(SmashingHandGO, hit.point, Quaternion.identity);
                 GO.transform.parent = originalParent.parent;
             }

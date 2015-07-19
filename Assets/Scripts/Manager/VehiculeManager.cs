@@ -11,11 +11,24 @@ public class VehiculeManager : MonoBehaviour {
     [Header("Checks")]
     public float maxDistanceX;
 
+    [Header("Sirene")]
+    public GameObject Sirene;
+    public float sireneTime = 5f;
+    public float sireneCooldown = 10f;
+    public bool sirene_IsOn = false;
+    public bool canSirene = true;
+
+    [Header("Wipers")]
+    public GameObject Window;
+    public float wipersCooldown = 2f;
+    public bool canWipe = true;
+
     private CarTilt carTilt;
 
     void Awake() {
         carTilt = gameObject.GetComponent<CarTilt>();
         speedModifier = 0;
+        Sirene.SetActive(false);
     }
 
     void Update () {
@@ -79,6 +92,39 @@ public class VehiculeManager : MonoBehaviour {
     #endregion
 
     #region Gyrophares
+    public void StartCirene() {
+        if (canSirene) StartCoroutine(CoroutineSirene());
+    }
+
+    IEnumerator CoroutineSirene() {
+        canSirene = false;
+        sirene_IsOn = true;
+        Sirene.SetActive(true);
+        yield return new WaitForSeconds(sireneTime);
+        sirene_IsOn = false;
+        Sirene.SetActive(false);
+        yield return new WaitForSeconds(sireneCooldown);
+        canSirene = true;
+
+    }
+
+    #endregion
+    public void StartWipers() {
+        if (canSirene) StartCoroutine(CoroutineWipers());
+    }
+
+    IEnumerator CoroutineWipers() {
+        canWipe = false;
+        Transform[] ts = Window.GetComponentsInChildren<Transform>();
+        foreach (Transform t in ts) {
+            if (t != Window.transform) Destroy(t.gameObject);
+        }
+        yield return new WaitForSeconds(wipersCooldown);
+        canWipe = true;
+
+    }
+
+    #region Wipers
 
     #endregion
 }
