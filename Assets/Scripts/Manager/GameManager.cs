@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour {
     public voicePlayer_Pencil voices_pencil;
     public VoicePedestrian voices_pedestrian;
 
+    public AudioClip explosionSound;
+
 	void Awake() {
 		if(_instance == null){
             if (inventory == null) {

@@ -213,6 +213,7 @@ MonoBehaviour:
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
+  m_RepeatDelay: .5
   m_AllowActivationOnMobileDevice: 0
 --- !u!114 &89339115
 MonoBehaviour:
@@ -367,6 +368,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
 --- !u!4 &260375662
 Transform:
   m_ObjectHideFlags: 0
@@ -432,6 +434,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11466886, guid: f18112959dce32b4faba838fcab5f9d9, type: 2}
+      propertyPath: explosionSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 55b26fe35c78b3c498a9ba014124477d, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f18112959dce32b4faba838fcab5f9d9, type: 2}
   m_IsPrefabParent: 0
@@ -967,7 +973,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0992e4b152c453a49b26850492c35d52, type: 3}
   m_IsPrefabParent: 0
---- !u!4 &1748021432
+--- !u!4 &1748021432 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 0992e4b152c453a49b26850492c35d52, type: 3}
   m_PrefabInternal: {fileID: 1748021431}
