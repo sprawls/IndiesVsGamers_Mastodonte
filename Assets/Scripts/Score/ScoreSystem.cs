@@ -28,10 +28,12 @@ public class ScoreSystem : MonoBehaviour{
     }
 
     public void AddScore(int points, GameObject objectGivingScore, Vector3 offset, Vector3 scale, bool Combo = false) {
-        GameManager.instance.addScore(points);
-        TextMesh scorePopup = (Instantiate(scoreText, objectGivingScore.transform.position + new Vector3(0, 5, 0) + offset, Quaternion.identity) as GameObject).GetComponent<TextMesh>();
-        scorePopup.transform.localScale = scale;
-        StartCoroutine(ScoreAnim(scorePopup, points, Combo));
+        if (points != 0) {
+            GameManager.instance.addScore(points);
+            TextMesh scorePopup = (Instantiate(scoreText, objectGivingScore.transform.position + new Vector3(0, 5, 0) + offset, Quaternion.identity) as GameObject).GetComponent<TextMesh>();
+            scorePopup.transform.localScale = scale;
+            StartCoroutine(ScoreAnim(scorePopup, points, Combo));
+        }
     }
 
     IEnumerator ScoreAnim(TextMesh score, int points, bool combo) {
