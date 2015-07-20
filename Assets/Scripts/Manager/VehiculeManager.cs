@@ -24,7 +24,7 @@ public class VehiculeManager : MonoBehaviour {
     public bool canWipe = true;
 
     [Header("Drivin Wheel")]
-    public Animator drivinWheel;
+    public Transform drivinWheel;
 
     private CarTilt carTilt;
 
@@ -42,11 +42,25 @@ public class VehiculeManager : MonoBehaviour {
         GoForward();
         CalculateSpeedModifier(Input.GetAxis("Horizontal"));
         UpdateHorizontalPos();
+        UpdateWheelPos(Input.GetAxis("Horizontal"));
     }
 
     #region Mouvement Controller
+    void UpdateWheelPos(float input) {
+        Vector3 targetRot = Vector3.zero;
+        if (input == 0) targetRot = new Vector3(0, 0, 0);
+        if (input > 0) targetRot = new Vector3(0, 0, -30);
+        if (input < 0) targetRot = new Vector3(0, 0, 30);
+
+       
+        Quaternion TargetQ = Quaternion.Euler(targetRot);
+
+        drivinWheel.transform.localRotation = Quaternion.Lerp(drivinWheel.transform.localRotation, TargetQ, 0.075f);
+    }
+
 
     void CalculateSpeedModifier(float input) {
+
         if (input == 0) {
             if (speedModifier < 0)
                 speedModifier += 0.1f;
