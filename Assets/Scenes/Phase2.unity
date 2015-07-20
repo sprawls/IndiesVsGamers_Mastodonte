@@ -552,26 +552,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 2087606, guid: 91bb934579ffc204ab05625988ffa1ef, type: 2}
-      propertyPath: m_ClearFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2087606, guid: 91bb934579ffc204ab05625988ffa1ef, type: 2}
-      propertyPath: far clip plane
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 431806, guid: 91bb934579ffc204ab05625988ffa1ef, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -425.700012
-      objectReference: {fileID: 0}
-    - target: {fileID: 11493650, guid: 91bb934579ffc204ab05625988ffa1ef, type: 2}
-      propertyPath: drivinWheel
-      value: 
-      objectReference: {fileID: 1534321446}
-    - target: {fileID: 9595076, guid: 91bb934579ffc204ab05625988ffa1ef, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91bb934579ffc204ab05625988ffa1ef, type: 2}
   m_IsPrefabParent: 0
@@ -579,10 +559,6 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 137962, guid: 2c67eaef4138b2d42bcec69554caa2f0, type: 2}
   m_PrefabInternal: {fileID: 1619861834}
---- !u!4 &1534321446
-Transform:
-  m_PrefabParentObject: {fileID: 461368, guid: 91bb934579ffc204ab05625988ffa1ef, type: 2}
-  m_PrefabInternal: {fileID: 1129640491}
 --- !u!1001 &1567089741
 Prefab:
   m_ObjectHideFlags: 0
