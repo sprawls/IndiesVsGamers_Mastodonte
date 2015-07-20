@@ -232,13 +232,13 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &330839910 stripped
+--- !u!114 &330839910
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11413512, guid: 21ddd1e6e3588724dbd1a5ebcfb7c254,
     type: 2}
   m_PrefabInternal: {fileID: 14601338}
   m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
---- !u!1 &376596629 stripped
+--- !u!1 &376596629
 GameObject:
   m_PrefabParentObject: {fileID: 183300, guid: 0710ca518dd59d04bab528a512262dc6, type: 2}
   m_PrefabInternal: {fileID: 46439111}
@@ -509,7 +509,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5dd0fb7df31fb04585b2d3fb8776a10, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &829082028 stripped
+--- !u!1 &829082028
 GameObject:
   m_PrefabParentObject: {fileID: 187492, guid: 91bb934579ffc204ab05625988ffa1ef, type: 2}
   m_PrefabInternal: {fileID: 1129640491}
@@ -564,13 +564,22 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -425.700012
       objectReference: {fileID: 0}
+    - target: {fileID: 11493650, guid: 91bb934579ffc204ab05625988ffa1ef, type: 2}
+      propertyPath: drivinWheel
+      value: 
+      objectReference: {fileID: 1534321447}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91bb934579ffc204ab05625988ffa1ef, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1419271456 stripped
+--- !u!1 &1419271456
 GameObject:
   m_PrefabParentObject: {fileID: 137962, guid: 2c67eaef4138b2d42bcec69554caa2f0, type: 2}
   m_PrefabInternal: {fileID: 1619861834}
+--- !u!95 &1534321447
+Animator:
+  m_PrefabParentObject: {fileID: 9595076, guid: 91bb934579ffc204ab05625988ffa1ef,
+    type: 2}
+  m_PrefabInternal: {fileID: 1129640491}
 --- !u!1001 &1567089741
 Prefab:
   m_ObjectHideFlags: 0
@@ -701,7 +710,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
---- !u!4 &1777002176 stripped
+--- !u!4 &1777002176
 Transform:
   m_PrefabParentObject: {fileID: 456460, guid: 91bb934579ffc204ab05625988ffa1ef, type: 2}
   m_PrefabInternal: {fileID: 1129640491}

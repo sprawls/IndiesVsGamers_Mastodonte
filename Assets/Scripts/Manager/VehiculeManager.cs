@@ -23,6 +23,9 @@ public class VehiculeManager : MonoBehaviour {
     public float wipersCooldown = 2f;
     public bool canWipe = true;
 
+    [Header("Drivin Wheel")]
+    public Animator drivinWheel;
+
     private CarTilt carTilt;
 
     void Awake() {
