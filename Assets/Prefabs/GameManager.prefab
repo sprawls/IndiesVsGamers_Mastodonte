@@ -2283,6 +2283,7 @@ MonoBehaviour:
   voices_stalin: {fileID: 0}
   voices_pencil: {fileID: 0}
   voices_pedestrian: {fileID: 0}
+  explosionSound: {fileID: 8300000, guid: 55b26fe35c78b3c498a9ba014124477d, type: 3}
 --- !u!114 &11467118
 MonoBehaviour:
   m_ObjectHideFlags: 1
