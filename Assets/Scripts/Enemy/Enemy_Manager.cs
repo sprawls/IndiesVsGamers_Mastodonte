@@ -41,6 +41,15 @@ public class Enemy_Manager : MonoBehaviour{
         }
         UpdateHealthBar();
         
+        //Taunts
+        if(health % 20 == 0){
+            Random.seed = (int)System.DateTime.Now.Ticks;
+            int random = Random.Range(0, 100);
+            if(random < 50)
+                GameManager.instance.voices_stalin.PlayTaunts();
+            else
+                GameManager.instance.voices_player.PlayTaunts();
+        }
     }
 
     private void UpdateHealthBar() {
