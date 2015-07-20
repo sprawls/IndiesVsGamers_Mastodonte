@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour {
 
     public AudioClip explosionSound;
 
+    private bool inPause = false;
+
 	void Awake() {
 		if(_instance == null){
             if (inventory == null) {
@@ -119,6 +121,16 @@ public class GameManager : MonoBehaviour {
 
 		}
         GameObject.Find("Main_UI").transform.FindChild("Level").GetComponent<Text>().text = (currentLevel + 1).ToString("00");
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            EscapePause();
+        }
+
+        if (inPause)
+            Cursor.visible = true;
+        else
+            Cursor.visible = false;
 	}
 	
     private void OnDestroy() {
@@ -269,6 +281,22 @@ public class GameManager : MonoBehaviour {
 	
 	#region UI calls
 
+    private void EscapePause() {
+        if (inPause)
+        {
+            GameManager.instance.UnPause();
+            GameObject.Find("Main_UI").transform.FindChild("PauseMenu").gameObject.SetActive(false);
+            GameObject.Find("Main_UI").transform.FindChild("Pause").gameObject.SetActive(true);
+            inPause = false;
+        }
+        else {
+            GameManager.instance.Pause();
+            GameObject.Find("Main_UI").transform.FindChild("PauseMenu").gameObject.SetActive(true);
+            GameObject.Find("Main_UI").transform.FindChild("Pause").gameObject.SetActive(false);
+            inPause = true;
+        }
+    }
+
 	public void login(){
         api.Login();
         score = 1000;
@@ -294,6 +322,7 @@ public class GameManager : MonoBehaviour {
 	public void Pause(){
         StartCoroutine(SayPauseLine());
 		Time.timeScale = 0.0f;
+        inPause = true;
 	}
 
     IEnumerator SayPauseLine() {
@@ -304,6 +333,7 @@ public class GameManager : MonoBehaviour {
 
 	public void UnPause(){
 		Time.timeScale = 1.0f;
+        inPause = false;
 	}
 
 	public void Quit(){
