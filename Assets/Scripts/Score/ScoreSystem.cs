@@ -24,7 +24,7 @@ public class ScoreSystem : MonoBehaviour{
     }
 
     public void AddScore(int points, GameObject objectGivingScore, Vector3 offset, bool Combo = false) {
-        AddScore(points, objectGivingScore, offset, new Vector3(1, 1, 1), Combo);
+        AddScore(points, objectGivingScore, offset, new Vector3(0.05f, 0.05f, 0.05f), Combo);
     }
 
     public void AddScore(int points, GameObject objectGivingScore, Vector3 offset, Vector3 scale, bool Combo = false) {

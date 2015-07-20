@@ -17,6 +17,7 @@ public class Explosion : MonoBehaviour {
 	public void BOOM () {
         GetComponent<Collider>().enabled = true;
         Destroy(gameObject, 0.1f);
+        StartCoroutine(CountdownBeforeDestroy());
     }
 
     void OnTriggerStay(Collider other) {
@@ -34,7 +35,7 @@ public class Explosion : MonoBehaviour {
     }
 
     IEnumerator CountdownBeforeDestroy() {
-        yield return new WaitForSeconds(0.09f);
+        yield return new WaitForSeconds(0.07f);
         GameManager.instance.scoreSystem.AddScore((int)Mathf.Pow((target.Count), 1.2f) * target.Count * 1000, gameObject, new Vector3(0, 10, 0), true);
     }
 }
