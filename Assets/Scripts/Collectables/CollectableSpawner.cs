@@ -6,12 +6,12 @@ public class CollectableSpawner : MonoBehaviour {
     public GameObject[] spawnLocation;
     public List<GameObject> possibleSpawn;
     List<Inventory.UpgradeType> possibleUpgradeToSpawn = new List<Inventory.UpgradeType>();
-    List<Collectable> collectable = new List<Collectable>();
+    public List<Collectable> collectable = new List<Collectable>();
     public int NumberOfUpgradeRatio = 2;
     public int MaxNumberCollectable = 10;
 
     public void Awake() {
-        spawnLocation = GameObject.FindGameObjectsWithTag("Spawn");
+        
         OnReset();
     }
 
@@ -32,7 +32,7 @@ public class CollectableSpawner : MonoBehaviour {
     }
 
     private void SpawnLogic() {
-        int count = MaxNumberCollectable - SpawnUpgrade();
+        int count = 2;
         for (int i = 0; i < count; i++) {
             Instantiate(collectable[Random.Range(0, collectable.Count)], RandomPos(), Quaternion.identity);
         }

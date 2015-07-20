@@ -107,6 +107,7 @@ GameObject:
   - 4: {fileID: 410878}
   - 33: {fileID: 3345328}
   - 23: {fileID: 2375872}
+  - 122: {fileID: 12210532}
   m_Layer: 10
   m_Name: grabbed
   m_TagString: Untagged
@@ -352,6 +353,17 @@ MonoBehaviour:
   isGrabbing: 0
   _mousePosition: {x: 0, y: 0, z: 0}
   _modelRB: {fileID: 0}
+--- !u!122 &12210532
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183504}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294934528
+  m_Size: 1
 --- !u!135 &13545402
 SphereCollider:
   m_ObjectHideFlags: 1
