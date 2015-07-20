@@ -29,38 +29,38 @@ public class SpawnEndUI : MonoBehaviour {
         float time = 0;
         yield return new WaitForSeconds(0.7f);
         while (pedestrian.transform.localScale.x < 1) {
-            pedestrian.transform.localScale += new Vector3(1, 1, 1) * Time.timeScale * scaleTime;
+            pedestrian.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime * scaleTime;
             yield return new WaitForEndOfFrame();
         }
         yield return new WaitForSeconds(0.7f);
         time = 0;
         while (flying.transform.localScale.x < 1) {
-            flying.transform.localScale += new Vector3(1, 1, 1) * Time.timeScale * scaleTime;
+            flying.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime * scaleTime;
             yield return new WaitForEndOfFrame();
         }
         yield return new WaitForSeconds(0.7f);
         time = 0;
         while (car.transform.localScale.x < 1) {
-            car.transform.localScale += new Vector3(1, 1, 1) * Time.timeScale * scaleTime;
+            car.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime * scaleTime;
             yield return new WaitForEndOfFrame();
         }
         yield return new WaitForSeconds(1f);
         time = 0;
         while (enemy.transform.localScale.x < 1) {
-            enemy.transform.localScale += new Vector3(1, 1, 1) * Time.timeScale * scaleTime;
+            enemy.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime * scaleTime;
             yield return new WaitForEndOfFrame();
         }
         yield return new WaitForSeconds(0.5f);
         time = 0;
         while (justice.transform.localScale.x < 1) {
-            justice.transform.localScale += new Vector3(1, 1, 1) * Time.timeScale * scaleTime;
+            justice.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime * scaleTime;
             yield return new WaitForEndOfFrame();
         }
         yield return new WaitForSeconds(1f);
         time = 0;
         while (finalScore.transform.localScale.x < 1) {
-            finalScore.transform.localScale += new Vector3(1, 1, 1) * Time.timeScale * scaleTime;
-            finalText.transform.localScale += new Vector3(1, 1, 1) * Time.timeScale * scaleTime;
+            finalScore.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime / scaleTime;
+            finalText.transform.localScale += new Vector3(1, 1, 1) * Time.deltaTime / scaleTime;
             yield return new WaitForEndOfFrame();
         }
         

@@ -17,7 +17,7 @@ public class FlyerSpawn : MonoBehaviour {
     }
 
     void CheckSpawn() {
-        if (Random.Range(0, 1000) == 0) {
+        if (Random.Range(0, 900) == 0) {
             Instantiate(Resources.Load("Flyer"), transform.position + new Vector3(Random.Range(-15f, 15f), 0, 0), Quaternion.identity);
         }
     }
