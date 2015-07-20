@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour {
     public AudioClip explosionSound;
 
     private bool inPause = false;
+    private bool inMenu = false;
 
 	void Awake() {
 		if(_instance == null){
@@ -127,7 +128,7 @@ public class GameManager : MonoBehaviour {
             EscapePause();
         }
 
-        if (inPause)
+        if (inPause || inMenu)
             Cursor.visible = true;
         else
             Cursor.visible = false;
@@ -148,6 +149,7 @@ public class GameManager : MonoBehaviour {
 		switch(currentPhase){
 			case 1:
 				GameObject.Find("Main_UI").transform.FindChild("Phase1End").gameObject.SetActive(true);
+                inMenu = true;
                 Cursor.visible = true;
 				break;
 			case 2:
@@ -157,10 +159,12 @@ public class GameManager : MonoBehaviour {
                 else {
                     GameObject.Find("Main_UI").transform.FindChild("Phase2Endfail").gameObject.SetActive(true);
                 }
+                inMenu = true;
                 Cursor.visible = true;
 				break;
 			case 3:
 				CompleteLevel();
+                inMenu = true;
                 Cursor.visible = true;
 				break;
 			default:
@@ -176,7 +180,7 @@ public class GameManager : MonoBehaviour {
 		case 1:
             Time.timeScale = 1.0f;
 			GameObject.Find("Main_UI").transform.FindChild("Phase1End").gameObject.SetActive(false);
-
+            inMenu = false;
             currentPhaseTime = phase2Time - 15 * currentLevel;
 
 			StartLevel_Phase2();
@@ -184,6 +188,7 @@ public class GameManager : MonoBehaviour {
 			break;
 		case 2:
 			GameObject.Find("Main_UI").transform.FindChild("Phase2End").gameObject.SetActive(false);
+            inMenu = false;
 			/*currentPhaseTime = phase3Time;
 			StartLevel_Phase3();
 			phaseOngoing = true;*/
@@ -219,7 +224,7 @@ public class GameManager : MonoBehaviour {
 
 	void OnLevelWasLoaded(int level){
         GameObject.Find("Main_UI").transform.FindChild("Level").GetComponent<Text>().text = (currentLevel+1).ToString("00");
-		
+        inMenu = false;
         if(level == 0){
 			phaseOngoing = false;
             Cursor.visible = true;
@@ -257,9 +262,11 @@ public class GameManager : MonoBehaviour {
 		//End Game
 		if(currentLevel < numberOfLevels){currentPhaseTime = phase1Time;
             GameObject.Find("Main_UI").transform.FindChild("Phase3End").gameObject.SetActive(true);
+            inMenu = true;
 		}
 		else{
 			GameObject.Find("Main_UI").transform.FindChild("EndPopUp").gameObject.SetActive(true);
+            inMenu = true;
 		}
         GameObject.Find("Main_UI").transform.FindChild("Level").GetComponent<Text>().text = (currentLevel + 1).ToString("00");
 
