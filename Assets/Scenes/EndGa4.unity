@@ -249,7 +249,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b321355d2c9e5794eb5603c3fd373681, type: 3}
+  m_audioClip: {fileID: 8300000, guid: af012c6a77d4c6542bf28c9012209f63, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1594,9 +1594,9 @@ Light:
   serializedVersion: 6
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 4.26000023
+  m_Intensity: 8
   m_Range: 10
-  m_SpotAngle: 80.0999985
+  m_SpotAngle: 97.0999985
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -1768,31 +1768,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 414528, guid: d625385f0e1e36447946afca630e43ab, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.08999991
+      value: 3.71550798
       objectReference: {fileID: 0}
     - target: {fileID: 414528, guid: d625385f0e1e36447946afca630e43ab, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.57999992
+      value: -1.34871852
       objectReference: {fileID: 0}
     - target: {fileID: 414528, guid: d625385f0e1e36447946afca630e43ab, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1.78952122
+      value: -1.96340752
       objectReference: {fileID: 0}
     - target: {fileID: 414528, guid: d625385f0e1e36447946afca630e43ab, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: .055405017
       objectReference: {fileID: 0}
     - target: {fileID: 414528, guid: d625385f0e1e36447946afca630e43ab, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -.998113155
+      value: -.995963216
       objectReference: {fileID: 0}
     - target: {fileID: 414528, guid: d625385f0e1e36447946afca630e43ab, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -.0524584576
       objectReference: {fileID: 0}
     - target: {fileID: 414528, guid: d625385f0e1e36447946afca630e43ab, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -.0614015609
+      value: .0472832024
       objectReference: {fileID: 0}
     - target: {fileID: 414528, guid: d625385f0e1e36447946afca630e43ab, type: 2}
       propertyPath: m_RootOrder
