@@ -155,10 +155,9 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void NextPhase(){
-		Time.timeScale = 1.0f;
-
 		switch(currentPhase){
 		case 1:
+            Time.timeScale = 1.0f;
 			GameObject.Find("Main_UI").transform.FindChild("Phase1End").gameObject.SetActive(false);
 			currentPhaseTime = phase2Time;
 			StartLevel_Phase2();
@@ -166,9 +165,10 @@ public class GameManager : MonoBehaviour {
 			break;
 		case 2:
 			GameObject.Find("Main_UI").transform.FindChild("Phase2End").gameObject.SetActive(false);
-			currentPhaseTime = phase3Time;
+			/*currentPhaseTime = phase3Time;
 			StartLevel_Phase3();
-			phaseOngoing = true;
+			phaseOngoing = true;*/
+            CompleteLevel();
 			break;
 		case 3:
             phaseOngoing = false;
