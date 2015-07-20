@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour {
     public ScoreSystem scoreSystem;
 
 	//Game loop
-	private int numberOfLevels = 1;
+	private int numberOfLevels = 6;
 	internal int currentLevel = 0;
 	internal int currentPhase = 1;
 
@@ -159,7 +159,10 @@ public class GameManager : MonoBehaviour {
 		case 1:
             Time.timeScale = 1.0f;
 			GameObject.Find("Main_UI").transform.FindChild("Phase1End").gameObject.SetActive(false);
-			currentPhaseTime = phase2Time;
+            Debug.Log(currentLevel);
+                
+			currentPhaseTime = phase2Time - 15*currentLevel;
+            Debug.Log(currentPhaseTime);
 			StartLevel_Phase2();
 			phaseOngoing = true;
 			break;
