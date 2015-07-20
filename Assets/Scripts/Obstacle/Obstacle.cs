@@ -37,7 +37,6 @@ public class Obstacle : MonoBehaviour {
     private float stalinAudioChance = 0.1f;
     private float pencilAudioChance = 0.025f;
 
-    private AudioSource audioSource = new AudioSource();
     public AudioClip explosionSound = GameManager.instance.explosionSound;
 
     void Awake() {
@@ -88,6 +87,9 @@ public class Obstacle : MonoBehaviour {
     #endregion
 
     void OnDeath() {
+        //Explosion
+        AudioSource.PlayClipAtPoint(explosionSound, transform.position);
+
         if (hitByPlayer) {
             GameManager.instance.scoreSystem.AddScore(scoreGivenOnDeath, gameObject, new Vector3(0,0,0));
             GameManager.instance.scoreSystem.AddKill(type);
@@ -107,10 +109,6 @@ public class Obstacle : MonoBehaviour {
                 Destroy(gameObject, 0.1f);
                 return;
         }
-
-        //Explosion
-        Debug.Log("death");
-        AudioSource.PlayClipAtPoint(explosionSound, transform.position);
     }
 
     void ExplodingFlyer() {
