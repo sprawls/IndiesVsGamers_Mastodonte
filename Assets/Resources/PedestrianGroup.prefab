@@ -1259,20 +1259,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 170818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71d24a9e256781c4781d9b9edf215318, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ba844e658ede524dadf7d366c1e07b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
+  type: 0
   knockInTheAir: 0
   maxHealth: 0
-  ForceMinSpeed: 700
-  ForceMaxSpeed: 1500
-  YvectorRangeMin: -2000
-  YvectorRangeMax: -3000
+  ForceMinSpeed: 1000
+  ForceMaxSpeed: 2000
+  YvectorRangeMin: 1000
+  YvectorRangeMax: 2000
   maxTorqueSpeed: 1000
   Explosion: {fileID: 0}
   scoreGivenOnDeath: 0
-  scoreGivenOnBump: 250
+  scoreGivenOnBump: 0
+  explosionSound: {fileID: 0}
 --- !u!114 &11406448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1281,20 +1282,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 145568}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71d24a9e256781c4781d9b9edf215318, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ba844e658ede524dadf7d366c1e07b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
+  type: 0
   knockInTheAir: 0
   maxHealth: 0
-  ForceMinSpeed: 700
-  ForceMaxSpeed: 1500
-  YvectorRangeMin: -2000
-  YvectorRangeMax: -3000
+  ForceMinSpeed: 1000
+  ForceMaxSpeed: 2000
+  YvectorRangeMin: 1000
+  YvectorRangeMax: 2000
   maxTorqueSpeed: 1000
   Explosion: {fileID: 0}
   scoreGivenOnDeath: 0
-  scoreGivenOnBump: 250
+  scoreGivenOnBump: 0
+  explosionSound: {fileID: 0}
 --- !u!114 &11410334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1303,20 +1305,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 179654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71d24a9e256781c4781d9b9edf215318, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ba844e658ede524dadf7d366c1e07b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
+  type: 0
   knockInTheAir: 0
   maxHealth: 0
-  ForceMinSpeed: 700
-  ForceMaxSpeed: 1500
-  YvectorRangeMin: -2000
-  YvectorRangeMax: -3000
+  ForceMinSpeed: 1000
+  ForceMaxSpeed: 2000
+  YvectorRangeMin: 1000
+  YvectorRangeMax: 2000
   maxTorqueSpeed: 1000
   Explosion: {fileID: 0}
   scoreGivenOnDeath: 0
-  scoreGivenOnBump: 250
+  scoreGivenOnBump: 0
+  explosionSound: {fileID: 0}
 --- !u!114 &11419532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1357,20 +1360,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 188380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71d24a9e256781c4781d9b9edf215318, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ba844e658ede524dadf7d366c1e07b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
+  type: 0
   knockInTheAir: 0
   maxHealth: 0
-  ForceMinSpeed: 700
-  ForceMaxSpeed: 1500
-  YvectorRangeMin: -2000
-  YvectorRangeMax: -3000
+  ForceMinSpeed: 1000
+  ForceMaxSpeed: 2000
+  YvectorRangeMin: 1000
+  YvectorRangeMax: 2000
   maxTorqueSpeed: 1000
   Explosion: {fileID: 0}
   scoreGivenOnDeath: 0
-  scoreGivenOnBump: 250
+  scoreGivenOnBump: 0
+  explosionSound: {fileID: 0}
 --- !u!114 &11457314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1411,20 +1415,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 112096}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71d24a9e256781c4781d9b9edf215318, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ba844e658ede524dadf7d366c1e07b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
+  type: 0
   knockInTheAir: 0
   maxHealth: 0
-  ForceMinSpeed: 700
-  ForceMaxSpeed: 1500
-  YvectorRangeMin: -2000
-  YvectorRangeMax: -3000
+  ForceMinSpeed: 1000
+  ForceMaxSpeed: 2000
+  YvectorRangeMin: 1000
+  YvectorRangeMax: 2000
   maxTorqueSpeed: 1000
   Explosion: {fileID: 0}
   scoreGivenOnDeath: 0
-  scoreGivenOnBump: 250
+  scoreGivenOnBump: 0
+  explosionSound: {fileID: 0}
 --- !u!114 &11485066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1449,20 +1454,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 141382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71d24a9e256781c4781d9b9edf215318, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ba844e658ede524dadf7d366c1e07b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
+  type: 0
   knockInTheAir: 0
   maxHealth: 0
-  ForceMinSpeed: 700
-  ForceMaxSpeed: 1500
-  YvectorRangeMin: -2000
-  YvectorRangeMax: -3000
+  ForceMinSpeed: 1000
+  ForceMaxSpeed: 2000
+  YvectorRangeMin: 1000
+  YvectorRangeMax: 2000
   maxTorqueSpeed: 1000
   Explosion: {fileID: 0}
   scoreGivenOnDeath: 0
-  scoreGivenOnBump: 250
+  scoreGivenOnBump: 0
+  explosionSound: {fileID: 0}
 --- !u!114 &11489080
 MonoBehaviour:
   m_ObjectHideFlags: 1

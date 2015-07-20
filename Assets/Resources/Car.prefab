@@ -292,20 +292,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 181090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71d24a9e256781c4781d9b9edf215318, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ba844e658ede524dadf7d366c1e07b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
   knockInTheAir: 0
-  maxHealth: 3
+  maxHealth: 0
   ForceMinSpeed: 1000
   ForceMaxSpeed: 2000
   YvectorRangeMin: 1000
   YvectorRangeMax: 2000
   maxTorqueSpeed: 1000
-  Explosion: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
-  scoreGivenOnDeath: 250
-  scoreGivenOnBump: 100
+  Explosion: {fileID: 0}
+  scoreGivenOnDeath: 0
+  scoreGivenOnBump: 0
+  explosionSound: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

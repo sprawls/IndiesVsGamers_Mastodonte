@@ -4,7 +4,7 @@ using System.Collections;
 public class Obstacle : MonoBehaviour {
 
     //VARIABLES
-    public enum Type { car, parkedCar, cone, pedestrian, flying}
+    public enum Type { car, parkedCar, cone, pedestrian, flying }
     public Type type;
     public bool knockInTheAir = false;
     [Header("Stats")]
@@ -63,7 +63,7 @@ public class Obstacle : MonoBehaviour {
             case Type.car: Destroy(GetComponent<Car_ForwardMove>()); return;
             case Type.pedestrian:
                 GameManager.instance.voices_pedestrian.PlayScream(gameObject.GetComponent<AudioSource>());
-                Destroy(GetComponent<PedestrianMoveForward>()); 
+                Destroy(GetComponent<PedestrianMoveForward>());
                 return;
         }
     }
@@ -74,7 +74,7 @@ public class Obstacle : MonoBehaviour {
     }
 
     private void RotationRandomDerp() {
-        gameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(0, maxTorqueSpeed), 
+        gameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(0, maxTorqueSpeed),
                                                                    Random.Range(0, maxTorqueSpeed),
                                                                    Random.Range(0, maxTorqueSpeed)));
     }
@@ -88,11 +88,11 @@ public class Obstacle : MonoBehaviour {
 
     void OnDeath() {
         //Explosion
-        if (type != Type.pedestrian)
-            AudioSource.PlayClipAtPoint(explosionSound, transform.position);
+        /*if (type != Type.pedestrian)
+            AudioSource.PlayClipAtPoint(explosionSound, transform.position);*/
 
         if (hitByPlayer) {
-            GameManager.instance.scoreSystem.AddScore(scoreGivenOnDeath, gameObject, new Vector3(0,0,0));
+            GameManager.instance.scoreSystem.AddScore(scoreGivenOnDeath, gameObject, new Vector3(0, 0, 0));
             GameManager.instance.scoreSystem.AddKill(type);
         }
         switch (type) {
@@ -139,7 +139,7 @@ public class Obstacle : MonoBehaviour {
 
     void OnCollisionEnter(Collision other) {
         if (knockInTheAir && hitByPlayer && other.gameObject.GetComponentInParent<Obstacle>()) { //Combo points
-            GameManager.instance.scoreSystem.AddScore(scoreGivenOnBump * 2, gameObject, new Vector3(0,10,0), true);
+            GameManager.instance.scoreSystem.AddScore(scoreGivenOnBump * 2, gameObject, new Vector3(0, 10, 0), true);
         }
 
         //When colliding with the player or enemy vehicle get thrown into the air, otherwise explode on impact
@@ -154,7 +154,7 @@ public class Obstacle : MonoBehaviour {
                 other.gameObject.GetComponent<Enemy_Manager>().TakeDamage(10);
             }
             OnHit(other.transform);
-            float randomChange = Random.Range(0f,1f);
+            float randomChange = Random.Range(0f, 1f);
 
             if (other.gameObject.tag == "Player" && randomChange < sharkAudioChance) {
                 switch (type) {
@@ -162,11 +162,12 @@ public class Obstacle : MonoBehaviour {
                     case Type.car:
                         GameManager.instance.voices_player.PlayCarHit();
                         break;
-                    case Type.pedestrian :
+                    case Type.pedestrian:
                         GameManager.instance.voices_player.PlayPedHit();
                         break;
                 }
-            } else if (other.gameObject.tag == "Player" && randomChange < pencilAudioChance) {
+            }
+            else if (other.gameObject.tag == "Player" && randomChange < pencilAudioChance) {
                 switch (type) {
                     case Type.parkedCar:
                     case Type.car:
@@ -176,7 +177,8 @@ public class Obstacle : MonoBehaviour {
                         GameManager.instance.voices_pencil.PlayPedHit();
                         break;
                 }
-            } else if (other.gameObject.tag == "Enemy" && randomChange < stalinAudioChance) {
+            }
+            else if (other.gameObject.tag == "Enemy" && randomChange < stalinAudioChance) {
                 switch (type) {
                     case Type.parkedCar:
                     case Type.car:
@@ -187,7 +189,8 @@ public class Obstacle : MonoBehaviour {
                         break;
                 }
             }
-        } else if (knockInTheAir) OnDeath();
-        
+        }
+        else if (knockInTheAir) OnDeath();
+
     }
 }
