@@ -88,7 +88,8 @@ public class Obstacle : MonoBehaviour {
 
     void OnDeath() {
         //Explosion
-        AudioSource.PlayClipAtPoint(explosionSound, transform.position);
+        if (type != Type.pedestrian)
+            AudioSource.PlayClipAtPoint(explosionSound, transform.position);
 
         if (hitByPlayer) {
             GameManager.instance.scoreSystem.AddScore(scoreGivenOnDeath, gameObject, new Vector3(0,0,0));
