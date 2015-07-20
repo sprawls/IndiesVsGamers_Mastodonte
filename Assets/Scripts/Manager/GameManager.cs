@@ -290,8 +290,15 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void Pause(){
+        StartCoroutine(SayPauseLine());
 		Time.timeScale = 0.0f;
 	}
+
+    IEnumerator SayPauseLine() {
+        while(GameManager.instance.voices_player.PlayPause()){
+            yield return null;
+        }
+    }
 
 	public void UnPause(){
 		Time.timeScale = 1.0f;
@@ -318,6 +325,8 @@ public class GameManager : MonoBehaviour {
         StartCoroutine("WaitForLogin");
     }
 	
+    
+
 	#endregion
 
 
