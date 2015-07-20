@@ -389,7 +389,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .449999988, y: 0}
   m_AnchorMax: {x: .949999988, y: .75}
-  m_AnchoredPosition: {x: -195, y: -425}
+  m_AnchoredPosition: {x: -195, y: -641}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &755624140
@@ -398,7 +398,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 755624136}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1367256648, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
@@ -735,10 +735,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 755624139}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: .200000003}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 216.899994}
-  m_SizeDelta: {x: 51.0999908, y: -103.319992}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 535}
+  m_SizeDelta: {x: 655.099976, y: 304.679993}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1361463212
 MonoBehaviour:
@@ -765,7 +765,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "SHARK COP \nFISHY BUSINESS"
+  m_Text: 'SHARK COP
+
+    JUSTICE LEGACY'
 --- !u!222 &1361463213
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1040,7 +1042,7 @@ RectTransform:
   m_GameObject: {fileID: 1522763993}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.18406892, y: 1, z: 1}
   m_Children:
   - {fileID: 943622882}
   m_Father: {fileID: 21549504}
@@ -2188,10 +2190,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 755624139}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 5.5999999}
-  m_SizeDelta: {x: 7.62939453e-06, y: 0}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 208.100006}
+  m_SizeDelta: {x: 648.97998, y: 510}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1614241131
 MonoBehaviour:
@@ -2220,7 +2222,7 @@ MonoBehaviour:
   m_Color: {r: .669117689, g: .669117689, b: .669117689, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 16
+    m_FontSize: 18
     m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 10
@@ -2229,15 +2231,27 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: "Shark Cop was a Shark and a Cop\nThe best of his kind, he was born to be
-    cop.\nAfter gratuating from the military college of the Deep Sea Military Police
-    Force, Shark Cop was given a chance to participate in a new experimental training
-    program. \nIt was after two years of hard training that he needed to move to Waterloo
-    to take the role of a Civil Police Officer for an new Police Station. It's during
-    this moment that Shark Cop met his friend Commissar Pencil Washington. It's after
-    years of service in the DSMPF that SharkCop finally found his place in the Deep
-    Sea world of crime fighting."
+    m_LineSpacing: 1.10000002
+  m_Text: 'Shark Cop was a Shark. And a Cop.
+
+    The best of his kind; he was born to be a cop.
+
+
+    After gratuating from the military college of the Deep Sea Military Police Force,
+    he was given the chance to participate in a new experimental training program.
+
+
+    Following two years of intense training, he had to move to Waterloo to take the
+    role of a Civil Police Officer for a newly established Police Station.
+
+
+    It was at that time that Shark Cop met his friend
+
+    Commissioner Pencil Washington.
+
+
+    And so it was after years of service in the DSMPF that SharkCop finally found
+    his place in the Deep Sea world of crime fighting.'
 --- !u!222 &1614241134
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2401,7 +2415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b95543272c31aec4bb70ee558dc46d41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleTimeToSkip: 15
+  idleTimeToSkip: 50
   curIdleTime: 0
   holdTimeToSkip: 2
   curHoldTime: 0
