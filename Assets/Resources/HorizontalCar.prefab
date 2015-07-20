@@ -308,8 +308,8 @@ MonoBehaviour:
   YvectorRangeMax: 2000
   maxTorqueSpeed: 1000
   Explosion: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
-  scoreGivenOnDeath: 1000
-  scoreGivenOnBump: 500
+  scoreGivenOnDeath: 250
+  scoreGivenOnBump: 100
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

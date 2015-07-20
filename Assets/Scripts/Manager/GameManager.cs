@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour {
 
 	void Start(){
 		currentPhase = int.Parse(Application.loadedLevelName.Substring(5));
+        GameObject.Find("Main_UI").transform.FindChild("Level").GetComponent<Text>().text = (currentLevel + 1).ToString("00");
 
 		switch(currentPhase){
 		case 0:
@@ -115,6 +116,7 @@ public class GameManager : MonoBehaviour {
 		else{
 
 		}
+        GameObject.Find("Main_UI").transform.FindChild("Level").GetComponent<Text>().text = (currentLevel + 1).ToString("00");
 	}
 	
     private void OnDestroy() {
@@ -155,14 +157,14 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void NextPhase(){
+        GameObject.Find("Main_UI").transform.FindChild("Level").GetComponent<Text>().text = (currentLevel + 1).ToString("00");
 		switch(currentPhase){
 		case 1:
             Time.timeScale = 1.0f;
 			GameObject.Find("Main_UI").transform.FindChild("Phase1End").gameObject.SetActive(false);
-            Debug.Log(currentLevel);
-                
-			currentPhaseTime = phase2Time - 15*currentLevel;
-            Debug.Log(currentPhaseTime);
+
+            currentPhaseTime = phase2Time - 15 * currentLevel;
+
 			StartLevel_Phase2();
 			phaseOngoing = true;
 			break;
@@ -188,6 +190,7 @@ public class GameManager : MonoBehaviour {
 	}
 	private void StartLevel_Phase1(){
         Application.LoadLevel("Phase1");
+        GameObject.Find("Main_UI").transform.FindChild("Level").GetComponent<Text>().text = (currentLevel + 1).ToString("00");
     }
     private void StartLevel_Phase2(){
         Application.LoadLevel("Phase2");
@@ -201,7 +204,9 @@ public class GameManager : MonoBehaviour {
 
 
 	void OnLevelWasLoaded(int level){
-		if(level == 0){
+        GameObject.Find("Main_UI").transform.FindChild("Level").GetComponent<Text>().text = (currentLevel+1).ToString("00");
+		
+        if(level == 0){
 			phaseOngoing = false;
             Cursor.visible = true;
 		}
@@ -211,7 +216,7 @@ public class GameManager : MonoBehaviour {
             Cursor.visible = false;
 		}
 		else if(level == 2){
-			currentPhaseTime = phase2Time;
+            currentPhaseTime = phase2Time - 15 * currentLevel;
 			phaseOngoing = true;
 			GameObject.Find("Main_UI").transform.FindChild("EnemyLifeBar").gameObject.SetActive(true);
             Cursor.visible = false;
@@ -242,6 +247,8 @@ public class GameManager : MonoBehaviour {
 		else{
 			GameObject.Find("Main_UI").transform.FindChild("EndPopUp").gameObject.SetActive(true);
 		}
+        GameObject.Find("Main_UI").transform.FindChild("Level").GetComponent<Text>().text = (currentLevel + 1).ToString("00");
+
 	}
 
     public void EnemyDeath() {
@@ -283,8 +290,15 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void Pause(){
+        StartCoroutine(SayPauseLine());
 		Time.timeScale = 0.0f;
 	}
+
+    IEnumerator SayPauseLine() {
+        while(GameManager.instance.voices_player.PlayPause()){
+            yield return null;
+        }
+    }
 
 	public void UnPause(){
 		Time.timeScale = 1.0f;
@@ -311,6 +325,8 @@ public class GameManager : MonoBehaviour {
         StartCoroutine("WaitForLogin");
     }
 	
+    
+
 	#endregion
 
 

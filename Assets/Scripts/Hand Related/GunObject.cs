@@ -26,7 +26,7 @@ public class GunObject : GrabbableObject {
     private bool highligthed = false;
 
     //Gun Related
-    private float cooldown = 0.25f;
+    private float cooldown = 0.35f;
     private bool onCooldown = false;
     private AudioSource audio;
 

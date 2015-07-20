@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61e3089fd2a63a84796de030b4cd2810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsGiven: 100
+  pointsGiven: 500
   amtAmmo: 10
 --- !u!1001 &100100000
 Prefab:
