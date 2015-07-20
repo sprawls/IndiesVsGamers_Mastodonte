@@ -6121,7 +6121,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11466886, guid: f18112959dce32b4faba838fcab5f9d9, type: 2}
       propertyPath: phase1Time
-      value: 30
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f18112959dce32b4faba838fcab5f9d9, type: 2}

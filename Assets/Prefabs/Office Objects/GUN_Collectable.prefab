@@ -122,6 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointsGiven: 500
   amtAmmo: 10
+  scoreParticles: {fileID: 142672, guid: 96e9f07a342abe14481d69aa6860743c, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
