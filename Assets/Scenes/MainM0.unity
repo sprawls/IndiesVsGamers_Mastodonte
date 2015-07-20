@@ -213,7 +213,6 @@ MonoBehaviour:
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
-  m_RepeatDelay: .5
   m_AllowActivationOnMobileDevice: 0
 --- !u!114 &89339115
 MonoBehaviour:
@@ -368,7 +367,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
-  m_StereoMirrorMode: 0
 --- !u!4 &260375662
 Transform:
   m_ObjectHideFlags: 0
@@ -969,7 +967,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0992e4b152c453a49b26850492c35d52, type: 3}
   m_IsPrefabParent: 0
---- !u!4 &1748021432 stripped
+--- !u!4 &1748021432
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 0992e4b152c453a49b26850492c35d52, type: 3}
   m_PrefabInternal: {fileID: 1748021431}

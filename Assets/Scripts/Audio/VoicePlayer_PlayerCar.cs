@@ -60,9 +60,9 @@ public class VoicePlayer_PlayerCar : VoicePlayer {
         PlaySoundFX(random);
     }
 
-    public void PlayPause() {
+    public bool PlayPause() {
         AudioClip random = Pause[Random.Range(0, Pause.Length)];
-        PlaySoundFX(random);
+        return(PlaySoundFX(random));
     }
 
     public void PlayPolice() {
