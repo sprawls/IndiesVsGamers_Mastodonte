@@ -67,7 +67,7 @@ public class VoicePlayer_PlayerCar : VoicePlayer {
 
     public void PlayPolice() {
         AudioClip random = PoliceAlarm[Random.Range(0, PoliceAlarm.Length)];
-        PlaySoundFX(random);
+        PlaySoundFX(random, 0.5f);
     }
 
     public void PlayJustice() {

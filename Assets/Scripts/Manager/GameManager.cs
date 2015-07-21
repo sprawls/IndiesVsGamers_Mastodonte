@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour {
 
 	void Start(){
 		currentPhase = int.Parse(Application.loadedLevelName.Substring(5));
-        GameObject.Find("Main_UI").transform.FindChild("Level").GetComponent<Text>().text = (currentLevel + 1).ToString("00");
+        //GameObject.Find("Main_UI").transform.FindChild("Level").GetComponent<Text>().text = (currentLevel + 1).ToString("00");
 
 		switch(currentPhase){
 		case 0:
